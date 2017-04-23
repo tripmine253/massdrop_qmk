@@ -16,9 +16,40 @@
 */
 
 #include "hal.h"
-
+#include "backlight.h"
 #include "led.h"
+#include "print.h"
 
+void backlight_init_ports(void) {
+    print("backlight_init_ports()\n");
+/*
+    palSetPadMode(GPIOA, 6,  PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOA, 3,  PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOA, 15, PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOB, 5,  PAL_MODE_OUTPUT_PUSHPULL);
 
-void led_set(uint8_t usb_led) {
+    // Set them high to turn off the LEDs
+    palClearPad(GPIOA, 6);
+    //palSetPad(GPIOA, 6);
+    palSetPad(GPIOA, 3);
+    palSetPad(GPIOA, 15);
+    palSetPad(GPIOB, 5);
+*/
+}
+
+void backlight_set(uint8_t level) {
+    printf("backlight_set(%d)\n", level);
+/*
+    if (level == 0) {
+        palSetPad(GPIOA, 6);
+        palSetPad(GPIOA, 3);
+        palSetPad(GPIOA, 15);
+        palSetPad(GPIOB, 5);
+    } else {
+        palClearPad(GPIOA, 6);
+        palClearPad(GPIOA, 3);
+        palClearPad(GPIOA, 15);
+        palClearPad(GPIOB, 5);
+    }
+*/
 }

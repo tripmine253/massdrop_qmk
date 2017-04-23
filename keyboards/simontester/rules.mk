@@ -33,6 +33,9 @@ ARMV = 6
 #OPT_DEFS = -DCORTEX_VTOR_INIT=0x00001000
 OPT_DEFS = 
 
+# Options to pass to dfu-util when flashing
+DFU_ARGS = -d 0483:df11 -a 0 -s 0x08000000
+
 # Build Options
 #   comment out to disable the options.
 #

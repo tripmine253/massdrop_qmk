@@ -27,7 +27,7 @@
 #define MANUFACTURER    "Clueboard"
 #define USBSTR_MANUFACTURER 'C', '\x00', 'l', '\x00', 'u', '\x00', 'e', '\x00', 'b', '\x00', 'o', '\x00', 'a', '\x00', 'r', '\x00', 'd', '\x00'
 #define PRODUCT         "Simon Tester"
-#define USBSTR_PRODUCT      'S', '\x00', 'i', '\x00', 'm', '\x00', 'o', '\x00', 'n', '\x00'
+#define USBSTR_PRODUCT      'S', '\x00', 'i', '\x00', 'm', '\x00', 'o', '\x00', 'n', '\x00', ' ', '\x00', 'T', '\x00', 'e', '\x00', 's', '\x00', 't', '\x00', 'e', '\x00', 'r', '\x00'
 #define DESCRIPTION     A switch tester that plays Simon
 
 /* key matrix size */
@@ -53,12 +53,6 @@
 /* COL2ROW, ROW2COL, or CUSTOM_MATRIX */
 #define DIODE_DIRECTION CUSTOM_MATRIX
  
-/* backlight control */
-// #define BACKLIGHT_PIN B7
-// #define BACKLIGHT_BREATHING
-// #define BACKLIGHT_LEVELS 3
-
-
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
 #define DEBOUNCE 6
 
@@ -133,5 +127,13 @@
 
 /* override number of MIDI tone keycodes (each octave adds 12 keycodes and allocates 12 bytes) */
 //#define MIDI_TONE_KEYCODE_OCTAVES 1
+
+/* Remap PA11->PA9 and PA12->PA10 on STM32 devices that require it.
+ *
+ * The following MCU's are known to require this:
+ *
+ *     STM32F042x6
+ */
+#define STM32_REMAP_PINS
 
 #endif

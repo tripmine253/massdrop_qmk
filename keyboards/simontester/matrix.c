@@ -5,6 +5,7 @@
 #include "timer.h"
 #include "wait.h"
 #include "print.h"
+#include "backlight.h"
 #include "matrix.h"
 
 
@@ -25,44 +26,55 @@ static uint16_t debouncing_time = 0;
 
 
 void matrix_init(void) {
-//debug_matrix = true;
+    //debug_matrix = true;
+
     /* Column(sense) */
     palSetPadMode(GPIOA, 5,  PAL_MODE_INPUT_PULLDOWN);
     palSetPadMode(GPIOA, 4,  PAL_MODE_INPUT_PULLDOWN);
-    palSetPadMode(GPIOB, 7,  PAL_MODE_INPUT_PULLDOWN);
+    palSetPadMode(GPIOB, 6,  PAL_MODE_INPUT_PULLDOWN);
     palSetPadMode(GPIOB, 3,  PAL_MODE_INPUT_PULLDOWN);
 
     /* Row(strobe) */
     palSetPadMode(GPIOA, 7,  PAL_MODE_OUTPUT_PUSHPULL);
-    palSetPad(GPIOA, 7);  // Only one row, so leave it in strobe state all the time
+    palSetPad(GPIOA, 7);  // Only one row, so leave it in strobe state all the time.
                           // I did it this way so hardware hackers would have another
                           // pin to play with.
 
     memset(matrix, 0, MATRIX_ROWS);
     memset(matrix_debouncing, 0, MATRIX_ROWS);
+
+    /* Setup the backlight */
+/*
+    palSetPadMode(GPIOA, 6,  PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOA, 3,  PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOA, 15, PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOB, 5,  PAL_MODE_OUTPUT_PUSHPULL);
+
+    // Set them high to turn off the LEDs
+    palSetPad(GPIOA, 6);
+    palSetPad(GPIOA, 3);
+    palSetPad(GPIOA, 15);
+    palSetPad(GPIOB, 5);
+*/
 }
 
 uint8_t matrix_scan(void) {
-    for (int row = 0; row < MATRIX_ROWS; row++) {
-        matrix_row_t data = 0;
+    matrix_row_t data = 0;
 
-        // read col data: { PA5, PA4, PB6, PB3 }
-        data = (palReadPad(GPIOA, 5) |
-                   palReadPad(GPIOA, 4) |
-                   palReadPad(GPIOB, 6) |
-                   palReadPad(GPIOB, 3));
+    // read col data: { PA5, PA4, PB6, PB3 }
+    data = (palReadPad(GPIOA, 5) |
+        (palReadPad(GPIOA, 4) << 1) |
+        (palReadPad(GPIOB, 6) << 2) |
+        (palReadPad(GPIOB, 3) << 3));
 
-        if (matrix_debouncing[row] != data) {
-            matrix_debouncing[row] = data;
-            debouncing = true;
-            debouncing_time = timer_read();
-        }
+    if (matrix_debouncing[0] != data) {
+        matrix_debouncing[0] = data;
+        debouncing = true;
+        debouncing_time = timer_read();
     }
 
     if (debouncing && timer_elapsed(debouncing_time) > DEBOUNCE) {
-        for (int row = 0; row < MATRIX_ROWS; row++) {
-            matrix[row] = matrix_debouncing[row];
-        }
+        matrix[0] = matrix_debouncing[0];
         debouncing = false;
     }
     return 1;

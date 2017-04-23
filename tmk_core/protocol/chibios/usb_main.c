@@ -1026,16 +1026,6 @@ void init_usb_driver(USBDriver *usbp) {
   obqObjectInit(&console_buf_queue, console_queue_buffer, CONSOLE_EPSIZE, CONSOLE_QUEUE_CAPACITY, console_queue_onotify, (void*)usbp);
   chVTObjectInit(&console_flush_timer);
 #endif
-#ifdef STM32_REMAP_PINS
- /* Remap PA11->PA9 and PA12->PA10 on STM32 devices that require it.
-  *
-  * The following MCU's are known to require this:
-  *
-  *     STM32F042x6
-  */
-  RCC->APB2ENR |= RCC_APB2ENR_SYSCFGCOMPEN;
-  SYSCFG->CFGR1 |= SYSCFG_CFGR1_PA11_PA12_RMP;
-#endif
 }
 
 /*

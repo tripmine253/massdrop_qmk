@@ -99,4 +99,8 @@ bool mmc_lld_is_write_protected(MMCDriver *mmcp) {
  * @todo    Add your board-specific code, if any.
  */
 void boardInit(void) {
+  /* Remap PA11->PA9 and PA12->PA10 for USB
+   */
+  RCC->APB2ENR |= RCC_APB2ENR_SYSCFGCOMPEN;
+  SYSCFG->CFGR1 |= SYSCFG_CFGR1_PA11_PA12_RMP;
 }

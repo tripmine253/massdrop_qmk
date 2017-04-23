@@ -4,7 +4,7 @@
 #include "hal.h"
 #include "timer.h"
 #include "wait.h"
-#include "print.h"
+#include "printf.h"
 #include "backlight.h"
 #include "matrix.h"
 
@@ -26,6 +26,7 @@ static uint16_t debouncing_time = 0;
 
 
 void matrix_init(void) {
+    printf("matrix init\n");
     //debug_matrix = true;
 
     /* Column(sense) */
@@ -44,18 +45,16 @@ void matrix_init(void) {
     memset(matrix_debouncing, 0, MATRIX_ROWS);
 
     /* Setup the backlight */
-/*
     palSetPadMode(GPIOA, 6,  PAL_MODE_OUTPUT_PUSHPULL);
     palSetPadMode(GPIOA, 3,  PAL_MODE_OUTPUT_PUSHPULL);
     palSetPadMode(GPIOA, 15, PAL_MODE_OUTPUT_PUSHPULL);
     palSetPadMode(GPIOB, 5,  PAL_MODE_OUTPUT_PUSHPULL);
 
     // Set them high to turn off the LEDs
-    palSetPad(GPIOA, 6);
+    palClearPad(GPIOA, 6);
     palSetPad(GPIOA, 3);
     palSetPad(GPIOA, 15);
     palSetPad(GPIOB, 5);
-*/
 }
 
 uint8_t matrix_scan(void) {
@@ -77,6 +76,7 @@ uint8_t matrix_scan(void) {
         matrix[0] = matrix_debouncing[0];
         debouncing = false;
     }
+
     return 1;
 }
 
@@ -89,16 +89,16 @@ matrix_row_t matrix_get_row(uint8_t row) {
 }
 
 void matrix_print(void) {
-    xprintf("\nr/c 01234567\n");
+    printf("\nr/c 01234567\n");
     for (uint8_t row = 0; row < MATRIX_ROWS; row++) {
-        xprintf("%X0: ", row);
+        printf("%X0: ", row);
         matrix_row_t data = matrix_get_row(row);
         for (int col = 0; col < MATRIX_COLS; col++) {
             if (data & (1<<col))
-                xprintf("1");
+                printf("1");
             else
-                xprintf("0");
+                printf("0");
         }
-        xprintf("\n");
+        printf("\n");
     }
 }

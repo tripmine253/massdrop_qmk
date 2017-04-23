@@ -1,4 +1,4 @@
-/* Copyright 2017 REPLACE_WITH_YOUR_NAME
+/* Copyright 2017 skully <skullydazed@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,45 +14,39 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "simontester.h"
+#include "printf.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = KEYMAP(
-        KC_1,  F(2),   \
-        F(0),  F(1) \
+        KC_1,  KC_2, \
+        F(0),  F(1)  \
     ),
 };
 
+const uint16_t PROGMEM fn_actions[] = {
+  [0] = ACTION_FUNCTION(0),
+  [1] = ACTION_FUNCTION(1),
+};
+
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
-    static bool backlight;
+    if (!record->event.pressed) {
+        return;
+    }
 
     switch (id) {
         case 0:
+            print("Turning backlight off.\n");
             palSetPad(GPIOA, 6);
             palSetPad(GPIOA, 3);
             palSetPad(GPIOA, 15);
             palSetPad(GPIOB, 5);
-            backlight = false;
             break;
         case 1:
+            print("Turning backlight on.\n");
             palClearPad(GPIOA, 6);
             palClearPad(GPIOA, 3);
             palClearPad(GPIOA, 15);
             palClearPad(GPIOB, 5);
-            backlight = true;
             break;
-        case 2:
-            if (backlight) {
-                palSetPad(GPIOA, 6);
-                palSetPad(GPIOA, 3);
-                palSetPad(GPIOA, 15);
-                palSetPad(GPIOB, 5);
-                backlight = false;
-            } else {
-                palClearPad(GPIOA, 6);
-                palClearPad(GPIOA, 3);
-                palClearPad(GPIOA, 15);
-                palClearPad(GPIOB, 5);
-                backlight = true;
-            }
     }
 }

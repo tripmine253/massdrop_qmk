@@ -18,10 +18,10 @@
 #include "hal.h"
 #include "backlight.h"
 #include "led.h"
-#include "print.h"
+#include "printf.h"
 
 void backlight_init_ports(void) {
-    print("backlight_init_ports()\n");
+    printf("backlight_init_ports()\n");
 /*
     palSetPadMode(GPIOA, 6,  PAL_MODE_OUTPUT_PUSHPULL);
     palSetPadMode(GPIOA, 3,  PAL_MODE_OUTPUT_PUSHPULL);

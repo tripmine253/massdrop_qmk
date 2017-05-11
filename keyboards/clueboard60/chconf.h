@@ -252,7 +252,7 @@
  *          requirements.
  * @note    Requires @p CH_CFG_USE_MESSAGES.
  */
-#define CH_CFG_USE_MESSAGES_PRIORITY        TRUE
+#define CH_CFG_USE_MESSAGES_PRIORITY        FALSE
 
 /**
  * @brief   Mailboxes APIs.

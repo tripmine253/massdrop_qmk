@@ -40,7 +40,6 @@ void matrix_scan_kb(void) {
   matrix_scan_user();
 }
 
-
 void matrix_init(void) {
     printf("matrix init\n");
     //debug_matrix = true;

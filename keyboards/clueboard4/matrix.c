@@ -9,7 +9,7 @@
 #include "matrix.h"
 
 
-/* Clueboard SimonTester
+/* Clueboard4
  *
  * Column pins are input with internal pull-down. 
  * Row pins are output and strobe with high.

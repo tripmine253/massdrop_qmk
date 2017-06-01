@@ -8,8 +8,8 @@
     <output_path>..</output_path>
     <hal_version>3.0.x</hal_version>
   </configuration_settings>
-  <board_name>Clueboard SimonTester</board_name>
-  <board_id>CB_SIMONTESTER</board_id>
+  <board_name>Clueboard4</board_name>
+  <board_id>CLUEBOARD4</board_id>
   <board_functions></board_functions>
   <subtype>STM32F042G</subtype>
   <clocks HSEFrequency="0" HSEBypass="true" LSEFrequency="0"

@@ -13,4 +13,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "simontester.h"
+#ifndef CLUEBOARD4_H
+#define CLUEBOARD4_H
+
+#include "quantum.h"
+
+// This a shortcut to help you visually see your layout.
+// The first section contains all of the arguments
+// The second converts the arguments into a two-dimensional array
+#define KEYMAP(\
+    k00, k03, \
+    k01, k02  \
+) { { \
+    k00, k01, k02, k03, \
+}, }
+
+#endif

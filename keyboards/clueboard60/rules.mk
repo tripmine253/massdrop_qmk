@@ -14,10 +14,7 @@ MCU_SERIES = STM32F3xx
 MCU_LDSCRIPT = STM32F303xC
 
 # Startup code to use
-<<<<<<< HEAD
 #  - it should exist in <chibios>/os/common/startup/ARMCMx/compilers/GCC/mk/
-=======
-#  - it should exist in <chibios>/os/common/ports/ARMCMx/compilers/GCC/mk/
 MCU_STARTUP = stm32f3xx
 
 # Board: it should exist either in <chibios>/os/hal/boards/

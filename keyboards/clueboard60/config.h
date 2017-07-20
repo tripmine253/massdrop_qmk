@@ -28,7 +28,7 @@
 #define USBSTR_MANUFACTURER 'C', '\x00', 'l', '\x00', 'u', '\x00', 'e', '\x00', 'b', '\x00', 'o', '\x00', 'a', '\x00', 'r', '\x00', 'd', '\x00'
 #define PRODUCT         "Clueboard60"
 #define USBSTR_PRODUCT 'C', '\x00', 'l', '\x00', 'u', '\x00', 'e', '\x00', 'b', '\x00', 'o', '\x00', 'a', '\x00', 'r', '\x00', 'd', '\x00', '6', '\x00', '0', '\x00'
-#define DESCRIPTION     Clueboard 60% PCB
+#define DESCRIPTION     Clueboard 60 PCB
 
 /* key matrix size */
 #define MATRIX_ROWS 5

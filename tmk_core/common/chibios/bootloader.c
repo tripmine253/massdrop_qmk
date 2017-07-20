@@ -49,7 +49,7 @@ void bootloader_jump(void) {
 #else /* defined(KIIBOHD_BOOTLOADER) */
 /* Default for Kinetis - expecting an ARM Teensy */
 void bootloader_jump(void) {
-	chThdSleepMilliseconds(100);
+	wait_ms(100);
 	__BKPT(0);
 }
 #endif /* defined(KIIBOHD_BOOTLOADER) */

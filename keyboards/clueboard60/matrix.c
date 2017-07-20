@@ -24,6 +24,22 @@ static matrix_row_t matrix_debouncing[MATRIX_ROWS];
 static bool debouncing = false;
 static uint16_t debouncing_time = 0;
 
+__attribute__ ((weak))
+void matrix_init_user(void) {}
+
+__attribute__ ((weak))
+void matrix_scan_user(void) {}
+
+__attribute__ ((weak))
+void matrix_init_kb(void) {
+  matrix_init_user();
+}
+
+__attribute__ ((weak))
+void matrix_scan_kb(void) {
+  matrix_scan_user();
+}
+
 
 void matrix_init(void) {
     printf("matrix init\n");
@@ -57,8 +73,10 @@ void matrix_init(void) {
     memset(matrix_debouncing, 0, MATRIX_ROWS);
 
     /* Setup capslock */
-    palSetPadMode(GPIOB, 7,  PAL_MODE_OUTPUT_PUSHPULL);
-    palClearPad(GPIOB, 7);
+    // palSetPadMode(GPIOB, 7,  PAL_MODE_OUTPUT_PUSHPULL);
+    // palClearPad(GPIOB, 7);
+
+    matrix_init_quantum();
 }
 
 uint8_t matrix_scan(void) {
@@ -82,18 +100,18 @@ uint8_t matrix_scan(void) {
             palReadPad(GPIOA, 2) << 0 |
             palReadPad(GPIOA, 3) << 1 |
             palReadPad(GPIOA, 6) << 2 |
-            palReadPad(GPIOA, 14) << 3 |
-            palReadPad(GPIOA, 15) << 4 |
+            palReadPad(GPIOB, 14) << 3 |
+            palReadPad(GPIOB, 15) << 4 |
             palReadPad(GPIOA, 8) << 5 |
             palReadPad(GPIOA, 9) << 6 |
             palReadPad(GPIOA, 7) << 7 |
-            palReadPad(GPIOA, 3) << 8 |
-            palReadPad(GPIOA, 4) << 9 |
-            palReadPad(GPIOA, 14) << 10 |
-            palReadPad(GPIOA, 15) << 11 |
-            palReadPad(GPIOA, 13) << 12 |
-            palReadPad(GPIOA, 5) << 13 |
-            palReadPad(GPIOA, 6) << 14
+            palReadPad(GPIOB, 3) << 8 |
+            palReadPad(GPIOB, 4) << 9 |
+            palReadPad(GPIOC, 14) << 10 |
+            palReadPad(GPIOC, 15) << 11 |
+            palReadPad(GPIOC, 13) << 12 |
+            palReadPad(GPIOB, 5) << 13 |
+            palReadPad(GPIOB, 6) << 14
         );
 
         // unstrobe row { PB0, PB1, PB2, PA15, PA10 }
@@ -117,6 +135,9 @@ uint8_t matrix_scan(void) {
         }
         debouncing = false;
     }
+
+    matrix_scan_quantum();
+
     return 1;
 }
 

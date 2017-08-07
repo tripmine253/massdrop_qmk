@@ -1,6 +1,7 @@
 # Keyboard Identifiers
 
 |Keyboard|Vendor ID|Product ID|Device Ver|
+| ------ |--------:| --------:| --------:|
 |alps64|0xFEED|0x6464|0x0001|
 |amj40|0xFEED|0x6072|0x0002|
 |amj60|0xFEED|0x6066|0x0001|

@@ -1,7 +1,8 @@
 #/bin/bash
 echo "# Keyboard Identifiers
 
-|Keyboard|Vendor ID|Product ID|Device Ver|" > docs/keyboard_identifiers.md
+|Keyboard|Vendor ID|Product ID|Device Ver|
+| ------ |--------:| --------:| --------:|" > docs/keyboard_identifiers.md
 for project in $(find . -regex '\./keyboards/[a-z0-9_\-]+/config.h')
 do
     keyboard_name=$(printf $project | sed -r "s/\.\/keyboards\/([a-zA-Z0-9_\-]+).*/\1/g")

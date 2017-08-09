@@ -22,6 +22,7 @@
 /*
  * DAC test buffer (sine wave).
  */
+/*
 static const dacsample_t dac_buffer[DAC_BUFFER_SIZE] = {
   2047, 2082, 2118, 2154, 2189, 2225, 2260, 2296, 2331, 2367, 2402, 2437,
   2472, 2507, 2542, 2576, 2611, 2645, 2679, 2713, 2747, 2780, 2813, 2846,
@@ -54,20 +55,24 @@ static const dacsample_t dac_buffer[DAC_BUFFER_SIZE] = {
   1215, 1248, 1281, 1314, 1347, 1381, 1415, 1449, 1483, 1518, 1552, 1587,
   1622, 1657, 1692, 1727, 1763, 1798, 1834, 1869, 1905, 1940, 1976, 2012
 };
+*/
 
 /*
  * DAC streaming callback.
  */
 size_t nx = 0, ny = 0, nz = 0;
+/*
 static void end_cb1(DACDriver *dacp, const dacsample_t *buffer, size_t n) {
 
   (void)dacp;
 }
+*/
 
 
 /*
  * DAC error callback.
  */
+/*
 static void error_cb1(DACDriver *dacp, dacerror_t err) {
 
   (void)dacp;
@@ -75,7 +80,7 @@ static void error_cb1(DACDriver *dacp, dacerror_t err) {
 
   chSysHalt("DAC failure");
 }
-
+*/
 
 static void gpt_cb6(GPTDriver *gptp);
 static void gpt_cb7(GPTDriver *gptp);
@@ -133,6 +138,7 @@ static void gpt_cb7(GPTDriver *gptp) {
 
 
 
+/*
 static const DACConfig dac1cfg1 = {
   .init         = 2047U,
   .datamode     = DAC_DHRM_12BIT_RIGHT,
@@ -145,6 +151,7 @@ static const DACConversionGroup dacgrpcfg1 = {
   .error_cb     = error_cb1,
   .trigger      = DAC_TRG(0)
 };
+*/
 
 
 

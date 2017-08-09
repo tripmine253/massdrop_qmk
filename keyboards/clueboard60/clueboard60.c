@@ -22,7 +22,6 @@
 /*
  * DAC test buffer (sine wave).
  */
-/*
 static const dacsample_t dac_buffer[DAC_BUFFER_SIZE] = {
   2047, 2082, 2118, 2154, 2189, 2225, 2260, 2296, 2331, 2367, 2402, 2437,
   2472, 2507, 2542, 2576, 2611, 2645, 2679, 2713, 2747, 2780, 2813, 2846,
@@ -55,24 +54,21 @@ static const dacsample_t dac_buffer[DAC_BUFFER_SIZE] = {
   1215, 1248, 1281, 1314, 1347, 1381, 1415, 1449, 1483, 1518, 1552, 1587,
   1622, 1657, 1692, 1727, 1763, 1798, 1834, 1869, 1905, 1940, 1976, 2012
 };
-*/
 
 /*
  * DAC streaming callback.
  */
 size_t nx = 0, ny = 0, nz = 0;
-/*
+
 static void end_cb1(DACDriver *dacp, const dacsample_t *buffer, size_t n) {
 
   (void)dacp;
 }
-*/
-
 
 /*
  * DAC error callback.
  */
-/*
+
 static void error_cb1(DACDriver *dacp, dacerror_t err) {
 
   (void)dacp;
@@ -80,43 +76,91 @@ static void error_cb1(DACDriver *dacp, dacerror_t err) {
 
   chSysHalt("DAC failure");
 }
-*/
 
-static void gpt_cb6(GPTDriver *gptp);
-static void gpt_cb7(GPTDriver *gptp);
+
+// static void gpt_cb6(GPTDriver *gptp);
+// static void gpt_cb7(GPTDriver *gptp);
+static void gpt_cb8(GPTDriver *gptp);
+float frequency[2] = { 110.00, 130.81 };
 
 /*
  * GPT6 configuration.
  */
 GPTConfig gpt6cfg1 = {
-  .frequency    = 110U,
-  .callback     = gpt_cb6,
+  .frequency    = 110.00*DAC_BUFFER_SIZE,
+  // .frequency    = 1000000,
+  // .callback     = gpt_cb6,
+  .callback     = NULL,
   .cr2          = TIM_CR2_MMS_1,    /* MMS = 010 = TRGO on Update Event.    */
   .dier         = 0U
 };
 
 GPTConfig gpt7cfg1 = {
-  .frequency    = 131U,
-  .callback     = gpt_cb7,
+  .frequency    = 130.81*DAC_BUFFER_SIZE,
+  // .callback     = gpt_cb7,
+  .callback     = NULL,
   .cr2          = TIM_CR2_MMS_1,    /* MMS = 010 = TRGO on Update Event.    */
   .dier         = 0U
 };
 
-static void gpt_cb6(GPTDriver *gptp) {
-    palTogglePad(GPIOA, 4);
+GPTConfig gpt8cfg1 = {
+  .frequency    = 44100,
+  .callback     = gpt_cb8,
+  .cr2          = TIM_CR2_MMS_1,    /* MMS = 010 = TRGO on Update Event.    */
+  .dier         = 0U
+};
+
+// static void gpt_cb6(GPTDriver *gptp) {
+//     palTogglePad(GPIOA, 4);
+
+//   nz++;
+
+//   if ((nz % 1000) == 0) {
+//     palTogglePad(GPIOB, 7);
+//     nz = 0;
+//     gpt6cfg1.frequency *= 1.05946;
+//     gptStopTimer(&GPTD6);
+
+//     gptStart(&GPTD6, &gpt6cfg1);
+//     gptStartContinuous(&GPTD6, 2U);
+    
+//     gpt7cfg1.frequency *= 1.05946;
+//     gptStopTimer(&GPTD7);
+
+//     gptStart(&GPTD7, &gpt7cfg1);
+//     gptStartContinuous(&GPTD7, 2U);
+//   }
+// }
+
+// static void gpt_cb7(GPTDriver *gptp) {
+//     palTogglePad(GPIOA, 5);
+
+//   // ny++;
+
+//   // if ((ny % 1000) == 0) {
+//   //   palTogglePad(GPIOB, 7);
+//   //   ny = 0;
+//   // }
+// }
+
+static void gpt_cb8(GPTDriver *gptp) {
 
   nz++;
 
-  if ((nz % 1000) == 0) {
+  if ((nz % 5000) == 0) {
     palTogglePad(GPIOB, 7);
     nz = 0;
-    gpt6cfg1.frequency *= 1.05946;
+    frequency[0] *= 1.05946;
+    frequency[1] *= 1.05946;
+
+    gpt6cfg1.frequency = frequency[0];
     gptStopTimer(&GPTD6);
 
     gptStart(&GPTD6, &gpt6cfg1);
     gptStartContinuous(&GPTD6, 2U);
-    
-    gpt7cfg1.frequency *= 1.05946;
+
+
+    gpt7cfg1.frequency = frequency[1];
     gptStopTimer(&GPTD7);
 
     gptStart(&GPTD7, &gpt7cfg1);
@@ -124,34 +168,21 @@ static void gpt_cb6(GPTDriver *gptp) {
   }
 }
 
-static void gpt_cb7(GPTDriver *gptp) {
-    palTogglePad(GPIOA, 5);
-
-  // ny++;
-
-  // if ((ny % 1000) == 0) {
-  //   palTogglePad(GPIOB, 7);
-  //   ny = 0;
-  // }
-}
 
 
-
-
-/*
 static const DACConfig dac1cfg1 = {
   .init         = 2047U,
   .datamode     = DAC_DHRM_12BIT_RIGHT,
+  // .datamode     = DAC_DHRM_12BIT_RIGHT_DUAL,
   // .cr           = 0
 };
 
 static const DACConversionGroup dacgrpcfg1 = {
-  .num_channels = 1U,
+  .num_channels = 2U,
   .end_cb       = end_cb1,
   .error_cb     = error_cb1,
   .trigger      = DAC_TRG(0)
 };
-*/
 
 
 
@@ -160,24 +191,30 @@ void matrix_init_kb(void) {
    * Starting DAC1 driver, setting up the output pin as analog as suggested
    * by the Reference Manual.
    */
-  // palSetPadMode(GPIOA, 4, PAL_MODE_INPUT_ANALOG);
-  palSetPadMode(GPIOA, 4, PAL_MODE_OUTPUT_PUSHPULL);
-  palSetPadMode(GPIOA, 5, PAL_MODE_OUTPUT_PUSHPULL);
-  // dacStart(&DACD1, &dac1cfg1);
+  palSetPadMode(GPIOA, 4, PAL_MODE_INPUT_ANALOG);
+  palSetPadMode(GPIOA, 5, PAL_MODE_INPUT_ANALOG);
+  // palSetPadMode(GPIOA, 4, PAL_MODE_OUTPUT_PUSHPULL);
+  // palSetPadMode(GPIOA, 5, PAL_MODE_OUTPUT_PUSHPULL);
+  dacStart(&DACD1, &dac1cfg1);
+  dacStart(&DACD2, &dac1cfg1);
 
   /*
    * Starting GPT6 driver, it is used for triggering the DAC.
    */
   gptStart(&GPTD6, &gpt6cfg1);
   gptStart(&GPTD7, &gpt7cfg1);
+  gptStart(&GPTD8, &gpt8cfg1);
 
   /*
    * Starting a continuous conversion.
    */
-  // dacStartConversion(&DACD1, &dacgrpcfg1,
-                     // (dacsample_t *)dac_buffer, DAC_BUFFER_SIZE);
+  dacStartConversion(&DACD1, &dacgrpcfg1,
+                     (dacsample_t *)dac_buffer, DAC_BUFFER_SIZE);
+  dacStartConversion(&DACD2, &dacgrpcfg1,
+                     (dacsample_t *)dac_buffer, DAC_BUFFER_SIZE);
   gptStartContinuous(&GPTD6, 2U);  
   gptStartContinuous(&GPTD7, 2U);
+  gptStartContinuous(&GPTD8, 2U);
 }
 
 void matrix_scan_kb(void) {

@@ -15,7 +15,7 @@
  * Row pins are output and strobe with high.
  * Key is high or 1 when it turns on.
  *
- *     col: { PA2, PA3, PA6, PB14, PB15, PA8, PA9, PA7, PB3, PB4, PC14, PC15, PC13, PB5, PB6 }
+ *     col: { PA2, PA3, PA6, PB14, PB15, PA8, PA9, PA7, PB3, PB4, PC15, PC14, PC13, PB5, PB6 }
  *     row: { PB0, PB1, PB2, PA15, PA10 }
  */
 /* matrix state(1:on, 0:off) */
@@ -55,8 +55,8 @@ void matrix_init(void) {
     palSetPadMode(GPIOA, 7,  PAL_MODE_OUTPUT_PUSHPULL);
     palSetPadMode(GPIOB, 3,  PAL_MODE_OUTPUT_PUSHPULL);
     palSetPadMode(GPIOB, 4,  PAL_MODE_OUTPUT_PUSHPULL);
-    palSetPadMode(GPIOC, 14, PAL_MODE_OUTPUT_PUSHPULL);
     palSetPadMode(GPIOC, 15, PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOC, 14, PAL_MODE_OUTPUT_PUSHPULL);
     palSetPadMode(GPIOC, 13, PAL_MODE_OUTPUT_PUSHPULL);
     palSetPadMode(GPIOB, 5,  PAL_MODE_OUTPUT_PUSHPULL);
     palSetPadMode(GPIOB, 6,  PAL_MODE_OUTPUT_PUSHPULL);
@@ -94,8 +94,8 @@ uint8_t matrix_scan(void) {
             case 7: palSetPad(GPIOA, 7); break; 
             case 8: palSetPad(GPIOB, 3); break; 
             case 9: palSetPad(GPIOB, 4); break; 
-            case 10: palSetPad(GPIOC, 14); break; 
-            case 11: palSetPad(GPIOC, 15); break; 
+            case 10: palSetPad(GPIOC, 15); break; 
+            case 11: palSetPad(GPIOC, 14); break; 
             case 12: palSetPad(GPIOC, 13); break; 
             case 13: palSetPad(GPIOB, 5); break; 
             case 14: palSetPad(GPIOB, 6); break;
@@ -113,7 +113,7 @@ uint8_t matrix_scan(void) {
             (palReadPad(GPIOA, 10) << 4 )
         );
 
-        // unstrobe  col { PA2, PA3, PA6, PB14, PB15, PA8, PA9, PA7, PB3, PB4, PC14, PC15, PC13, PB5, PB6 }
+        // unstrobe  col { PA2, PA3, PA6, PB14, PB15, PA8, PA9, PA7, PB3, PB4, PC15, PC14, PC13, PB5, PB6 }
         switch (col) {
             case 0: palClearPad(GPIOA, 2); break; 
             case 1: palClearPad(GPIOA, 3); break; 
@@ -125,8 +125,8 @@ uint8_t matrix_scan(void) {
             case 7: palClearPad(GPIOA, 7); break; 
             case 8: palClearPad(GPIOB, 3); break; 
             case 9: palClearPad(GPIOB, 4); break; 
-            case 10: palClearPad(GPIOC, 14); break; 
-            case 11: palClearPad(GPIOC, 15); break; 
+            case 10: palClearPad(GPIOC, 15); break; 
+            case 11: palClearPad(GPIOC, 14); break; 
             case 12: palClearPad(GPIOC, 13); break; 
             case 13: palClearPad(GPIOB, 5); break; 
             case 14: palClearPad(GPIOB, 6); break;

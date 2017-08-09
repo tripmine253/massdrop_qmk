@@ -1,28 +1,14 @@
-Clueboard60 keyboard firmware
-=============================
+# Clueboard 60%
 
-## Quantum MK Firmware
+A fully customizable 60% keyboard.
 
-For the full Quantum feature list, see [the parent readme](/).
+* Keyboard Maintainer: [Zach White](https://github.com/skullydazed)
+* Hardware Supported: Clueboard 60% PCB
+  * rev1 (1.0)
+* Hardware Availability: [clueboard.co](https://clueboard.co/)
 
-## Building
+Make example for this keyboard (after setting up your build environment):
 
-Download or clone the whole firmware and navigate to the keyboards/clueboard60 folder. Once your dev env is setup, you'll be able to type `make` to generate your .hex.
+    make clueboard60-default
 
-Depending on which keymap you would like to use, you will have to compile slightly differently.
-
-### Default
-
-To build with the default keymap, simply run `make default`.
-
-### Other Keymaps
-
-Several version of keymap are available in advance but you are recommended to define your favorite layout yourself. To define your own keymap create a folder with the name of your keymap in the keymaps folder, and see keymap documentation (you can find in top readme.md) and existant keymap files.
-
-To build the firmware binary hex file with a keymap just do `make` with a keymap like this:
-
-```
-$ make [default|jack|<name>]
-```
-
-Keymaps follow the format **__\<name\>.c__** and are stored in the `keymaps` folder.
+See [build environment setup](https://docs.qmk.fm/build_environment_setup.html) then the [make instructions](https://docs.qmk.fm/make_instructions.html) for more information.

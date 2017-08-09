@@ -1,1 +1,1 @@
-# The default keymap for simontester
+# The default keymap for clueboard 60%

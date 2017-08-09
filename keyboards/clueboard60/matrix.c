@@ -19,7 +19,7 @@
  *     row: { PB0, PB1, PB2, PA15, PA10 }
  */
 /* matrix state(1:on, 0:off) */
-static matrix_row_t matrix[MATRIX_COLS];
+static matrix_row_t matrix[MATRIX_ROWS];
 static matrix_row_t matrix_debouncing[MATRIX_COLS];
 static bool debouncing = false;
 static uint16_t debouncing_time = 0;
@@ -68,7 +68,7 @@ void matrix_init(void) {
     palSetPadMode(GPIOA, 15,  PAL_MODE_INPUT_PULLDOWN);
     palSetPadMode(GPIOA, 10,  PAL_MODE_INPUT_PULLDOWN);
 
-    memset(matrix, 0, MATRIX_COLS);
+    memset(matrix, 0, MATRIX_ROWS);
     memset(matrix_debouncing, 0, MATRIX_COLS);
 
     /* Setup capslock */
@@ -139,8 +139,11 @@ uint8_t matrix_scan(void) {
         }
     }
     if (debouncing && timer_elapsed(debouncing_time) > DEBOUNCE) {
-        for (int col = 0; col < MATRIX_COLS; col++) {
-            matrix[col] = matrix_debouncing[col];
+        for (int row = 0; row < MATRIX_ROWS; row++) {
+            matrix[row] = 0;
+            for (int col = 0; col < MATRIX_COLS; col++) {
+                matrix[row] |= ((matrix_debouncing[col] & (1 << row) ? 1 : 0) << col);
+            }
         }
         debouncing = false;
     }
@@ -151,7 +154,7 @@ uint8_t matrix_scan(void) {
 }
 
 bool matrix_is_on(uint8_t row, uint8_t col) {
-    return (matrix[col] & (1<<row));
+    return (matrix[row] & (1<<col));
 }
 
 matrix_row_t matrix_get_row(uint8_t row) {

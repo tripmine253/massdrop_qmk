@@ -186,7 +186,7 @@ void audio_init()
 
 void stop_all_notes()
 {
-    dprintf("audio stop all notes");
+    dprintf("audio stop all notes\n");
 
     if (!audio_initialized) {
         audio_init();
@@ -219,7 +219,7 @@ void stop_all_notes()
 
 void stop_note(float freq)
 {
-    dprintf("audio stop note freq=%d", (int)freq);
+    dprintf("audio stop note freq=%d\n", (int)freq);
 
     if (playing_note) {
         if (!audio_initialized) {
@@ -717,6 +717,7 @@ void audio_toggle(void) {
 }
 
 void audio_on(void) {
+    PLAY_SONG(startup_song);
     audio_config.enable = 1;
     eeconfig_update_audio(audio_config.raw);
     audio_on_user();

@@ -134,11 +134,11 @@ void reset_keyboard(void) {
   clear_keyboard();
 #if defined(AUDIO_ENABLE) || (defined(MIDI_ENABLE) && defined(MIDI_ENABLE_BASIC))
   music_all_notes_off();
-  uint16_t timer_start = timer_read();
+  // uint16_t timer_start = timer_read();
   PLAY_SONG(goodbye_song);
   shutdown_user();
-  while(timer_elapsed(timer_start) < 250) 
-    wait_ms(1);
+  // while(timer_elapsed(timer_start) < 500) 
+  wait_ms(250);
   stop_all_notes();
 #else
   wait_ms(250);

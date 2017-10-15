@@ -91,6 +91,11 @@ $(eval $(call NEXT_PATH_ELEMENT))
 #     endif
 # endif
 
+define newline
+
+
+endef
+
 define GET_KEYBOARDS
     All_RULES_MK := $$(patsubst $(ROOT_DIR)/keyboards/%/rules.mk,%,$$(wildcard $(ROOT_DIR)/keyboards/*/rules.mk))
     All_RULES_MK += $$(patsubst $(ROOT_DIR)/keyboards/%/rules.mk,%,$$(wildcard $(ROOT_DIR)/keyboards/*/*/rules.mk))
@@ -103,6 +108,7 @@ define GET_KEYBOARDS
     KEYMAPS_MK += $$(patsubst $(ROOT_DIR)/keyboards/%/rules.mk,%,$$(wildcard $(ROOT_DIR)/keyboards/*/*/*/*/keymaps/*/rules.mk))
 
     KEYBOARDS := $$(sort $$(filter-out $$(KEYMAPS_MK), $$(All_RULES_MK)))
+    TRAVIS_KEYBOARDS := $$(patsubst %, "- script: make %\n", $$(KEYBOARDS))
 endef
 
 $(eval $(call GET_KEYBOARDS))
@@ -112,6 +118,10 @@ $(eval $(call GET_KEYBOARDS))
 
 list-keyboards:
 	echo $(KEYBOARDS)
+	exit 0
+
+travis-keyboards:
+	echo $(TRAVIS_KEYBOARDS)
 	exit 0
 
 #Compatibility with the old make variables, anything you specify directly on the command line

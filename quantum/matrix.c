@@ -271,23 +271,14 @@ uint8_t matrix_key_count(void)
 }
 
 
-#define PIN(p) (*((volatile uint8_t*)(p >> 4) + 0))
-#define DDR(p) (*((volatile uint8_t*)(p >> 4) + 1))
-#define PORT(p) (*((volatile uint8_t*)(p >> 4) + 2))
-
-_Static_assert(1==2, "wat");
-_Static_assert(PIN(F0)==PINC, "Pin does not match");
-_Static_assert(PIN(D0)==PIND, "Pin does not match");
-_Static_assert(PIN(E0)==PINE, "Pin does not match");
-
 #if (DIODE_DIRECTION == COL2ROW)
 
 static void init_cols(void)
 {
     for(uint8_t x = 0; x < MATRIX_COLS; x++) {
         uint8_t pin = col_pins[x];
-        DDR(pin) &= ~_BV(pin & 0xF); // IN
-        PORT(pin) |=  _BV(pin & 0xF); // HI
+        DDR_INPUT(pin); // IN
+        PORT_HIGH(pin); // HI
     }
 }
 
@@ -308,7 +299,7 @@ static bool read_cols_on_row(matrix_row_t current_matrix[], uint8_t current_row)
 
         // Select the col pin to read (active low)
         uint8_t pin = col_pins[col_index];
-        uint8_t pin_state = (PIN(pin) & _BV(pin & 0xF));
+        uint8_t pin_state = PIN_VALUE(pin);
 
         // Populate the matrix row with the state of the col pin
         current_matrix[current_row] |=  pin_state ? 0 : (ROW_SHIFTER << col_index);
@@ -323,23 +314,23 @@ static bool read_cols_on_row(matrix_row_t current_matrix[], uint8_t current_row)
 static void select_row(uint8_t row)
 {
     uint8_t pin = row_pins[row];
-    DDR(pin) |=  _BV(pin & 0xF); // OUT
-    PORT(pin) &= ~_BV(pin & 0xF); // LOW
+    DDR_OUTPUT(pin); // OUT
+    PORT_LOW(pin); // LOW
 }
 
 static void unselect_row(uint8_t row)
 {
     uint8_t pin = row_pins[row];
-    DDR(pin) &= ~_BV(pin & 0xF); // IN
-    PORT(pin) |=  _BV(pin & 0xF); // HI
+    DDR_INPUT(pin); // IN
+    PORT_HIGH(pin); // HI
 }
 
 static void unselect_rows(void)
 {
     for(uint8_t x = 0; x < MATRIX_ROWS; x++) {
         uint8_t pin = row_pins[x];
-        DDR(pin) &= ~_BV(pin & 0xF); // IN
-        PORT(pin) |=  _BV(pin & 0xF); // HI
+        DDR_INPUT(pin); // IN
+        PORT_HIGH(pin); // HI
     }
 }
 
@@ -349,8 +340,8 @@ static void init_rows(void)
 {
     for(uint8_t x = 0; x < MATRIX_ROWS; x++) {
         uint8_t pin = row_pins[x];
-        DDR(pin) &= ~_BV(pin & 0xF); // IN
-        PORT(pin) |=  _BV(pin & 0xF); // HI
+        DDR_INPUT(pin); // IN
+        PORT_HIGH(pin); // HI
     }
 }
 
@@ -370,7 +361,7 @@ static bool read_rows_on_col(matrix_row_t current_matrix[], uint8_t current_col)
         matrix_row_t last_row_value = current_matrix[row_index];
 
         // Check row pin state
-        if ((PIN(row_pins[row_index]) & _BV(row_pins[row_index] & 0xF)) == 0)
+        if (PIN_VALUE(row_pins[row_index]) == 0)
         {
             // Pin LO, set col bit
             current_matrix[row_index] |= (ROW_SHIFTER << current_col);
@@ -397,23 +388,23 @@ static bool read_rows_on_col(matrix_row_t current_matrix[], uint8_t current_col)
 static void select_col(uint8_t col)
 {
     uint8_t pin = col_pins[col];
-    DDR(pin) |=  _BV(pin & 0xF); // OUT
-    PORT(pin) &= ~_BV(pin & 0xF); // LOW
+    DDR_OUTPUT(pin); // OUT
+    PORT_LOW(pin); // LOW
 }
 
 static void unselect_col(uint8_t col)
 {
     uint8_t pin = col_pins[col];
-    DDR(pin) &= ~_BV(pin & 0xF); // IN
-    PORT(pin) |=  _BV(pin & 0xF); // HI
+    DDR_INPUT(pin); // IN
+    PORT_HIGH(pin); // HI
 }
 
 static void unselect_cols(void)
 {
     for(uint8_t x = 0; x < MATRIX_COLS; x++) {
         uint8_t pin = col_pins[x];
-        DDR(pin) &= ~_BV(pin & 0xF); // IN
-        PORT(pin) |=  _BV(pin & 0xF); // HI
+        DDR_INPUT(pin); // IN
+        PORT_HIGH(pin); // HI
     }
 }
 

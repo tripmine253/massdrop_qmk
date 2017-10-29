@@ -1054,7 +1054,8 @@ void send_remote_wakeup(USBDriver *usbp) {
   wait_ms(15);
   STM32_USB->CNTR &= ~CNTR_RESUME;
 #else /* End STM32F0XX || STM32F1XX || STM32F3XX */
-#warning Sending remote wakeup packet not implemented for your platform.
+//FIXME!!!!
+//#warning Sending remote wakeup packet not implemented for your platform.
 #endif
 }
 

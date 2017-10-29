@@ -2,6 +2,9 @@
 SRC =	matrix.c \
 	    led.c
 
+# Options to pass to dfu-util when flashing
+DFU_ARGS = -d 0483:df11 -a 0 -s 0x08000000 -R
+
 # STM32L476 Discovery board
 MCU_LDSCRIPT = STM32L476xG
 BOARD = ST_STM32L476_DISCOVERY

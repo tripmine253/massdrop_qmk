@@ -26,18 +26,25 @@ static uint16_t debouncing_time = 0;
 void matrix_init(void) {
     printf("matrix init\n");
 
-    /* Column(sense) */
-    palSetPadMode(GPIOA, 1,  PAL_MODE_INPUT_PULLUP);
-
     memset(matrix, 0, MATRIX_ROWS);
     memset(matrix_debouncing, 0, MATRIX_ROWS);
+
+    /* LED Init
+     */
+    palSetPad(GPIOB, 5);
+    palSetPad(GPIOB, 3);
+    palSetPad(GPIOA, 2);
+
+    /* Speaker Init
+     */
+    palClearPad(GPIOA, 7);
 }
 
 uint8_t matrix_scan(void) {
     matrix_row_t data = 0;
 
     // read switch data: { PA1 }
-    data = (palReadPad(GPIOA, 1));
+    data = ~(palReadPad(GPIOA, 1));
 
     if (matrix_debouncing[0] != data) {
         matrix_debouncing[0] = data;

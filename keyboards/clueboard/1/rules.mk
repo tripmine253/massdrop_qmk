@@ -19,7 +19,7 @@ MCU_STARTUP = stm32f0xx
 
 # Board: it should exist either in <chibios>/os/hal/boards/
 #  or <this_dir>/boards
-BOARD = GENERIC_STM32_F04
+BOARD = CLUEBOARD_1
 
 # Cortex version
 MCU  = cortex-m0
@@ -39,7 +39,8 @@ DFU_ARGS = -d 0483:df11 -a 0 -s 0x08000000
 # Build Options
 #   comment out to disable the options.
 #
-BOOTMAGIC_ENABLE = yes	# Virtual DIP switch configuration
+BACKLIGHT_ENABLE = no
+BOOTMAGIC_ENABLE = no	# Virtual DIP switch configuration
 MOUSEKEY_ENABLE = no	# Mouse keys
 EXTRAKEY_ENABLE = no	# Audio control and System control
 CONSOLE_ENABLE = yes	# Console for debug

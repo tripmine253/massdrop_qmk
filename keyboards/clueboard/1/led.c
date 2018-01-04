@@ -22,18 +22,18 @@
 
 void backlight_init_ports(void) {
     printf("backlight_init_ports()\n");
-    palSetPadMode(GPIOB, 5,  PAL_MODE_OUTPUT_PUSHPULL); // Red
-    palSetPadMode(GPIOB, 3,  PAL_MODE_OUTPUT_PUSHPULL); // Green
-    palSetPadMode(GPIOA, 2, PAL_MODE_OUTPUT_PUSHPULL);  // Blue
 
     // Pull them high to turn off the LEDs
+/*
     palSetPad(GPIOB, 5);
     palSetPad(GPIOB, 3);
     palSetPad(GPIOA, 2);
+*/
 }
 
 void backlight_set(uint8_t level) {
     printf("backlight_set(%d)\n", level);
+/*
     if (level == 0) {
         palSetPad(GPIOB, 5);
         palSetPad(GPIOB, 3);
@@ -43,4 +43,5 @@ void backlight_set(uint8_t level) {
         palClearPad(GPIOB, 3);
         palClearPad(GPIOA, 2);
     }
+*/
 }

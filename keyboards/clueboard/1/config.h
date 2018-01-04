@@ -134,4 +134,7 @@
  */
 #define STM32_REMAP_PINS
 
+/* Backlight configuration
+ */
+#define BACKLIGHT_LEVELS 1
 #endif

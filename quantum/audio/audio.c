@@ -247,7 +247,7 @@ void audio_init()
 
 void stop_all_notes()
 {
-    dprintf("audio stop all notes");
+    dprintf("audio stop all notes\n");
 
     if (!audio_initialized) {
         audio_init();
@@ -280,7 +280,7 @@ void stop_all_notes()
 
 void stop_note(float freq)
 {
-    dprintf("audio stop note freq=%d", (int)freq);
+    dprintf("audio stop note freq=%d\n", (int)freq);
 
     if (playing_note) {
         if (!audio_initialized) {
@@ -679,7 +679,7 @@ ISR(TIMER1_COMPC_vect)
 
 void play_note(float freq, int vol) {
 
-    dprintf("audio play note freq=%d vol=%d", (int)freq, vol);
+    dprintf("audio play note freq=%d vol=%d\n", (int)freq, vol);
 
     if (!audio_initialized) {
         audio_init();

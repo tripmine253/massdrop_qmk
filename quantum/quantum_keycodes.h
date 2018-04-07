@@ -63,26 +63,23 @@ enum quantum_keycodes {
     QK_ONE_SHOT_LAYER_MAX = 0x54FF,
     QK_ONE_SHOT_MOD       = 0x5500,
     QK_ONE_SHOT_MOD_MAX   = 0x55FF,
-#ifndef DISABLE_CHORDING
+// affected by DISABLE_CHORDING
     QK_CHORDING           = 0x5600,
     QK_CHORDING_MAX       = 0x56FF,
-#endif
     QK_TAP_DANCE          = 0x5700,
     QK_TAP_DANCE_MAX      = 0x57FF,
     QK_LAYER_TAP_TOGGLE   = 0x5800,
     QK_LAYER_TAP_TOGGLE_MAX = 0x58FF,
     QK_LAYER_MOD          = 0x5900,
     QK_LAYER_MOD_MAX      = 0x59FF,
-#ifdef STENO_ENABLE
+// affected by STENO_ENABLE
     QK_STENO              = 0x5A00,
     QK_STENO_BOLT         = 0x5A30,
     QK_STENO_GEMINI       = 0x5A31,
     QK_STENO_MAX          = 0x5A3F,
-#endif
-#ifdef SWAP_HANDS_ENABLE
+// affected by SWAP_HANDS_ENABLE
     QK_SWAP_HANDS         = 0x5B00,
     QK_SWAP_HANDS_MAX     = 0x5BFF,
-#endif
     QK_MOD_TAP            = 0x6000,
     QK_MOD_TAP_MAX        = 0x7FFF,
 #if defined(UNICODEMAP_ENABLE) && defined(UNICODE_ENABLE)
@@ -123,9 +120,8 @@ enum quantum_keycodes {
     GRAVE_ESC,
 
     // Leader key
-#ifndef DISABLE_LEADER
+    // affected by DISABLE_LEADER
     KC_LEAD,
-#endif
 
     // Auto Shift setup
     KC_ASUP,
@@ -140,12 +136,11 @@ enum quantum_keycodes {
     AU_OFF,
     AU_TOG,
 
-#ifdef FAUXCLICKY_ENABLE
     // Faux clicky
+    // affected by FAUXCLICKY_ENABLE
     FC_ON,
     FC_OFF,
     FC_TOG,
-#endif
 
     // Music mode on/off/toggle
     MU_ON,
@@ -160,16 +155,15 @@ enum quantum_keycodes {
     MUV_DE,
 
     // Midi
-#if !MIDI_ENABLE_STRICT || (defined(MIDI_ENABLE) && defined(MIDI_BASIC))
+    // affected by !MIDI_ENABLE_STRICT || (defined(MIDI_ENABLE) && defined(MIDI_BASIC))
     MI_ON,
     MI_OFF,
     MI_TOG,
-#endif
 
-#if !MIDI_ENABLE_STRICT || (defined(MIDI_ENABLE) && defined(MIDI_ADVANCED))
+    // affected by !MIDI_ENABLE_STRICT || (defined(MIDI_ENABLE) && defined(MIDI_ADVANCED))
     MIDI_TONE_MIN,
 
-#if !MIDI_ENABLE_STRICT || MIDI_TONE_KEYCODE_OCTAVES > 0
+    // affected by !MIDI_ENABLE_STRICT || MIDI_TONE_KEYCODE_OCTAVES > 0
     MI_C = MIDI_TONE_MIN,
     MI_Cs,
     MI_Db = MI_Cs,
@@ -187,9 +181,8 @@ enum quantum_keycodes {
     MI_As,
     MI_Bb = MI_As,
     MI_B,
-#endif
 
-#if !MIDI_ENABLE_STRICT || MIDI_TONE_KEYCODE_OCTAVES > 1
+    // affected by !MIDI_ENABLE_STRICT || MIDI_TONE_KEYCODE_OCTAVES > 1
     MI_C_1,
     MI_Cs_1,
     MI_Db_1 = MI_Cs_1,
@@ -207,9 +200,8 @@ enum quantum_keycodes {
     MI_As_1,
     MI_Bb_1 = MI_As_1,
     MI_B_1,
-#endif
 
-#if !MIDI_ENABLE_STRICT || MIDI_TONE_KEYCODE_OCTAVES > 2
+    // affected by !MIDI_ENABLE_STRICT || MIDI_TONE_KEYCODE_OCTAVES > 2
     MI_C_2,
     MI_Cs_2,
     MI_Db_2 = MI_Cs_2,
@@ -227,9 +219,8 @@ enum quantum_keycodes {
     MI_As_2,
     MI_Bb_2 = MI_As_2,
     MI_B_2,
-#endif
 
-#if !MIDI_ENABLE_STRICT || MIDI_TONE_KEYCODE_OCTAVES > 3
+    // affected by !MIDI_ENABLE_STRICT || MIDI_TONE_KEYCODE_OCTAVES > 3
     MI_C_3,
     MI_Cs_3,
     MI_Db_3 = MI_Cs_3,
@@ -247,9 +238,8 @@ enum quantum_keycodes {
     MI_As_3,
     MI_Bb_3 = MI_As_3,
     MI_B_3,
-#endif
 
-#if !MIDI_ENABLE_STRICT || MIDI_TONE_KEYCODE_OCTAVES > 4
+    // affected by !MIDI_ENABLE_STRICT || MIDI_TONE_KEYCODE_OCTAVES > 4
     MI_C_4,
     MI_Cs_4,
     MI_Db_4 = MI_Cs_4,
@@ -267,9 +257,8 @@ enum quantum_keycodes {
     MI_As_4,
     MI_Bb_4 = MI_As_4,
     MI_B_4,
-#endif
 
-#if !MIDI_ENABLE_STRICT || MIDI_TONE_KEYCODE_OCTAVES > 5
+    // affected by !MIDI_ENABLE_STRICT || MIDI_TONE_KEYCODE_OCTAVES > 5
     MI_C_5,
     MI_Cs_5,
     MI_Db_5 = MI_Cs_5,
@@ -287,21 +276,20 @@ enum quantum_keycodes {
     MI_As_5,
     MI_Bb_5 = MI_As_5,
     MI_B_5,
-#endif
 
-#if !MIDI_ENABLE_STRICT || MIDI_TONE_KEYCODE_OCTAVES > 5
+    #if !MIDI_ENABLE_STRICT || MIDI_TONE_KEYCODE_OCTAVES > 5
     MIDI_TONE_MAX = MI_B_5,
-#elif MIDI_TONE_KEYCODE_OCTAVES > 4
+    #elif  MIDI_TONE_KEYCODE_OCTAVES > 4
     MIDI_TONE_MAX = MI_B_4,
-#elif MIDI_TONE_KEYCODE_OCTAVES > 3
+    #elif  MIDI_TONE_KEYCODE_OCTAVES > 3
     MIDI_TONE_MAX = MI_B_3,
-#elif MIDI_TONE_KEYCODE_OCTAVES > 2
+    #elif  MIDI_TONE_KEYCODE_OCTAVES > 2
     MIDI_TONE_MAX = MI_B_2,
-#elif MIDI_TONE_KEYCODE_OCTAVES > 1
+    #elif  MIDI_TONE_KEYCODE_OCTAVES > 1
     MIDI_TONE_MAX = MI_B_1,
-#elif MIDI_TONE_KEYCODE_OCTAVES > 0
+    #elif  MIDI_TONE_KEYCODE_OCTAVES > 0
     MIDI_TONE_MAX = MI_B,
-#endif
+    #endif
 
     MIDI_OCTAVE_MIN,
     MI_OCT_N2 = MIDI_OCTAVE_MIN,
@@ -383,7 +371,7 @@ enum quantum_keycodes {
     MI_MOD, // modulation
     MI_MODSD, // decrease modulation speed
     MI_MODSU, // increase modulation speed
-#endif // MIDI_ADVANCED
+
 
     // Backlight functionality
     BL_ON,
@@ -429,18 +417,15 @@ enum quantum_keycodes {
     // output selection
     OUT_AUTO,
     OUT_USB,
-#ifdef BLUETOOTH_ENABLE
+    // affected by  BLUETOOTH_ENABLE
     OUT_BT,
-#endif
 
-#ifdef KEY_LOCK_ENABLE
+    // affected by  KEY_LOCK_ENABLE
     KC_LOCK,
-#endif
 
-#ifdef TERMINAL_ENABLE
+    // affected by  TERMINAL_ENABLE
     TERM_ON,
     TERM_OFF,
-#endif
 
     // always leave at the end
     SAFE_RANGE

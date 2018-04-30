@@ -65,20 +65,37 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LED_BRIGHTNESS_HI       255
 
 /* ws2812 RGB LED */
-#define RGB_DI_PIN D7
-#define RGBLIGHT_ANIMATIONS
-#define RGBLED_NUM 15     // Number of LEDs
-#define RGBLIGHT_HUE_STEP 12
-#define RGBLIGHT_SAT_STEP 255
-#define RGBLIGHT_VAL_STEP 12
+// #define RGB_DI_PIN D7
+// #define RGBLIGHT_ANIMATIONS
+// #define RGBLED_NUM 15     // Number of LEDs
+// #define RGBLIGHT_HUE_STEP 12
+// #define RGBLIGHT_SAT_STEP 255
+// #define RGBLIGHT_VAL_STEP 12
 
-/* fix space cadet rollover issue */
-#define DISABLE_SPACE_CADET_ROLLOVER
+// /* fix space cadet rollover issue */
+// #define DISABLE_SPACE_CADET_ROLLOVER
 
-// #define RGB_MIDI
-#define RGBW_BB_TWI
+// // #define RGB_MIDI
+// #define RGBW_BB_TWI
 
-#define RGBW 1
+// #define RGBW 1
+
+// This is a 7-bit address, that gets left-shifted and bit 0
+// set to 0 for write, 1 for read (as per I2C protocol)
+// The address will vary depending on your wiring:
+// 0b1110100 AD <-> GND
+// 0b1110111 AD <-> VCC
+// 0b1110101 AD <-> SCL
+// 0b1110110 AD <-> SDA
+#define DRIVER_ADDR_1 0b1110100
+#define DRIVER_ADDR_2 0b1110111
+
+#define DRIVER_COUNT 2
+#define DRIVER_1_LED_TOTAL 24
+#define DRIVER_2_LED_TOTAL 24
+#define DRIVER_LED_TOTAL DRIVER_1_LED_TOTAL + DRIVER_2_LED_TOTAL
+
+//#define RGB_MATRIX_ANIMATIONS
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE    15

@@ -766,10 +766,9 @@ void matrix_scan_quantum() {
   #endif
 
   #ifdef RGB_MATRIX_ENABLE
-    // if (rgb_matrix_task_counter == 0)
-    rgb_matrix_task();
-    // rgb_matrix_task_counter = ((rgb_matrix_task_counter + 1) % 5);
-    rgb_matrix_update_pwm_buffers();
+      // if (rgb_matrix_task_counter == 0)
+      rgb_matrix_task();
+      // rgb_matrix_task_counter = ((rgb_matrix_task_counter + 1) % 5);
   #endif
 
   matrix_scan_kb();

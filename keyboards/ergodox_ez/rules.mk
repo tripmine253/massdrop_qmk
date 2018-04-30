@@ -5,7 +5,7 @@
 #
 # make clean = Clean out built project files.
 #
-# That's pretty much all you need. To compile, always go make clean, 
+# That's pretty much all you need. To compile, always go make clean,
 # followed by make.
 #
 # For advanced users only:
@@ -81,6 +81,7 @@ UNICODE_ENABLE   = yes # Unicode
 ONEHAND_ENABLE   = yes # Allow swapping hands of keyboard
 SLEEP_LED_ENABLE = no
 API_SYSEX_ENABLE = no
-RGBLIGHT_ENABLE = yes
+RGBLIGHT_ENABLE = no
+RGB_MATRIX_ENABLE = yes
 
 LAYOUTS = ergodox

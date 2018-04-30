@@ -219,11 +219,20 @@ void rgb_matrix_all_off(void) {
     rgb_matrix_set_color_all( 0, 0, 0 );
 }
 
+static HSV current_solid_color;
+
 // Solid color
 void rgb_matrix_solid_color(void) {
-    HSV hsv = { .h = rgb_matrix_config.hue, .s = rgb_matrix_config.sat, .v = rgb_matrix_config.val };
-    RGB rgb = hsv_to_rgb( hsv );
-    rgb_matrix_set_color_all( rgb.r, rgb.g, rgb.b );
+    if (current_solid_color.h != rgb_matrix_config.hue && 
+        current_solid_color.s != rgb_matrix_config.sat && 
+        current_solid_color.v != rgb_matrix_config.val) {
+        HSV hsv = { .h = rgb_matrix_config.hue, .s = rgb_matrix_config.sat, .v = rgb_matrix_config.val };
+        RGB rgb = hsv_to_rgb( hsv );
+        rgb_matrix_set_color_all( rgb.r, rgb.g, rgb.b );
+        current_solid_color.h = hsv.h;
+        current_solid_color.s = hsv.s;
+        current_solid_color.v = hsv.v;
+    }
 }
 
 void rgb_matrix_solid_reactive(void) {
@@ -685,6 +694,7 @@ void rgb_matrix_task(void) {
         rgb_matrix_indicators();
     }
 
+    rgb_matrix_update_pwm_buffers();
 }
 
 void rgb_matrix_indicators(void) {
@@ -864,7 +874,7 @@ void rgblight_decrease_val(void) {
 }
 
 void rgblight_mode(uint8_t mode) {
-    rgb_matrix_config.mode = mode;
+    rgb_matrix_config.mode = 1;
     eeconfig_update_rgb_matrix(rgb_matrix_config.raw);
 }
 

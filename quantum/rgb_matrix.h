@@ -86,6 +86,7 @@ enum rgb_matrix_effects {
 };
 
 void rgb_matrix_set_color( int index, uint8_t red, uint8_t green, uint8_t blue );
+void rgb_matrix_set_color_all( uint8_t red, uint8_t green, uint8_t blue );
 
 // This runs after another backlight effect and replaces
 // colors already set

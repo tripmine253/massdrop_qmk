@@ -150,26 +150,27 @@ void rgb_matrix_set_suspend_state(bool state) {
 void rgb_matrix_test(void) {
     // Mask out bits 4 and 5
     // This 2-bit value will stay the same for 16 ticks.
-    switch ( (g_tick & 0x30) >> 4 )
+    uint32_t factor = 10;
+    switch ( (g_tick & (0b11 << factor)) >> factor )
     {
         case 0:
         {
-            rgb_matrix_set_color_all( 20, 0, 0 );
+            rgb_matrix_set_color_all( 255, 0, 0 );
             break;
         }
         case 1:
         {
-            rgb_matrix_set_color_all( 0, 20, 0 );
+            rgb_matrix_set_color_all( 0, 255, 0 );
             break;
         }
         case 2:
         {
-            rgb_matrix_set_color_all( 0, 0, 20 );
+            rgb_matrix_set_color_all( 0, 0, 255 );
             break;
         }
         case 3:
         {
-            rgb_matrix_set_color_all( 20, 20, 20 );
+            rgb_matrix_set_color_all( 255, 255, 255 );
             break;
         }
     }
@@ -217,7 +218,7 @@ void rgb_matrix_single_LED_test(void) {
 }
 
 // All LEDs off
-void rgb_matrix_all_off(void) { 
+void rgb_matrix_all_off(void) {
     rgb_matrix_set_color_all( 0, 0, 0 );
 }
 
@@ -243,7 +244,7 @@ void rgb_matrix_solid_reactive(void) {
 
 // alphas = color1, mods = color2
 void rgb_matrix_alphas_mods(void) {
- 
+
     RGB rgb1 = hsv_to_rgb( (HSV){ .h = rgb_matrix_config.hue, .s = rgb_matrix_config.sat, .v = rgb_matrix_config.val } );
     RGB rgb2 = hsv_to_rgb( (HSV){ .h = (rgb_matrix_config.hue + 180) % 360, .s = rgb_matrix_config.sat, .v = rgb_matrix_config.val } );
 
@@ -577,10 +578,10 @@ void rgb_matrix_custom(void) {
 }
 
 void rgb_matrix_task(void) {
-    static uint8_t toggle_enable_last = 255;
+    // static uint8_t toggle_enable_last = 255;
 	if (!rgb_matrix_config.enable) {
     	rgb_matrix_all_off();
-        toggle_enable_last = rgb_matrix_config.enable;
+      //  toggle_enable_last = rgb_matrix_config.enable;
     	return;
     }
     // delay 1 second before driving LEDs or doing anything else
@@ -619,50 +620,61 @@ void rgb_matrix_task(void) {
     // Keep track of the effect used last time,
     // detect change in effect, so each effect can
     // have an optional initialization.
-    static uint8_t effect_last = 255;
-    bool initialize = (effect != effect_last) || (rgb_matrix_config.enable != toggle_enable_last);
-    effect_last = effect;
-    toggle_enable_last = rgb_matrix_config.enable;
+    // static uint8_t effect_last = 255;
+    // bool initialize = (effect != effect_last) || (rgb_matrix_config.enable != toggle_enable_last);
+    // effect_last = effect;
+    // toggle_enable_last = rgb_matrix_config.enable;
 
     // this gets ticked at 20 Hz.
     // each effect can opt to do calculations
     // and/or request PWM buffer updates.
     switch ( effect ) {
         case RGB_MATRIX_SOLID_COLOR:
-            rgb_matrix_solid_color();
+            rgb_matrix_test();
             break;
         case RGB_MATRIX_ALPHAS_MODS:
-            rgb_matrix_alphas_mods();
+            rgb_matrix_test();
+//            rgb_matrix_alphas_mods();
             break;
         case RGB_MATRIX_DUAL_BEACON:
-            rgb_matrix_dual_beacon();
+            rgb_matrix_test();
+//            rgb_matrix_dual_beacon();
             break;
         case RGB_MATRIX_GRADIENT_UP_DOWN:
-            rgb_matrix_gradient_up_down();
+            rgb_matrix_test();
+//            rgb_matrix_gradient_up_down();
             break;
         case RGB_MATRIX_RAINDROPS:
-            rgb_matrix_raindrops( initialize );
+            rgb_matrix_test();
+//            rgb_matrix_raindrops( initialize );
             break;
         case RGB_MATRIX_CYCLE_ALL:
-            rgb_matrix_cycle_all();
+            rgb_matrix_test();
+//            rgb_matrix_cycle_all();
             break;
         case RGB_MATRIX_CYCLE_LEFT_RIGHT:
-            rgb_matrix_cycle_left_right();
+            rgb_matrix_test();
+//            rgb_matrix_cycle_left_right();
             break;
         case RGB_MATRIX_CYCLE_UP_DOWN:
-            rgb_matrix_cycle_up_down();
+            rgb_matrix_test();
+//            rgb_matrix_cycle_up_down();
             break;
         case RGB_MATRIX_RAINBOW_BEACON:
-            rgb_matrix_rainbow_beacon();
+            rgb_matrix_test();
+//            rgb_matrix_rainbow_beacon();
             break;
         case RGB_MATRIX_RAINBOW_PINWHEELS:
-            rgb_matrix_rainbow_pinwheels();
+            rgb_matrix_test();
+//            rgb_matrix_rainbow_pinwheels();
             break;
         case RGB_MATRIX_RAINBOW_MOVING_CHEVRON:
-            rgb_matrix_rainbow_moving_chevron();
+            rgb_matrix_test();
+//            rgb_matrix_rainbow_moving_chevron();
             break;
         case RGB_MATRIX_JELLYBEAN_RAINDROPS:
-            rgb_matrix_jellybean_raindrops( initialize );
+            rgb_matrix_test();
+//            rgb_matrix_jellybean_raindrops( initialize );
             break;
         #ifdef RGB_MATRIX_KEYPRESSES
             case RGB_MATRIX_SOLID_REACTIVE:

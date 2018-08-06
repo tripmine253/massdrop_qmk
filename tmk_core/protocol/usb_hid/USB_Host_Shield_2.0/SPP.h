@@ -15,8 +15,7 @@
  e-mail   :  kristianl@tkjelectronics.com
  */
 
-#ifndef _spp_h_
-#define _spp_h_
+#pragma once
 
 #include "BTD.h"
 
@@ -222,4 +221,4 @@ private:
         bool checkFcs(uint8_t *data, uint8_t fcs);
         uint8_t crc(uint8_t *data);
 };
-#endif
+

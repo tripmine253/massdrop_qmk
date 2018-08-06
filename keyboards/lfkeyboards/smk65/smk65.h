@@ -1,5 +1,4 @@
-#ifndef SMK65_H
-#define SMK65_H
+#pragma once
 
 /* if the kb.h file exists (because we're running from qmkbuilder) include it */
 #ifdef __has_include
@@ -104,4 +103,4 @@ void click(uint16_t freq, uint16_t duration);
     { k51, k52, k53, ___, ___, ___, k57, ___, ___, ___, k5B, k5C, k5D, k5E, ___, ___ }, \
 }
 
-#endif //SMK65_H
+

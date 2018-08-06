@@ -1,5 +1,4 @@
-#ifndef S60X_H
-#define S60X_H
+#pragma once
 
 #ifdef KEYBOARD_s60_x_default
     #include "default.h"
@@ -10,4 +9,4 @@
 
 #include "quantum.h"
 
-#endif
+

@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef DIVERGE3_H
-#define DIVERGE3_H
+#pragma once
 
 #include "quantum.h"
 
@@ -46,4 +45,4 @@
     { R36, R35, R34, R33, R32, R31, R30, KC_NO }, \
     { R44, R43, R42, R41, R40, RT0, RT1, RT2   } \
   }
-#endif
+

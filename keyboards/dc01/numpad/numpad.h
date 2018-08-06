@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef NUMPAD_H
-#define NUMPAD_H
+#pragma once
 
 #include "quantum.h"
 
@@ -53,4 +52,4 @@
     { K40, K41, K42, K43 }  \
 }
 
-#endif
+

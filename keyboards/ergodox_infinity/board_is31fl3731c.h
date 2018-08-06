@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _GDISP_LLD_BOARD_H
-#define _GDISP_LLD_BOARD_H
+#pragma once
 
 static const I2CConfig i2ccfg = {
   400000 // clock speed (Hz); 400kHz max for IS31
@@ -107,4 +106,4 @@ static GFXINLINE void write_data(GDisplay *g, uint8_t* data, uint16_t length) {
 	i2cMasterTransmitTimeout(&I2CD1, IS31_ADDR_DEFAULT, data, length, 0, 0, US2ST(IS31_TIMEOUT));
 }
 
-#endif /* _GDISP_LLD_BOARD_H */
+

@@ -15,8 +15,7 @@
  e-mail   :  kristianl@tkjelectronics.com
  */
 
-#ifndef _ps4parser_h_
-#define _ps4parser_h_
+#pragma once
 
 #include "Usb.h"
 #include "controllerEnums.h"
@@ -404,4 +403,4 @@ private:
         PS4Output ps4Output;
         uint8_t oldDpad;
 };
-#endif
+

@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef LEFT_H
-#define LEFT_H
+#pragma once
 
 #include "quantum.h"
 
@@ -38,4 +37,4 @@
     { K40, K41, K42, K43, XXX, K45,   K46, K47, K48, K49, K4A, K4B, XXX, XXX,   K4E, K4F, K4G,   K4H, K4J, K4K, K4L }  \
 }
 
-#endif
+

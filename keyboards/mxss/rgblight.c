@@ -24,8 +24,7 @@
 #include "led_tables.h"
 #include "mxss_frontled.h"
 
-#ifndef RGBLIGHT_LIMIT_VAL
-#define RGBLIGHT_LIMIT_VAL 255
+#pragma once
 #endif
 
 #define MIN(a,b) (((a)<(b))?(a):(b))
@@ -824,4 +823,4 @@ void rgblight_effect_rgbtest(void) {
   pos = (pos + 1) % 3;
 }
 
-#endif /* RGBLIGHT_ANIMATIONS */
+

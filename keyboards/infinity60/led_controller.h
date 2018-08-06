@@ -16,8 +16,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _LED_CONTROLLER_H_
-#define _LED_CONTROLLER_H_
+#pragma once
 
 /* =========================
  *  communication functions
@@ -118,4 +117,4 @@ enum led_msg_t {
     STEP_BRIGHTNESS
 };
 
-#endif /* _LED_CONTROLLER_H_ */
+

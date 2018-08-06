@@ -1,5 +1,4 @@
-#ifndef PROCESS_AUDIO_H
-#define PROCESS_AUDIO_H
+#pragma once
 
 float compute_freq_for_midi_note(uint8_t note);
 
@@ -10,4 +9,4 @@ void process_audio_all_notes_off(void);
 
 void audio_on_user(void);
 
-#endif
+

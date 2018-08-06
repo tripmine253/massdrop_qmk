@@ -21,8 +21,7 @@
  */
 
 
-#ifndef KEYMAP_JP_H
-#define KEYMAP_JP_H
+#pragma once
 
 
 #include "keymap.h"
@@ -74,4 +73,4 @@
 #define JP_QUES KC_QUES // ?
 
 
-#endif
+

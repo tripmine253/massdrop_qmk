@@ -1,5 +1,4 @@
-#ifndef REV1_H
-#define REV1_H
+#pragma once
 
 #include "ergotravel.h"
 
@@ -34,4 +33,4 @@
         { R35, R34, R33, R32, R31, R30, KC_NO } \
     }
 
-#endif
+

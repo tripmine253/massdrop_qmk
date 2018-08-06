@@ -1,5 +1,4 @@
-#ifndef CONFIG_KEYMAP_H
-#define CONFIG_KEYMAP_H
+#pragma once
 
 #include "../../config.h"
 #define RGB_DI_PIN F6
@@ -10,4 +9,4 @@
 #endif
 #define BACKLIGHT_LEVELS 3
 
-#endif
+

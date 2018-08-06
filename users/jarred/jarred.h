@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
  
-#ifndef USERSPACE
-#define USERSPACE
+#pragma once
 
 #include "quantum.h"
 
@@ -121,4 +120,4 @@
 #define NUMPAD_4x12 NUMPAD_1_12, NUMPAD_2_12, NUMPAD_3_12, NUMPAD_4_12
 #define MOUSE_4x12 MOUSE_1_12, MOUSE_2_12, MOUSE_3_12, MOUSE_4_12
 
-#endif
+

@@ -1,5 +1,4 @@
-#ifndef NANO_H
-#define NANO_H
+#pragma once
 
 #include "quantum.h"
 
@@ -11,4 +10,4 @@
     { k05, k06, k07, k08 } \
 }
 
-#endif
+

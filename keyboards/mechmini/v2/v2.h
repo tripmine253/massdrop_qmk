@@ -13,8 +13,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef V2_H
-#define V2_H
+#pragma once
 
 #include "../mechmini.h"
 
@@ -66,4 +65,4 @@
     { K300,  K301,  K302,  K303,  K304,  K305,  K305,  K307,  K308,  K309,  K310,  K311 }  \
 }
 
-#endif
+

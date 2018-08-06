@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #define MIDI_BASIC
 
@@ -29,4 +28,4 @@
 #undef BACKLIGHT_LEVELS
 #define BACKLIGHT_LEVELS 8
 
-#endif
+

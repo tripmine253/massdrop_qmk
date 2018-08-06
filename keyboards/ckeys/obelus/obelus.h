@@ -1,5 +1,4 @@
-#ifndef OBELUS_H
-#define OBELUS_H
+#pragma once
 
 #include "quantum.h"
 
@@ -20,4 +19,4 @@
     { k30, k31, k32, k33 } \
 }
 
-#endif
+

@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef KEYMAP_H
-#define KEYMAP_H
+#pragma once
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -53,4 +52,4 @@ extern const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS];
 extern const uint16_t fn_actions[];
 
 
-#endif
+

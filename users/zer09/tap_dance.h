@@ -1,5 +1,4 @@
-#ifndef TAP_DANCE_H
-#define TAP_DANCE_H
+#pragma once
 
 #include "zer09.h"
 
@@ -52,4 +51,4 @@ void dance_uply_reset(qk_tap_dance_state_t *, void *);
 void dance_dwly_finished(qk_tap_dance_state_t *, void *);
 void dance_dwly_reset(qk_tap_dance_state_t *, void *);
 
-#endif
+

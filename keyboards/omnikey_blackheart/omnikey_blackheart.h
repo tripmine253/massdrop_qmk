@@ -1,5 +1,4 @@
-#ifndef omnikey_blackheart
-#define omnikey_blackheart
+#pragma once
 
 #include "quantum.h"
 
@@ -19,4 +18,3 @@
   { K500,  K501,  K502,  K503,  K504,  KC_NO,  KC_NO, K507,  KC_NO, KC_NO, KC_NO, KC_NO, K512,  K513,  K514,  K515,  K516,  K517,  K518,  K519,  K520,  KC_NO, KC_NO }  \
 }
 
-#endif

@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CONFIG_H
-#define CONFIG_H
+#pragma once
 
 #include "config_common.h"
 
@@ -30,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-//#define AUDIO_VOICES	
+//#define AUDIO_VOICES  
 
 //#define BACKLIGHT_PIN B7
 
@@ -80,4 +79,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #include "ver2/config.h"
 #endif
 
-#endif
+

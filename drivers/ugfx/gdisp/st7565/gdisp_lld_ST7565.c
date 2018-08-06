@@ -19,8 +19,7 @@
 /* Driver local definitions.                                                 */
 /*===========================================================================*/
 
-#ifndef GDISP_SCREEN_HEIGHT
-#define GDISP_SCREEN_HEIGHT         LCD_HEIGHT
+#pragma once
 #endif
 #ifndef GDISP_SCREEN_WIDTH
 #define GDISP_SCREEN_WIDTH          LCD_WIDTH
@@ -326,4 +325,4 @@ LLDSPEC void gdisp_lld_control(GDisplay *g) {
 }
 #endif // GDISP_NEED_CONTROL
 
-#endif // GFX_USE_GDISP
+

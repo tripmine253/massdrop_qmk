@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef FACEW_H
-#define FACEW_H
+#pragma once
 
 #include "quantum.h"
 
@@ -54,4 +53,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   { KC_NO, K71,   K72,   K73,   K74, K75, K76,   K77,   K78,   KC_NO, KC_NO}, \
 }
 
-#endif
+

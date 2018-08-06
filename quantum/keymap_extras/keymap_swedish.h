@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KEYMAP_SWEDISH_H
-#define KEYMAP_SWEDISH_H
+#pragma once
 
 #include "keymap_nordic.h"
 
@@ -46,5 +45,5 @@
 #define NO_PIPE_MAC ALGR(KC_7)  // |
 #define NO_RCBR_MAC ALGR(LSFT(KC_9))  // }
 
-#endif
+
 

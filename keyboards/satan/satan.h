@@ -1,5 +1,4 @@
-#ifndef SATAN_H
-#define SATAN_H
+#pragma once
 
 #include "quantum.h"
 
@@ -180,4 +179,4 @@
 void matrix_init_user(void);
 void matrix_scan_user(void);
 
-#endif
+

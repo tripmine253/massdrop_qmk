@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /* Sendstring definitions for the JIS keyboard layout */
-#ifndef SENDSTRING_JIS
-#define SENDSTRING_JIS
+#pragma once
 
 const bool ascii_to_shift_lut[0x80] PROGMEM = {
     0, 0, 0, 0, 0, 0, 0, 0,
@@ -55,4 +54,4 @@ const uint8_t ascii_to_keycode_lut[0x80] PROGMEM = {
     KC_X, KC_Y, KC_Z, KC_RBRC, KC_JYEN, KC_BSLS, KC_EQL, KC_DEL,
 };
 
-#endif
+

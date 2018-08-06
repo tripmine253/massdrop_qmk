@@ -14,8 +14,7 @@
     limitations under the License.
 */
 
-#ifndef _MCUCONF_H_
-#define _MCUCONF_H_
+#pragma once
 
 #define KL2x_MCUCONF
 
@@ -52,4 +51,4 @@
  * for Teensy 3.x */
 #define KINETIS_USB_USB0_IRQ_PRIORITY         2
 
-#endif /* _MCUCONF_H_ */
+

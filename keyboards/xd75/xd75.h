@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef XD75_H
-#define XD75_H
+#pragma once
 
 #include "quantum.h"
 
@@ -68,4 +67,4 @@ void keycaps_led_init(void);
 void keycaps_led_off(void);
 void keycaps_led_on(void);
 
-#endif
+

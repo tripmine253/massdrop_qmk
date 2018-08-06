@@ -1,5 +1,4 @@
-#ifndef NUMPAD20_H
-#define NUMPAD20_H
+#pragma once
 
 #include "quantum.h"
 
@@ -17,4 +16,3 @@
   { KC_##K40, KC_##K41, KC_##K42, KC_##K43 }   \
 }
 
-#endif

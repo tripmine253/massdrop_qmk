@@ -1,5 +1,4 @@
-#ifndef ERGODASH_H
-#define ERGODASH_H
+#pragma once
 
 #include "quantum.h"
 
@@ -43,4 +42,4 @@
         )
 #endif // #ifdef KEYBOARD_ergodash_rev2
 
-#endif
+

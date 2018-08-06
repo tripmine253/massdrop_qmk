@@ -1,5 +1,4 @@
-#ifndef CONFIG_ALGERNON_H
-#define CONFIG_ALGERNON_H
+#pragma once
 
 #include QMK_KEYBOARD_CONFIG_H
 
@@ -24,4 +23,4 @@
 #undef LEADER_TIMEOUT
 #define LEADER_TIMEOUT 1000
 
-#endif
+

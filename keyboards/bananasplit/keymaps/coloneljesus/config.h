@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "config_common.h"
 
@@ -24,4 +23,4 @@
 #define BACKLIGHT_BREATHING
 #define BREATHING_PERIOD 8
 
-#endif
+

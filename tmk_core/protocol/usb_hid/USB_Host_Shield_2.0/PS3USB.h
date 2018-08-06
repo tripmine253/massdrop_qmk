@@ -15,8 +15,7 @@
  e-mail   :  kristianl@tkjelectronics.com
  */
 
-#ifndef _ps3usb_h_
-#define _ps3usb_h_
+#pragma once
 
 #include "Usb.h"
 #include "hid.h"
@@ -300,4 +299,4 @@ private:
         void enable_sixaxis(); // Command used to enable the Dualshock 3 and Navigation controller to send data via USB
         void Move_Command(uint8_t *data, uint16_t nbytes);
 };
-#endif
+

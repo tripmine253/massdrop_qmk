@@ -1,5 +1,4 @@
-#ifndef PREONIC_H
-#define PREONIC_H
+#pragma once
 
 #include "quantum.h"
 
@@ -146,4 +145,4 @@
 
 #endif
 
-#endif
+

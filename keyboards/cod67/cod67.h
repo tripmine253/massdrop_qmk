@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef COD67_H
-#define COD67_H
+#pragma once
 
 #include "quantum.h"
 
@@ -33,4 +32,4 @@
     { K40, K41, K42, K43, K44, K45, K46, K47, K48, K49, K4A, K4B, K4C, K4D }, \
 }
 
-#endif
+

@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef REPORT_H
-#define REPORT_H
+#pragma once
 
 #include <stdint.h>
 #include "keycode.h"
@@ -190,4 +189,4 @@ void clear_keys_from_report(report_keyboard_t* keyboard_report);
 }
 #endif
 
-#endif
+

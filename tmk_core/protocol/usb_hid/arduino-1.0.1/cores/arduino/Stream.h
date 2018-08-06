@@ -19,8 +19,7 @@
   parsing functions based on TextFinder library by Michael Margolis
 */
 
-#ifndef Stream_h
-#define Stream_h
+#pragma once
 
 #include <inttypes.h>
 #include "Print.h"
@@ -93,4 +92,4 @@ class Stream : public Print
   float parseFloat(char skipChar);  // as above but the given skipChar is ignored
 };
 
-#endif
+

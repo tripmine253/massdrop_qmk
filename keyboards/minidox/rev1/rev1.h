@@ -1,5 +1,4 @@
-#ifndef REV1_H
-#define REV1_H
+#pragma once
 
 #include "../minidox.h"
 
@@ -28,4 +27,4 @@
     { ___, ___, k73, k74, k75 } \
   }
 
-#endif
+

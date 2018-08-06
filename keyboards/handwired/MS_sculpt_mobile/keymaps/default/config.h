@@ -1,8 +1,7 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "../../../MS_sculpt_mobile/config.h"
 
 // place overrides here
 
-#endif
+

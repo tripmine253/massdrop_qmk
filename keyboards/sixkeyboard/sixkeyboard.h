@@ -1,5 +1,4 @@
-#ifndef SIXKEYBOARD_H
-#define SIXKEYBOARD_H
+#pragma once
 
 #include "quantum.h"
 
@@ -31,4 +30,4 @@
 }
 
 
-#endif
+

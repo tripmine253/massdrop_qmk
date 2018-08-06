@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "config_common.h"
 
@@ -29,4 +28,4 @@
 #undef ACTUATION_DEPTH_ADJUSTMENT
 #define ACTUATION_DEPTH_ADJUSTMENT +1
 
-#endif
+

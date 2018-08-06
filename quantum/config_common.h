@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef CONFIG_DEFINITIONS_H
-#define CONFIG_DEFINITIONS_H
+#pragma once
 
 /* diode directions */
 #define COL2ROW       0
@@ -104,4 +103,4 @@
 
 #include "song_list.h"
 
-#endif
+

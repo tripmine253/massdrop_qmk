@@ -1,5 +1,4 @@
-#ifndef gen1_H
-#define gen1_H
+#pragma once
 
 #include "66_hotswap.h"
 
@@ -68,4 +67,4 @@
     { KC_NO, KC_NO, k92, k93, k94, k95, k96, k97 }  \
 }
 
-#endif
+

@@ -1,5 +1,4 @@
-#ifndef DACTYL_H
-#define DACTYL_H
+#pragma once
 
 #include "quantum.h"
 #include <stdint.h>
@@ -64,4 +63,4 @@ void init_expander(void);
    }
 
 
-#endif
+

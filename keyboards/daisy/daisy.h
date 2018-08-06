@@ -1,5 +1,4 @@
-#ifndef DAISY_H
-#define DAISY_H
+#pragma once
 
 #include "quantum.h"
 
@@ -16,4 +15,4 @@
   { K30, K31, K32, KC_NO, K34, K35, KC_NO, K37, K38, K39, K3A }  \
 }
 
-#endif
+

@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef EECONFIG_H
-#define EECONFIG_H
+#pragma once
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -36,7 +35,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define EECONFIG_UNICODEMODE                        (uint8_t *)12
 #define EECONFIG_STENOMODE                          (uint8_t *)13
 // EEHANDS for two handed boards
-#define EECONFIG_HANDEDNESS         				(uint8_t *)14
+#define EECONFIG_HANDEDNESS                         (uint8_t *)14
 
 
 /* debug bit */
@@ -83,4 +82,4 @@ uint8_t eeconfig_read_audio(void);
 void eeconfig_update_audio(uint8_t val);
 #endif
 
-#endif
+

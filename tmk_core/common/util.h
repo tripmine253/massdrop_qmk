@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef UTIL_H
-#define UTIL_H
+#pragma once
 
 #include <stdint.h>
 
@@ -40,4 +39,4 @@ uint8_t  bitrev(uint8_t bits);
 uint16_t bitrev16(uint16_t bits);
 uint32_t bitrev32(uint32_t bits);
 
-#endif
+

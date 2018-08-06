@@ -15,12 +15,11 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PJRC_H
-#define PJRC_H
+#pragma once
 
 #include "host_driver.h"
 
 
 host_driver_t *pjrc_driver(void);
 
-#endif
+

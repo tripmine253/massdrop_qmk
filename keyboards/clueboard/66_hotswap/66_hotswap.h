@@ -1,5 +1,4 @@
-#ifndef CLUEBOARD_H
-#define CLUEBOARD_H
+#pragma once
 
 #include "quantum.h"
 
@@ -7,4 +6,4 @@
     #include "gen1.h"
 #endif
 
-#endif
+

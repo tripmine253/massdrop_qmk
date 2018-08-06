@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef KEYMAP_CANADIAN_MULTILINGUAG_H
-#define KEYMAP_CANADIAN_MULTILINGUAG_H
+#pragma once
 
 #include "keymap.h"
 
@@ -267,4 +266,4 @@
 #define CSA_DVSN                CSA_DIVISION_SIGN
 // TODO GR2A(LSFT(CSA_E_ACUTE))
 
-#endif
+

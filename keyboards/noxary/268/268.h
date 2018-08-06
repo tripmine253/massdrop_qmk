@@ -1,5 +1,4 @@
-#ifndef noxary268_H
-#define noxary268_H
+#pragma once
 
 #include "quantum.h"
 
@@ -80,4 +79,4 @@
     { K400, K401, K402, ____, ____, ____, K406, ____, ____, ____, K410, K411, ____, K413, K414, K415 }  \
 }
 
-#endif
+

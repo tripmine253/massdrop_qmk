@@ -16,8 +16,7 @@
 
  // additional config optoinsa vailable at https://docs.qmk.fm/reference/config-options#the-config.h-file
 
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "../../config.h"
 
@@ -35,4 +34,4 @@
 #define MOUSEKEY_MAX_SPEED 7
 #define MOUSEKEY_WHEEL_DELAY 0
 
-#endif
+

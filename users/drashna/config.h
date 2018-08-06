@@ -21,8 +21,7 @@
 
 
 
-#ifndef ONESHOT_TAP_TOGGLE
-#define ONESHOT_TAP_TOGGLE 2
+#pragma once
 #endif // !ONESHOT_TAP_TOGGLE
 
 #ifndef ONESHOT_TIMEOUT
@@ -64,7 +63,7 @@
 #endif // !NO_DEBUG
 #if !defined(NO_PRINT) && !defined(CONSOLE_ENABLE)
 #define NO_PRINT
-#endif // !NO_PRINT
+!NO_PRINT
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
 

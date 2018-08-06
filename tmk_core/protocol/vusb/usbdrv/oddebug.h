@@ -8,8 +8,7 @@
  * This Revision: $Id: oddebug.h 692 2008-11-07 15:07:40Z cs $
  */
 
-#ifndef __oddebug_h_included__
-#define __oddebug_h_included__
+#pragma once
 
 /*
 General Description:
@@ -120,4 +119,4 @@ static inline void  odDebugInit(void)
 
 /* ------------------------------------------------------------------------- */
 
-#endif /* __oddebug_h_included__ */
+

@@ -1,5 +1,4 @@
-#ifndef CLUEBOARD_66_REV1_CONFIG_H
-#define CLUEBOARD_66_REV1_CONFIG_H
+#pragma once
 
 #include "config_common.h"
 
@@ -33,4 +32,4 @@
 #define RGBLIGHT_VAL_STEP 17
 
 
-#endif
+

@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CONFIG_H
-#define CONFIG_H
+#pragma once
 
 #include "config_common.h"
 
@@ -62,7 +61,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #define RGB_DI_PIN F6
 #define RGBLIGHT_ANIMATIONS
-#define RGBLED_NUM 20     			// Number of LEDs
+#define RGBLED_NUM 20               // Number of LEDs
 #define RGBLIGHT_HUE_STEP 10
 #define RGBLIGHT_SAT_STEP 17
 #define RGBLIGHT_VAL_STEP 17
@@ -79,4 +78,4 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #define TAPPING_TERM 200
 
-#endif
+

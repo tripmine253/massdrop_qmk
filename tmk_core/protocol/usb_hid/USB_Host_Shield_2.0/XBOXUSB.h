@@ -15,8 +15,7 @@
  e-mail   :  kristianl@tkjelectronics.com
  */
 
-#ifndef _xboxusb_h_
-#define _xboxusb_h_
+#pragma once
 
 #include "Usb.h"
 #include "hid.h"
@@ -222,4 +221,4 @@ private:
         /* Private commands */
         void XboxCommand(uint8_t* data, uint16_t nbytes);
 };
-#endif
+

@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef HOST_H
-#define HOST_H
+#pragma once
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -50,4 +49,4 @@ uint16_t host_last_consumer_report(void);
 }
 #endif
 
-#endif
+

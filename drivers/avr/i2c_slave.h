@@ -5,8 +5,7 @@
        Read or write to the necessary buffer according to the opperation.
  */
 
-#ifndef I2C_SLAVE_H
-#define I2C_SLAVE_H
+#pragma once
 
 #define TX_BUFFER_SIZE 30
 #define RX_BUFFER_SIZE 30
@@ -20,4 +19,3 @@ void i2c_init(uint8_t address);
 void i2c_stop(void);
 ISR(TWI_vect);
 
-#endif // I2C_SLAVE_H

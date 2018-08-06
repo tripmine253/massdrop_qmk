@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PROCESS_PRINTER_H
-#define PROCESS_PRINTER_H
+#pragma once
 
 #include "quantum.h"
 
@@ -23,4 +22,4 @@
 
 bool process_printer(uint16_t keycode, keyrecord_t *record);
 
-#endif
+

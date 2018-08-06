@@ -1,5 +1,4 @@
-#ifndef IRIS_H
-#define IRIS_H
+#pragma once
 
 #ifdef KEYBOARD_iris_rev1
     #include "rev1.h"
@@ -27,4 +26,4 @@
                                                 KC_##LT1, KC_##LT2, KC_##LT3, KC_##RT3, KC_##RT2, KC_##RT1 \
     )
 
-#endif
+

@@ -1,5 +1,4 @@
-#ifndef GORDON
-#define GORDON
+#pragma once
 
 #include "quantum.h"
 #include "process_keycode/process_tap_dance.h"
@@ -246,4 +245,4 @@ enum {
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt);
 
-#endif
+

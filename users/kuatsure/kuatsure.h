@@ -1,5 +1,4 @@
-#ifndef KUATSURE
-#define KUATSURE
+#pragma once
 
 #include "quantum.h"
 
@@ -28,4 +27,4 @@ void tmux_window_switch(uint16_t keycode);
 #define ____________FUNCTION_2____________                 KC_F5,   KC_F6,   KC_F7,   KC_F8
 #define ____________FUNCTION_3____________                 KC_F9,   KC_F10,  KC_F11,  KC_F12
 
-#endif
+

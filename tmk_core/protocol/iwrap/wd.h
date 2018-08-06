@@ -1,6 +1,5 @@
 /* This is from http://www.mtcnet.net/~henryvm/wdt/ */
-#ifndef _AVR_WD_H_
-#define _AVR_WD_H_
+#pragma once
 
 #include <avr/io.h>
 
@@ -156,4 +155,4 @@ cleared on every power up or reset, along with disabling the watchdog-
 #define wdt_disable()   WD_SET(WD_OFF)
 
 
-#endif /* _AVR_WD_H_ */
+

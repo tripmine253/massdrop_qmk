@@ -1,5 +1,4 @@
-#ifndef MF68_BLE_H
-#define MF68_BLE_H
+#pragma once
 
 #include "quantum.h"
 
@@ -37,4 +36,4 @@
     KC_##K70, KC_##K71, KC_##K72, KC_##K73, KC_##K74 \
 )
 
-#endif
+

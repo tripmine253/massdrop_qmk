@@ -1,5 +1,4 @@
-#ifndef REV2_H
-#define REV2_H
+#pragma once
 
 #include "iris.h"
 
@@ -37,4 +36,4 @@
         { KC_NO, KC_NO, RT4, RT1, RT2, RT3 } \
     }
 
-#endif
+

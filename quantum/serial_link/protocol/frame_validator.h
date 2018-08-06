@@ -22,8 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#ifndef SERIAL_LINK_FRAME_VALIDATOR_H
-#define SERIAL_LINK_FRAME_VALIDATOR_H
+#pragma once
 
 #include <stdint.h>
 
@@ -31,4 +30,4 @@ void validator_recv_frame(uint8_t link, uint8_t* data, uint16_t size);
 // The buffer pointed to by the data needs 4 additional bytes
 void validator_send_frame(uint8_t link, uint8_t* data, uint16_t size);
 
-#endif
+

@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef KEYMAP_SWISS_GERMAN
-#define KEYMAP_SWISS_GERMAN
+#pragma once
 
 #include "keymap.h"
 
@@ -118,4 +117,4 @@
 #define CH_RCBR ALGR(CH_DLR) // }
 #define CH_BSLS ALGR(CH_LESS) // backslash
 
-#endif
+

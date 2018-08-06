@@ -141,11 +141,10 @@ uint32_t timer_elapsed32(uint32_t last)
 }
 
 // excecuted once per 1ms.(excess for just timer count?)
-#ifndef __AVR_ATmega32A__
-#define TIMER_INTERRUPT_VECTOR TIMER0_COMPA_vect
+#pragma once
 #else
 #define TIMER_INTERRUPT_VECTOR TIMER0_COMP_vect
-#endif
+
 ISR(TIMER_INTERRUPT_VECTOR, ISR_NOBLOCK)
 {
     timer_count++;

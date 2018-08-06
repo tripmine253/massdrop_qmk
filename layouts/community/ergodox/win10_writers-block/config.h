@@ -1,5 +1,4 @@
-#ifndef KEYBOARDS_ERGODOX_CONFIG_H_
-#define KEYBOARDS_ERGODOX_CONFIG_H_
+#pragma once
 
 #include QMK_KEYBOARD_CONFIG_H
 
@@ -32,4 +31,4 @@
     keyboard_report->mods == (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT)) \
 )
 
-#endif /* KEYBOARDS_ERGODOX_CONFIG_H_ */
+

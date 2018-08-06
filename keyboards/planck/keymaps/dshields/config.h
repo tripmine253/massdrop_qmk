@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "../../config.h"
 
@@ -40,5 +39,5 @@
 // mod-tap keys
 #define MT_SPC  SFT_T(KC_SPC)
 
-#endif
+
 

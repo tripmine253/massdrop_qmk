@@ -1,5 +1,4 @@
-#ifndef CLUEPAD_H
-#define CLUEPAD_H
+#pragma once
 
 #include "quantum.h"
 
@@ -33,4 +32,4 @@
     { k40, KC_NO, k42, KC_NO } \
 }
 
-#endif
+

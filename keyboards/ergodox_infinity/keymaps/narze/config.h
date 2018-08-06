@@ -1,5 +1,4 @@
-#ifndef CONFIG_H_
-#define CONFIG_H_
+#pragma once
 
 #include "../../config.h"
 
@@ -18,4 +17,4 @@
 #undef MOUSEKEY_DELAY
 #define MOUSEKEY_DELAY 100
 
-#endif
+

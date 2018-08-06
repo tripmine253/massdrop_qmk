@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef KEYMAP_PLOVER_H
-#define KEYMAP_PLOVER_H
+#pragma once
 
 #include "keymap.h"
 
@@ -44,4 +43,4 @@
 #define PV_E    KC_N
 #define PV_U    KC_M
 
-#endif
+

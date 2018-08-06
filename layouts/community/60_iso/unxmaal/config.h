@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef KEYMAP_CONFIG_H
-#define KEYMAP_CONFIG_H
+#pragma once
 
 #include QMK_KEYBOARD_CONFIG_H
 
@@ -29,4 +28,4 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     #define RGBLIGHT_VAL_STEP 8
 #endif
 
-#endif
+

@@ -17,8 +17,7 @@
  IR camera support added by Allan Glover (adglover9.81@gmail.com) and Kristian Lauszus
  */
 
-#ifndef _wii_h_
-#define _wii_h_
+#pragma once
 
 #include "BTD.h"
 #include "controllerEnums.h"
@@ -515,4 +514,4 @@ private:
         uint8_t IR_object_s4;
 #endif
 };
-#endif
+

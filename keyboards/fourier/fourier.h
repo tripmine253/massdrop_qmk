@@ -1,5 +1,4 @@
-#ifndef FOURIER_H
-#define FOURIER_H
+#pragma once
 
 #include "quantum.h"
 
@@ -20,4 +19,4 @@
         KC_##LC1, KC_##LC2, KC_##LC3, KC_##LC4, KC_##LC5, KC_##LC6, KC_##RC1,           KC_##RC3, KC_##RC4, KC_##RC5, KC_##RC6, KC_##RC7, \
         KC_##LD1, KC_##LD2, KC_##LD3, KC_##LD4, KC_##LD5,           KC_##RD1,                     KC_##RD4, KC_##RD5, KC_##RD6, KC_##RD7 \
     )
-#endif
+

@@ -1,5 +1,4 @@
-#ifndef REV1_H
-#define REV1_H
+#pragma once
 
 #include "../quefrency.h"
 
@@ -34,4 +33,4 @@
     { RE1, KC_NO, KC_NO, RE4, RE5, RE6, RE7, RE8 } \
   }
 
-#endif
+

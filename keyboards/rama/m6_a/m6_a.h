@@ -15,8 +15,7 @@
  */
 #include "quantum.h"
 
-#ifndef RAMA_M6_A_H
-#define RAMA_M6_A_H
+#pragma once
 
 // This a shortcut to help you visually see your layout.
 // The first section contains all of the arguments
@@ -26,4 +25,4 @@
     {                                   \
         {K00, K01, K02, K03, K04, K05}, \
     }
-#endif // RAMA_M6_A
+

@@ -1,5 +1,4 @@
-#ifndef FEATHERBLE_H
-#define FEATHERBLE_H
+#pragma once
 
 #include "../meira.h"
 
@@ -7,4 +6,4 @@
 
 #include "pro_micro.h"
 
-#endif
+

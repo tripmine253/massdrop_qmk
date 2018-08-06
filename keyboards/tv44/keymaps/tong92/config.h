@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "../../config.h"
 
@@ -9,4 +8,4 @@
     #define BACKLIGHT_LEVELS 7
 #endif
 
-#endif
+

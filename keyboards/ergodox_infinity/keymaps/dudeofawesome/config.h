@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #undef TAPPING_TOGGLE
 
@@ -8,4 +7,4 @@
 
 #include "./visualizer.h"
 
-#endif
+

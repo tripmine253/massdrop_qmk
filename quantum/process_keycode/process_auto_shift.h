@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PROCESS_AUTO_SHIFT_H
-#define PROCESS_AUTO_SHIFT_H
+#pragma once
 
 #include "quantum.h"
 
@@ -30,4 +29,4 @@ void autoshift_disable(void);
 void autoshift_toggle(void);
 bool autoshift_state(void);
 
-#endif
+

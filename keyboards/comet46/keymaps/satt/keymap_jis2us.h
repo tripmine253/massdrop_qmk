@@ -1,5 +1,4 @@
-#ifndef KEYMAP_JIS2US_H
-#define KEYMAP_JIS2US_H
+#pragma once
 
 /* keymap for convert from JIS to US */
 const uint16_t PROGMEM keymap_jis2us[][2] = {
@@ -29,4 +28,4 @@ const uint16_t PROGMEM keymap_jis2us[][2] = {
     [KC_SLSH] = { KC_SLSH, KC_QUES    }, /* / and ? -> / and ? */
 };
 
-#endif
+

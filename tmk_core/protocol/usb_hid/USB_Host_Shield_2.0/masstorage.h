@@ -19,8 +19,7 @@ e-mail   :  support@circuitsathome.com
 #define __MASSTORAGE_H__
 
 // Cruft removal, makes driver smaller, faster.
-#ifndef MS_WANT_PARSER
-#define MS_WANT_PARSER 0
+#pragma once
 #endif
 
 #include "Usb.h"
@@ -568,4 +567,4 @@ private:
 
 };
 
-#endif // __MASSTORAGE_H__
+

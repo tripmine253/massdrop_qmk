@@ -1,5 +1,4 @@
-#ifndef LFKPAD_H
-#define LFKPAD_H
+#pragma once
 
 /* if the kb.h file exists (because we're running from qmkbuilder) include it */
 #if __has_include("kb.h")
@@ -74,4 +73,4 @@ void click(uint16_t freq, uint16_t duration);
     { k50, ___, k52, ___ } \
 }
 
-#endif //LFKPAD_H
+

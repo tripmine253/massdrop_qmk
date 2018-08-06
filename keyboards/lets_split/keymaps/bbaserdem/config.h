@@ -1,5 +1,4 @@
-#ifndef CONFIG_KEYMAP_H
-#define CONFIG_KEYMAP_H
+#pragma once
 
 #include "../../config.h"
 
@@ -24,4 +23,4 @@
 #define RGBLIGHT_EFFECT_CHRISTMAS_STEP 1
 #endif
 
-#endif
+

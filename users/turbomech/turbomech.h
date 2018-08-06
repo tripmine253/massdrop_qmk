@@ -15,8 +15,7 @@
  */
 
 
-#ifndef USERSPACE
-#define USERSPACE
+#pragma once
 
 #include "quantum.h"
 
@@ -47,4 +46,4 @@ enum userspace_custom_keycodes {
   _FLIP,
   NEW_SAFE_RANGE
 };
-#endif
+

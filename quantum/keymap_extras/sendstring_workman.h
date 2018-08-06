@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /* Sendstring definitions for the Workman layout */
-#ifndef SENDSTRING_WORKMAN
-#define SENDSTRING_WORKMAN
+#pragma once
 
 #include "keymap_workman.h"
 
@@ -38,4 +37,3 @@ const uint8_t ascii_to_keycode_lut[0x80] PROGMEM = {
     WK_X,    WK_Y,   WK_Z,    KC_LBRC, KC_BSLS, KC_RBRC, KC_GRV, KC_DEL
 };
 
-#endif

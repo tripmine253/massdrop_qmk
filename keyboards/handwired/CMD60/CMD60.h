@@ -1,5 +1,4 @@
-#ifndef CMD60_H
-#define CMD60_H
+#pragma once
 
 #include "quantum.h"
 
@@ -17,4 +16,3 @@
   {  K40,  K41,  K42,  KC_NO,  KC_NO,  K45,  KC_NO,  KC_NO,  KC_NO,  KC_NO,K4A,  K4B,  K4C,  K4D  }   \
 }
 
-#endif

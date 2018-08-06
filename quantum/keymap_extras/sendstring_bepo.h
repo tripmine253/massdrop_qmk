@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /* Sendstring definitions for the bépo layout */
-#ifndef SENDSTRING_BEPO
-#define SENDSTRING_BEPO
+#pragma once
 
 #include "keymap_bepo.h"
 
@@ -38,4 +37,4 @@ const uint8_t ascii_to_keycode_lut[0x80] PROGMEM = {
   BP_X,     BP_Y,     BP_Z,     BP_Y,       BP_B,       BP_X,        BP_K,    KC_DEL,
 };
 
-#endif
+

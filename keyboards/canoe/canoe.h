@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CANOE_H
-#define CANOE_H
+#pragma once
 
 #include "quantum.h"
 
@@ -56,4 +55,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   { _x_, _x_, _x_, _x_, _x_, _x_, _x_, _x_, _x_, _x_, _x_, _x_, _x_, _x_, _x_ }  \
 }
 
-#endif
+

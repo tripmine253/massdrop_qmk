@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef MOUSEKEY_H
-#define  MOUSEKEY_H
+#pragma once
 
 #include <stdbool.h>
 #include "host.h"
@@ -83,4 +82,4 @@ void mousekey_send(void);
 }
 #endif
 
-#endif
+

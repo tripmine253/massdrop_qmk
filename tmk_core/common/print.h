@@ -22,8 +22,7 @@
  * THE SOFTWARE.
  */
 
-#ifndef PRINT_H__
-#define PRINT_H__ 1
+#pragma once
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -276,4 +275,4 @@ void print_set_sendchar(int8_t (*print_sendchar_func)(uint8_t));
 #define pbin_reverse(data)      print_bin_reverse8(data)
 #define pbin_reverse16(data)    print_bin_reverse16(data)
 
-#endif
+

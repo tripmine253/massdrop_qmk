@@ -1,5 +1,4 @@
-#ifndef LOSINGGENERATION_COMMON_H
-#define LOSINGGENERATION_COMMON_H
+#pragma once
 
 /* Custom keys & combinations to be shorter for keymaps */
 #define KC_LCA LCA(KC_NO)
@@ -71,4 +70,4 @@ enum custom_keycodes {
   RAISE,
 };
 
-#endif
+

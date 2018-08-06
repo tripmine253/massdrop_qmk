@@ -1,5 +1,4 @@
-#ifndef KINESIS_ALVICSTEP_H
-#define KINESIS_ALVICSTEP_H
+#pragma once
 
 #include "../kinesis.h"
 
@@ -98,4 +97,4 @@
   PB7   col7  |        |        |        |        | RGUI   |        | PageUp |        | PageDn | N      | M      | ,<     |        | .>     | /?     | RShift
 */
 
-#endif
+

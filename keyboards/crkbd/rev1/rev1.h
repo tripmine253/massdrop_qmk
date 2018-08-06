@@ -1,5 +1,4 @@
-#ifndef REV1_H
-#define REV1_CONFIG_H
+#pragma once
 
 #include "../crkbd.h"
 
@@ -50,4 +49,4 @@
                                             KC_##L30, KC_##L31, KC_##L32, KC_##R30, KC_##R31, KC_##R32 \
   )
 
-#endif
+

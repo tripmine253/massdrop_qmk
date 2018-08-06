@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef VISUALIZER_H_
-#define VISUALIZER_H_
+#pragma once
 
 #include "visualizer.h"
 #include "led.h"
@@ -32,4 +31,4 @@ void ergodox_led_lower_set (uint8_t n);
 void ergodox_led_raise_set (uint8_t n);
 void ergodox_led_adjust_set (uint8_t n);
 
-#endif /* VISUALIZER_H_ */
+

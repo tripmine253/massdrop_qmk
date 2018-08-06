@@ -15,8 +15,7 @@ Web      :  http://www.circuitsathome.com
 e-mail   :  support@circuitsathome.com
  */
 
-#ifndef USB_HOST_SHIELD_SETTINGS_H
-#define USB_HOST_SHIELD_SETTINGS_H
+#pragma once
 #include "macros.h"
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -136,4 +135,4 @@ e-mail   :  support@circuitsathome.com
 #include <../../../../hardware/pic32/libraries/SPI/SPI.h> // Hack to use the SPI library
 #endif
 
-#endif /* SETTINGS_H */
+

@@ -15,8 +15,7 @@
  e-mail   :  kristianl@tkjelectronics.com
  */
 
-#ifndef _ps4bt_h_
-#define _ps4bt_h_
+#pragma once
 
 #include "BTHID.h"
 #include "PS4Parser.h"
@@ -118,4 +117,4 @@ private:
                 pBtd->L2CAP_Command(hci_handle, data, nbytes, control_scid[0], control_scid[1]);
         };
 };
-#endif
+

@@ -19,8 +19,7 @@
 #include "outputselect.h"
 #endif
 
-#ifndef TAPPING_TERM
-#define TAPPING_TERM 200
+#pragma once
 #endif
 
 #ifndef BREATHING_PERIOD
@@ -1317,7 +1316,7 @@ void api_send_unicode(uint32_t unicode) {
     uint8_t chunk[4];
     dword_to_bytes(unicode, chunk);
     MT_SEND_DATA(DT_UNICODE, chunk, 5);
-#endif
+
 }
 
 __attribute__ ((weak))

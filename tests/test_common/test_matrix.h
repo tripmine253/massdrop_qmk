@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef TESTS_TEST_COMMON_TEST_MATRIX_H_
-#define TESTS_TEST_COMMON_TEST_MATRIX_H_
+#pragma once
 
 #ifdef __cplusplus
 extern "C" {
@@ -29,4 +28,4 @@ void clear_all_keys(void);
 }
 #endif
 
-#endif /* TESTS_TEST_COMMON_TEST_MATRIX_H_ */
+

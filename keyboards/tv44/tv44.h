@@ -1,5 +1,4 @@
-#ifndef TV44_H
-#define TV44_H
+#pragma once
 
 #include "quantum.h"
 
@@ -64,4 +63,4 @@
     { K30,   K31,   K32,   K33,  K34,   KC_NO, KC_NO, K37,   K38,   K39,   K3A,   K3B }  \
 }
 
-#endif
+

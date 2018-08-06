@@ -1,5 +1,4 @@
-#ifndef Arduino_h
-#define Arduino_h
+#pragma once
 
 #include <stdlib.h>
 #include <string.h>
@@ -178,7 +177,7 @@ extern const uint8_t PROGMEM digital_pin_to_timer_PGM[];
 #define TIMER4A 11
 #define TIMER4B 12
 #define TIMER4C 13
-#define TIMER4D 14	
+#define TIMER4D 14  
 #define TIMER5A 15
 #define TIMER5B 16
 #define TIMER5C 17
@@ -212,4 +211,4 @@ long map(long, long, long, long, long);
 
 #include "pins_arduino.h"
 
-#endif
+

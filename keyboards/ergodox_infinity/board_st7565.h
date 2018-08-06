@@ -5,8 +5,7 @@
  *              http://ugfx.org/license.html
  */
 
-#ifndef _GDISP_LLD_BOARD_H
-#define _GDISP_LLD_BOARD_H
+#pragma once
 
 #define ST7565_LCD_BIAS         ST7565_LCD_BIAS_9 // actually 6
 #define ST7565_ADC              ST7565_ADC_NORMAL
@@ -110,4 +109,4 @@ static GFXINLINE void write_data(GDisplay *g, uint8_t* data, uint16_t length) {
     spiSend(&SPID1, length, data);
 }
 
-#endif /* _GDISP_LLD_BOARD_H */
+

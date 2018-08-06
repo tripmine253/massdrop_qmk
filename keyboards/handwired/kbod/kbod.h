@@ -1,5 +1,4 @@
-#ifndef KBOD_H
-#define KBOD_H
+#pragma once
 
 #include "quantum.h"
 
@@ -18,4 +17,4 @@
     { k40, k41, k42, k43, k44, k45, k46, k47 },                                                 \
 }
 
-#endif
+

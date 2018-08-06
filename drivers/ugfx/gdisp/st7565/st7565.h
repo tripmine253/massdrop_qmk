@@ -5,8 +5,7 @@
  *              http://ugfx.org/license.html
  */
 
-#ifndef _ST7565_H
-#define _ST7565_H
+#pragma once
 
 #define ST7565_CONTRAST             0x81
 #define ST7565_ALLON_NORMAL         0xA4
@@ -36,4 +35,4 @@
 
 #define ST7565_RESET                0xE2
 
-#endif /* _ST7565_H */
+

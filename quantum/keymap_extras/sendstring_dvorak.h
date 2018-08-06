@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /* Sendstring definitions for the Dvorak layout */
-#ifndef SENDSTRING_DVORAK
-#define SENDSTRING_DVORAK
+#pragma once
 
 #include "keymap_dvorak.h"
 
@@ -38,4 +37,4 @@ const uint8_t ascii_to_keycode_lut[0x80] PROGMEM = {
     DV_X, DV_Y, DV_Z, DV_LBRC, DV_BSLS, DV_RBRC, DV_GRV, KC_DEL
 };
 
-#endif
+

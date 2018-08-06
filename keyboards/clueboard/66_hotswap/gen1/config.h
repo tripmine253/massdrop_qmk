@@ -1,5 +1,4 @@
-#ifndef CLUEBOARD_66_REV3_CONFIG_H
-#define CLUEBOARD_66_REV3_CONFIG_H
+#pragma once
 
 #include "config_common.h"
 
@@ -50,4 +49,4 @@
 #define RGBLIGHT_EFFECT_KNIGHT_LED_NUM 8  // How many LEDs to travel
 #define RGBLIGHT_EFFECT_SNAKE_LENGTH 4    // How many LEDs wide to light up
 
-#endif
+

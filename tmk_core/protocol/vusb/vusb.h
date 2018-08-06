@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef VUSB_H
-#define VUSB_H
+#pragma once
 
 #include "host_driver.h"
 
@@ -24,4 +23,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 host_driver_t *vusb_driver(void);
 void vusb_transfer_keyboard(void);
 
-#endif
+

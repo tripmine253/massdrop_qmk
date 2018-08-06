@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PROCESS_CHORDING_H
-#define PROCESS_CHORDING_H
+#pragma once
 
 #include "quantum.h"
 
@@ -29,4 +28,4 @@ uint8_t chord_key_down = 0;
 
 bool process_chording(uint16_t keycode, keyrecord_t *record);
 
-#endif
+

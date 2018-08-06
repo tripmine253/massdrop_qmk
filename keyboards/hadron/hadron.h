@@ -1,5 +1,4 @@
-#ifndef HADRON_H
-#define HADRON_H
+#pragma once
 
 #ifdef SUBPROJECT_ver0
     #include "ver0.h"
@@ -27,4 +26,4 @@
 }
 
 
-#endif
+

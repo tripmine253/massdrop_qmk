@@ -1,5 +1,4 @@
-#ifndef MAGICFORCE68_H
-#define MAGICFORCE68_H
+#pragma once
 
 #include "quantum.h"
 
@@ -17,4 +16,3 @@
   {  KC_##K40, KC_##K41, KC_##K42, KC_NO,    KC_NO,    KC_##K45, KC_NO,    KC_NO,    KC_NO,    KC_##K49, KC_##K4A, KC_##K4B, KC_##K4C, KC_##K4D, KC_##K4E  }   \
 }
 
-#endif

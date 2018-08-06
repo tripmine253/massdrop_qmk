@@ -23,8 +23,7 @@
  * adrianm@mcqn.com 1/1/2011
  */
 
-#ifndef IPAddress_h
-#define IPAddress_h
+#pragma once
 
 #include <Printable.h>
 
@@ -73,4 +72,4 @@ public:
 const IPAddress INADDR_NONE(0,0,0,0);
 
 
-#endif
+

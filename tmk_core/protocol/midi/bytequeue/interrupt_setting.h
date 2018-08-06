@@ -16,8 +16,7 @@
 //You should have received a copy of the GNU General Public License
 //along with avr-bytequeue.  If not, see <http://www.gnu.org/licenses/>.
 
-#ifndef INTERRUPT_SETTING_H
-#define INTERRUPT_SETTING_H
+#pragma once
 
 #ifdef __cplusplus
 extern "C" {
@@ -35,5 +34,5 @@ void restore_interrupt_setting(interrupt_setting_t setting);
 }
 #endif 
 
-#endif
+
 

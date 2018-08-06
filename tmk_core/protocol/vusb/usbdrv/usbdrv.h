@@ -8,8 +8,7 @@
  * This Revision: $Id: usbdrv.h 793 2010-07-15 15:58:11Z cs $
  */
 
-#ifndef __usbdrv_h_included__
-#define __usbdrv_h_included__
+#pragma once
 #include "usbconfig.h"
 #include "usbportability.h"
 
@@ -732,4 +731,4 @@ typedef struct usbRequest{
 
 /* ------------------------------------------------------------------------- */
 
-#endif /* __usbdrv_h_included__ */
+

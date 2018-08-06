@@ -1,5 +1,4 @@
-#ifndef OE_H
-#define OE_H
+#pragma once
 
 #include "quantum.h"
 
@@ -63,4 +62,4 @@
   { KC_NO, K41, K42, KC_NO, KC_NO, KC_NO, K46, KC_NO, KC_NO, KC_NO, KC_NO, K4B, K4C,   KC_NO, KC_NO }, \
 }
 
-#endif
+

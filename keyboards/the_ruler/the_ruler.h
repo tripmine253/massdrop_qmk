@@ -1,5 +1,4 @@
-#ifndef THERULER_H
-#define THERULER_H
+#pragma once
 
 #include "quantum.h"
 
@@ -8,4 +7,4 @@
     { K00, K01, K02, K03, K04, K05 }  \
 }
 
-#endif
+

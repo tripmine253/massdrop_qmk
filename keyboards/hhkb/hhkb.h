@@ -1,5 +1,4 @@
-#ifndef HHKB_H
-#define HHKB_H
+#pragma once
 
 #include "quantum.h"
 
@@ -48,4 +47,4 @@
 }
 
 
-#endif
+

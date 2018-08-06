@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef REDOX_H
-#define REDOX_H
+#pragma once
 
 #ifdef KEYBOARD_redox_rev1
     #include "rev1.h"
@@ -38,4 +37,4 @@
 
 #include "quantum.h"
 
-#endif
+

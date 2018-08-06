@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /* Keymap macros for the French BÉPO layout - http://bepo.fr */
-#ifndef KEYMAP_BEPO_H
-#define KEYMAP_BEPO_H
+#pragma once
 
 #include "keymap.h"
 
@@ -323,4 +322,4 @@
 #define BP_NARROW_NON_BREAKING_SPACE    ALTGR(BP_NON_BREAKING_SPACE)
 #define BP_NNBS                         BP_NARROW_NON_BREAKING_SPACE
 
-#endif
+

@@ -19,8 +19,7 @@
   Modified 28 September 2010 by Mark Sproul
 */
 
-#ifndef HardwareSerial_h
-#define HardwareSerial_h
+#pragma once
 
 #include <inttypes.h>
 
@@ -78,4 +77,4 @@ class HardwareSerial : public Stream
 
 extern void serialEventRun(void) __attribute__((weak));
 
-#endif
+

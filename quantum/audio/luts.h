@@ -23,8 +23,7 @@
     #include "hal.h"
 #endif
 
-#ifndef LUTS_H
-#define LUTS_H
+#pragma once
 
 #define VIBRATO_LUT_LENGTH 20
 
@@ -33,4 +32,4 @@
 extern const float vibrato_lut[VIBRATO_LUT_LENGTH];
 extern const uint16_t frequency_lut[FREQUENCY_LUT_LENGTH];
 
-#endif /* LUTS_H */
+

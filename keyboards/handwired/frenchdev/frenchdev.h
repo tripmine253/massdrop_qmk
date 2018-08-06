@@ -1,5 +1,4 @@
-#ifndef FRENCHDEV_V1_H
-#define FRENCHDEV_V1_H
+#pragma once
 
 #include "quantum.h"
 #include <stdint.h>
@@ -112,4 +111,4 @@ inline void frenchdev_led_all_set(uint8_t n)
     { k50,   k40,  k30,   k20,   k10,   KC_NO }   \
    }
 
-#endif
+

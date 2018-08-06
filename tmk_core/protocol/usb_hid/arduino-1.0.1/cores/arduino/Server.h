@@ -1,9 +1,8 @@
-#ifndef server_h
-#define server_h
+#pragma once
 
 class Server : public Print {
 public:
   virtual void begin() =0;
 };
 
-#endif
+

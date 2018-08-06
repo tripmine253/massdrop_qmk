@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "../../config.h"
 
@@ -11,7 +10,7 @@
     #define AUDIO_CLICKY
   // to enable clicky on startup
   //#define AUDIO_CLICKY_ON
-	#define AUDIO_CLICKY_FREQ_RANDOMNESS 1.0f
+    #define AUDIO_CLICKY_FREQ_RANDOMNESS 1.0f
 
 /* ws2812 RGB LED
 #define RGB_DI_PIN B5
@@ -57,4 +56,4 @@
 //#define MIDI_TONE_KEYCODE_OCTAVES 2
 
 
-#endif
+

@@ -1,5 +1,4 @@
-#ifndef NQN_KEYS_ON_QUERTZ_DE_LATIN1_H
-#define NQN_KEYS_ON_QUERTZ_DE_LATIN1_H
+#pragma once
 
 
 /*
@@ -70,4 +69,4 @@ Additionally, there are some common chars that we dit not yet define:
 #define N_UNDO LCTL(N_Z) // CTRL+Z
 
 
-#endif
+

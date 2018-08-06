@@ -22,8 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#ifndef SERIAL_LINK_H
-#define SERIAL_LINK_H
+#pragma once
 
 #include "host_driver.h"
 #include <stdbool.h>
@@ -60,4 +59,4 @@ void signal_data_written(void);
 
 #endif
 
-#endif
+

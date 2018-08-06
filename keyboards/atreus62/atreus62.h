@@ -1,5 +1,4 @@
-#ifndef ATREUS62_H
-#define ATREUS62_H
+#pragma once
 
 #include "quantum.h"
 
@@ -39,4 +38,4 @@ void promicro_bootloader_jmp(bool program);
     { KC_##k40, KC_##k41, KC_##k42, KC_##k43, KC_##k44, KC_##k45, KC_##k46, KC_##k48, KC_##k49, KC_##k4a, KC_##k4b, KC_##k4c, KC_##k4d } \
 }
 
-#endif
+

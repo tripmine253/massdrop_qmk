@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PROCESS_COMBO_H
-#define PROCESS_COMBO_H
+#pragma once
 
 #include <stdint.h>
 #include "progmem.h"
@@ -56,4 +55,4 @@ bool process_combo(uint16_t keycode, keyrecord_t *record);
 void matrix_scan_combo(void);
 void process_combo_event(uint8_t combo_index, bool pressed);
 
-#endif
+

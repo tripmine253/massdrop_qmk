@@ -16,8 +16,7 @@ You should have received a copy of the GNU General Public License
 long with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef LOSINGGENERATION_CONFIG_H
-#define LOSINGGENERATION_CONFIG_H
+#pragma once
 
 #define MOUSEKEY_DELAY             100
 #define MOUSEKEY_INTERVAL          20
@@ -26,4 +25,4 @@ long with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_WHEEL_MAX_SPEED   8
 #define MOUSEKEY_WHEEL_TIME_TO_MAX 20
 
-#endif
+

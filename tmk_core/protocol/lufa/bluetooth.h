@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef BLUETOOTH_H
-#define BLUETOOTH_H
+#pragma once
 
 #include "../serial.h"
 
@@ -76,4 +75,4 @@ void bluefruit_serial_send(uint8_t data);
     (usage == AC_SEARCH            ? 0x0400 : \
     (usage == AC_HOME              ? 0x0100 : 0))))))))))))
 
- #endif
+ 

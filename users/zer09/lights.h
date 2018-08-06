@@ -1,5 +1,4 @@
-#ifndef LIGHTS_H
-#define LIGHTS_H
+#pragma once
 
 #include "eeprom.h"
 #include "tap_dance.h"
@@ -42,4 +41,4 @@ bool rainbow_loop(uint8_t lyr);
 bool led_brightness(uint16_t keycode, keyrecord_t *record);
 void eeprom_read_led_dim_lvl(void);
 
-#endif
+

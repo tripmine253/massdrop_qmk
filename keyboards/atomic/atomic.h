@@ -1,5 +1,4 @@
-#ifndef ATOMIC_H
-#define ATOMIC_H
+#pragma once
 
 #include "quantum.h"
 #include <stddef.h>
@@ -40,4 +39,3 @@
 
 #define LAYOUT_ortho_5x15 LAYOUT_grid
 
-#endif

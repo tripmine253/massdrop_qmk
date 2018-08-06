@@ -1,5 +1,4 @@
-#ifndef MIUNI32_H
-#define MIUNI32_H
+#pragma once
 
 #include "quantum.h"
 
@@ -25,4 +24,4 @@
 
 #define LAYOUT_all LAYOUT_ortho_3x11
 
-#endif
+

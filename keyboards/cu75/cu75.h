@@ -1,5 +1,4 @@
-#ifndef CU75_H
-#define CU75_H
+#pragma once
 
 /* if the kb.h file exists (because we're running from qmkbuilder) include it */
 #ifdef __has_include
@@ -123,4 +122,4 @@ void click(uint16_t freq, uint16_t duration);
     {k51, k52,   k53, k54, KC_NO, KC_NO,   k57, KC_NO, k59, k5A, k5B, k5C, k5D, k5E,   k5F,   KC_NO}, \
 }
 
-#endif //CU75_H
+

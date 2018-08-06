@@ -18,8 +18,7 @@
 #include "keycode.h"
 #include "action_code.h"
 
-#ifndef KEYCODE_CONFIG_H
-#define KEYCODE_CONFIG_H
+#pragma once
 
 uint16_t keycode_config(uint16_t keycode);
 uint8_t mod_config(uint8_t mod);
@@ -41,4 +40,4 @@ typedef union {
 
 extern keymap_config_t keymap_config;
 
-#endif /* KEYCODE_CONFIG_H */
+

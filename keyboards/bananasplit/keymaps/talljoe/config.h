@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include QMK_KEYBOARD_CONFIG_H
 
@@ -20,4 +19,4 @@
     { K40, K41, K42, KC_NO, K44, K45, K46, KC_NO, K48, K49, KC_NO, K4B, K4C, KC_NO }\
 }
 
-#endif
+

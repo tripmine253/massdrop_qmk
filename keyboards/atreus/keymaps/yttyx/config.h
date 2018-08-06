@@ -1,5 +1,4 @@
-#ifndef CONFIG_H
-#define CONFIG_H
+#pragma once
 
 #define ONESHOT_TIMEOUT       500   // Time (in ms) before the one shot key is released
 
@@ -9,4 +8,4 @@
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
 
-#endif
+

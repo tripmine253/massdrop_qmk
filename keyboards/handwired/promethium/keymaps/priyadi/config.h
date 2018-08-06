@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "../../config.h"
 
@@ -26,4 +25,4 @@
 #define DOUBLESPACE_LAYER_ENABLE
 // #define TOLELOT_ENABLE
 
-#endif
+

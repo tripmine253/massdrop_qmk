@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KEYMAP_ITALIAN
-#define KEYMAP_ITALIAN
+#pragma once
 
 #include "keymap.h"
 
@@ -112,11 +111,11 @@
 #define IT_LBRC ALGR(IT_EACC) // [
 #define IT_RBRC ALGR(IT_PLUS) // ]
 #define IT_RCBR ALGR(KC_0) // }
-#define IT_AT   ALGR(IT_OACC) 	// @
-#define IT_EURO ALGR(KC_E) 		// €
-#define IT_PIPE LSFT(IT_BKSL) 	// |
-#define	IT_SHRP	ALGR(IT_AACC) 	// #
+#define IT_AT   ALGR(IT_OACC)   // @
+#define IT_EURO ALGR(KC_E)      // €
+#define IT_PIPE LSFT(IT_BKSL)   // |
+#define IT_SHRP ALGR(IT_AACC)   // #
 
-#define	IT_X_PLUS	X_RBRACKET 	// #
+#define IT_X_PLUS   X_RBRACKET  // #
 
-#endif
+

@@ -40,8 +40,7 @@
 #include "report.h"
 #include "usb_descriptor.h"
 
-#ifndef USB_MAX_POWER_CONSUMPTION
-#define USB_MAX_POWER_CONSUMPTION 500
+#pragma once
 #endif
 
 /*******************************************************************************
@@ -1007,7 +1006,7 @@ uint16_t get_usb_descriptor(const uint16_t wValue,
                 Address = &NKROReport;
                 Size    = sizeof(NKROReport);
                 break;
-#endif
+
             }
             break;
     }

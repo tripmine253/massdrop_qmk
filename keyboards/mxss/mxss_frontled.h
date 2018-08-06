@@ -17,8 +17,7 @@
 // EEPROM management code taken from Wilba6582
 // https://github.com/Wilba6582/qmk_firmware/blob/zeal60/keyboards/zeal60/zeal_eeprom.h
  
-#ifndef MXSS_FRONTLED_H
-#define MXSS_FRONTLED_H
+#pragma once
 
 #include "quantum_keycodes.h"
 
@@ -78,4 +77,3 @@ void fled_mode_cycle(void);         // Cycle between the 3 modes for the front L
 void fled_val_increase(void);       // Increase the brightness of the front LEDs
 void fled_val_decrease(void);       // Decrease the brightness of the front LEDs
 
-#endif //MXSS_FRONTLED_H

@@ -1,6 +1,5 @@
-#ifndef MINORCA_H
-#define MINORCA_H
+#pragma once
 
 #include "quantum.h"
 
-#endif
+

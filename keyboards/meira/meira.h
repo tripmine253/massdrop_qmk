@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef MEIRA_H
-#define MEIRA_H
+#pragma once
 
 #include "quantum.h"
 #include "issi.h"
@@ -56,5 +55,5 @@ void reset_keyboard_kb(void);
 #define KC_LAYOUT_ortho_4x12 KC_KEYMAP
 #define LAYOUT_kc_ortho_4x12 KC_KEYMAP
 
-#endif
+
 

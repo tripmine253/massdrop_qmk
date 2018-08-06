@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef RGBLIGHT_LIST_H
-#define RGBLIGHT_LIST_H
+#pragma once
 
 /*                            SET RGB List                            */
 #define rgblight_setrgb_white()       rgblight_setrgb (0xFF, 0xFF, 0xFF)
@@ -120,4 +119,4 @@
 #define rgblight_sethsv_magenta_at(at)     rgblight_sethsv_at (300, 255, 255, at)
 #define rgblight_sethsv_pink_at(at)        rgblight_sethsv_at (330, 128, 255, at)
 
-#endif
+

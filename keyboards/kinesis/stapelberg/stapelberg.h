@@ -1,5 +1,4 @@
-#ifndef KINESIS_STAPELBERG_H
-#define KINESIS_STAPELBERG_H
+#pragma once
 
 #include "quantum.h"
 
@@ -101,4 +100,4 @@ PC6 kEx Row: F2  F5  F8  F11 SLK KEY --
 
 
 
-#endif
+

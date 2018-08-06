@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KEYBOARDS_ERGODOX_INFINITY_SIMPLE_VISUALIZER_H_
-#define KEYBOARDS_ERGODOX_INFINITY_SIMPLE_VISUALIZER_H_
+#pragma once
 
 // Currently we are assuming that both the backlight and LCD are enabled
 // But it's entirely possible to write a custom visualizer that use only
@@ -120,4 +119,4 @@ void user_visualizer_resume(visualizer_state_t* state) {
     start_keyframe_animation(&default_startup_animation);
 }
 
-#endif /* KEYBOARDS_ERGODOX_INFINITY_SIMPLE_VISUALIZER_H_ */
+

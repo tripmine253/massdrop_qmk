@@ -15,8 +15,7 @@
  e-mail   :  kristianl@tkjelectronics.com
  */
 
-#ifndef _ps3enums_h
-#define _ps3enums_h
+#pragma once
 
 #include "controllerEnums.h"
 
@@ -138,4 +137,4 @@ enum StatusEnum {
         Bluetooth = (40 << 8) | 0x16, // Operating by Bluetooth and rumble is turned off
 };
 
-#endif
+

@@ -2,8 +2,7 @@
    Taken from http://www.avrfreaks.net/index.php?name=PNphpBB2&file=viewtopic&t=59453 
  */
 
-#ifndef NEW_H
-#define NEW_H
+#pragma once
 
 #include <stdlib.h>
 
@@ -18,5 +17,5 @@ extern "C" void __cxa_guard_abort (__guard *);
 
 extern "C" void __cxa_pure_virtual(void);
 
-#endif
+
 

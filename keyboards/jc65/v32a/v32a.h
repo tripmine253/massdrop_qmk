@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef V32A_H
-#define V32A_H
+#pragma once
 
 #include "quantum.h"
 
@@ -55,4 +54,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   {    KC_NO,KC_##K17,KC_##K27,KC_##K37,KC_##K47,KC_##K57,KC_##K67,KC_##K77,KC_##K87,   KC_NO,   KC_NO,KC_##KB7,KC_##KC7,KC_##KD7,KC_##KE7,KC_NO }  \
 }
 
-#endif
+

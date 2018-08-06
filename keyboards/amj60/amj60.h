@@ -1,5 +1,4 @@
-#ifndef AMJ60_H
-#define AMJ60_H
+#pragma once
 
 #include "quantum.h"
 
@@ -166,4 +165,4 @@
 void matrix_init_user(void);
 void matrix_scan_user(void);
 
-#endif
+

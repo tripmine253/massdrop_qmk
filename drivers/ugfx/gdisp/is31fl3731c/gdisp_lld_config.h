@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _GDISP_LLD_CONFIG_H
-#define _GDISP_LLD_CONFIG_H
+#pragma once
 
 #if GFX_USE_GDISP
 
@@ -33,4 +32,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #endif    /* GFX_USE_GDISP */
 
-#endif    /* _GDISP_LLD_CONFIG_H */
+

@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef KEYMAP_NEO2
-#define KEYMAP_NEO2
+#pragma once
 
 #include "keymap.h"
 #include "keymap_german.h"
@@ -75,4 +74,4 @@
 #define NEO_L2_L DE_LESS
 #define NEO_L2_R DE_ALGR
 
-#endif
+

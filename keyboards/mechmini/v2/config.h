@@ -12,8 +12,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef V2_CONFIG_H
-#define V2_CONFIG_H
+#pragma once
 
 #include "config_common.h"
 
@@ -74,4 +73,4 @@
 #define RGBLIGHT_VAL_STEP 8
 #endif
 
-#endif
+

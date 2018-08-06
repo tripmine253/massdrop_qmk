@@ -1,5 +1,4 @@
-#ifndef FORTITUDE60_H
-#define FORTITUDE60_H
+#pragma once
 
 #ifdef KEYBOARD_fortitude60_rev1
     #include "rev1.h"
@@ -23,4 +22,4 @@
                             KC_##LT0, KC_##LT1, KC_##LT2, KC_##LT3, KC_##LT4, KC_##RT4, KC_##RT3, KC_##RT2, KC_##RT1, KC_##RT0 \
     )
 
-#endif
+

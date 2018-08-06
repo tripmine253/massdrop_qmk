@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef RGBLIGHT_H
-#define RGBLIGHT_H
+#pragma once
 
 #ifdef RGBLIGHT_ANIMATIONS
 	#define RGBLIGHT_MODES 36
@@ -168,4 +167,4 @@ void rgblight_effect_christmas(void);
 void rgblight_effect_rgbtest(void);
 void rgblight_effect_alternating(void);
 
-#endif
+

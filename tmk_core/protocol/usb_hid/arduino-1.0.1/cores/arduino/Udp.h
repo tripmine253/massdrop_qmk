@@ -32,8 +32,7 @@
  * bjoern@cs.stanford.edu 12/30/2008
  */
 
-#ifndef udp_h
-#define udp_h
+#pragma once
 
 #include <Stream.h>
 #include <IPAddress.h>
@@ -85,4 +84,4 @@ protected:
   uint8_t* rawIPAddress(IPAddress& addr) { return addr.raw_address(); };
 };
 
-#endif
+

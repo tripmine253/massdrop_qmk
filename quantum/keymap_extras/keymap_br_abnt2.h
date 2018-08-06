@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KEYMAP_BR_ABNT2_H
-#define KEYMAP_BR_ABNT2_H
+#pragma once
 
 #include "keymap_common.h"
 
@@ -71,4 +70,4 @@
 #define BR_ASLS   LALT(KC_Q)
 #define BR_AQST   LALT(KC_W)
 
-#endif
+

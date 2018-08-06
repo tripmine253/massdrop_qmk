@@ -1,5 +1,4 @@
-#ifndef VITERBI_H
-#define VITERBI_H
+#pragma once
 
 #ifdef KEYBOARD_viterbi_rev1
     #include "rev1.h"
@@ -23,4 +22,4 @@
 
 #include "quantum.h"
 
-#endif
+

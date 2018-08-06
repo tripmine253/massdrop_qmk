@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef KEYMAP_COMMON_H
-#define KEYMAP_COMMON_H
+#pragma once
 
 #include "quantum.h"
 #include "quantum_keycodes.h"
@@ -40,4 +39,4 @@ void matrix_init_user(void);  // TODO port this to other PS2AVRGB boards
 
 #define KEYMAP KEYMAP_GRID
 
-#endif
+

@@ -10,8 +10,7 @@ the Free Software Foundation, either version 2 of the License, or
 (at your option) any later version.
 */
 
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "../../config.h"
 
@@ -34,4 +33,3 @@ the Free Software Foundation, either version 2 of the License, or
 #define IGNORE_MOD_TAP_INTERRUPT
 #define PERMISSIVE_HOLD
 
-#endif

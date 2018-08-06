@@ -14,10 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef LIGHT_H
-#define LIGHT_H
+#pragma once
 
 #include "planck.h"
 #include "rgb_matrix.h"
 
-#endif

@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include QMK_KEYBOARD_CONFIG_H
 
@@ -7,4 +6,4 @@
 #define SOLENOID_PIN F6
 #define SOLENOID_ACTIVE true
 
-#endif
+

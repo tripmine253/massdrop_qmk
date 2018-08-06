@@ -1,5 +1,4 @@
-#ifndef USERSPACE_CONFIG_H
-#define USERSPACE_CONFIG_H
+#pragma once
 
 #include "../../config.h"
 
@@ -30,4 +29,4 @@
 #define TAPPING_TERM    200
 #define IGNORE_MOD_TAP_INTERRUPT
 
-#endif
+

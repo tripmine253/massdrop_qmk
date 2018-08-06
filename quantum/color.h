@@ -15,8 +15,7 @@
  */
 
 
-#ifndef COLOR_H
-#define COLOR_H
+#pragma once
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -34,16 +33,16 @@
 
 typedef struct PACKED
 {
-	uint8_t r;
-	uint8_t g;
-	uint8_t b;
+    uint8_t r;
+    uint8_t g;
+    uint8_t b;
 } RGB;
 
 typedef struct PACKED
 {
-	uint8_t h;
-	uint8_t s;
-	uint8_t v;
+    uint8_t h;
+    uint8_t s;
+    uint8_t v;
 } HSV;
 
 #if defined(_MSC_VER)
@@ -52,4 +51,4 @@ typedef struct PACKED
 
 RGB hsv_to_rgb( HSV hsv );
 
-#endif // COLOR_H
+

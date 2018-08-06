@@ -14,8 +14,7 @@
     limitations under the License.
 */
 
-#ifndef _MCUCONF_H_
-#define _MCUCONF_H_
+#pragma once
 
 /*
  * STM32F0xx drivers configuration.
@@ -168,4 +167,4 @@
 #define STM32_USB_LOW_POWER_ON_SUSPEND      FALSE
 #define STM32_USB_USB1_LP_IRQ_PRIORITY      3
 
-#endif /* _MCUCONF_H_ */
+

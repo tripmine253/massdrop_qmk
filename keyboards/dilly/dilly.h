@@ -1,5 +1,4 @@
-#ifndef DILLY_H
-#define DILLY_H
+#pragma once
 
 #include "quantum.h"
 
@@ -28,4 +27,4 @@
         KC_##C1, KC_##C2, KC_##C3, KC_##C4, KC_##C5, KC_##C6, KC_##C7, KC_##C8, KC_##C9, KC_##C10 \
     )
 
-#endif
+

@@ -14,8 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef JM60_H
-#define JM60_H
+#pragma once
 
 #include "quantum.h"
 
@@ -50,4 +49,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	{k40, k41, k42, XXX, XXX, XXX, k46, XXX, XXX, XXX, k4a, k4b, k4c, k4d}  \
 }
 
-#endif
+

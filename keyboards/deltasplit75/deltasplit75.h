@@ -1,8 +1,6 @@
-#ifndef DELTASPLIT75_H
-#define DELTASPLIT75_H
+#pragma once
 
 #include "v2.h"
 
 #include "quantum.h"
 
-#endif

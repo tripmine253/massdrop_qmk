@@ -19,8 +19,7 @@
  * Please use spaces instead of tabs in this file.
  */
 
-#ifndef COMMON_GFXCONF_H
-#define COMMON_GFXCONF_H
+#pragma once
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -322,4 +321,4 @@
 #define GMISC_NEED_MATRIXFLOAT2D                     TRUE
 #define GMISC_NEED_MATRIXFIXED2D                     FALSE
 
-#endif /* COMMON_GFXCONF_H */
+

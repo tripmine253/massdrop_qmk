@@ -1,5 +1,4 @@
-#ifndef HHKB_AVR_H
-#define HHKB_AVR_H
+#pragma once
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -164,4 +163,4 @@ static inline void KEY_SELECT(uint8_t ROW, uint8_t COL)
 } while (0)
 #endif
 
-#endif
+

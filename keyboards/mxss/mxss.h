@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef MXSS_H
-#define MXSS_H
+#pragma once
 
 #include "quantum.h"
 #include "mxss_frontled.h"
@@ -204,4 +203,4 @@
     { k40, k41, k42, k43, KC_NO, KC_NO, k46, KC_NO, k48, KC_NO, k4A, k4B, k4C, k4D, k4E }, \
 }
 
-#endif
+

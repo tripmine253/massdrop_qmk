@@ -17,8 +17,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef KEYMAP_COMMON_H
-#define KEYMAP_COMMON_H
+#pragma once
 
 #include "quantum.h"
 #include "quantum_keycodes.h"
@@ -45,7 +44,7 @@ K00, K10, K20,           K56,                     K57, KB0, KC0, K96, K76, K66  
 { K07, K17,   K27, K37,   K47,   K57,   K67,   K77,   KE0,   KC_NO, KA7,   KB7, KC7,   KD7,   KE7   } \
 }
 
-#endif
+
 
 
 

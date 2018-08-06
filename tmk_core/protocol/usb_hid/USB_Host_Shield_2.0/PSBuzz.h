@@ -15,8 +15,7 @@
  e-mail   :  kristianl@tkjelectronics.com
  */
 
-#ifndef _psbuzz_h_
-#define _psbuzz_h_
+#pragma once
 
 #include "hiduniversal.h"
 #include "controllerEnums.h"
@@ -182,4 +181,4 @@ private:
         PSBUZZButtons psbuzzButtons, oldButtonState, buttonClickState;
         bool ledState[4];
 };
-#endif
+

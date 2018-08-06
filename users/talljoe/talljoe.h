@@ -1,5 +1,4 @@
-#ifndef USERSPACE
-#define USERSPACE
+#pragma once
 
 #include "quantum.h"
 
@@ -143,4 +142,4 @@ enum tap_dancers {
   )
 #endif
 
-#endif
+

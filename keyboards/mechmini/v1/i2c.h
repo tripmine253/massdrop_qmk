@@ -12,11 +12,10 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef __I2C_H__
-#define __I2C_H__
+#pragma once
 
 void i2c_init(void);
 void i2c_set_bitrate(uint16_t bitrate_khz);
 uint8_t i2c_send(uint8_t address, uint8_t *data, uint16_t length);
 
-#endif
+

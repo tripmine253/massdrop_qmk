@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef SPEEDO_H
-#define SPEEDO_H
+#pragma once
 
 #include "quantum.h"
 
@@ -37,5 +36,5 @@
     {   k52,   k53,   k54,   k55,   k56,   k57,   k58,   k59,   k60,   k61,   k62,   k63,   k64,   k65 } \
 }
 
-#endif
+
 

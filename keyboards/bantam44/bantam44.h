@@ -1,5 +1,4 @@
-#ifndef BANTAM44_H
-#define BANTAM44_H
+#pragma once
 
 #include "quantum.h"
 
@@ -20,4 +19,4 @@
   { K30, K31, K32, KC_NO, K33, KC_NO, K34, KC_NO, K35, K36, K37,   K38 }  \
 }
 
-#endif
+

@@ -1,5 +1,4 @@
-#ifndef REV2_H
-#define REV2_H
+#pragma once
 
 #include "../eco.h"
 
@@ -21,4 +20,4 @@
         { k31, k32, k33, k34, k35, k36, k37, k38, k39, k310, k311, k312, k313, k314 }  \
     }
 
-#endif
+

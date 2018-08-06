@@ -14,8 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef ACTION_TAPPING_H
-#define ACTION_TAPPING_H
+#pragma once
 
 
 
@@ -38,4 +37,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 void action_tapping_process(keyrecord_t record);
 #endif
 
-#endif
+

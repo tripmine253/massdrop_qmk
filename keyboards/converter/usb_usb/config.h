@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CONFIG_H
-#define CONFIG_H
+#pragma once
 
 // do not #include "config_common.h" because the pin names conflict with the USB HID code.
 // CUSTOM_MATRIX is defined it that file, though, and we need it, so we define it ourselves.
@@ -61,4 +60,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_MACRO
 //#define NO_ACTION_FUNCTION
 
-#endif
+

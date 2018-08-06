@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "config_common.h"
 
@@ -22,4 +21,4 @@
 #define RGBLIGHT_VAL_STEP 8
 #define RGBLIGHT_SLEEP
 
-#endif
+

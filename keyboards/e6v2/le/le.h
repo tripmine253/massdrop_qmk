@@ -1,5 +1,4 @@
-#ifndef LE_H
-#define LE_H
+#pragma once
 
 #include "quantum.h"
 
@@ -33,4 +32,4 @@
   { K40, KC_NO, K42, K43, KC_NO, KC_NO, KC_NO, K47, KC_NO, KC_NO, K4A, K4B, KC_NO, K4D, K4E   }, \
 }
 
-#endif
+

@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "config_common.h"
 
@@ -12,4 +11,4 @@
 #define RGBLIGHT_SAT_STEP   25 // units to step when in/decresing saturation
 #define RGBLIGHT_VAL_STEP   12 // units to step when in/decreasing value (brightness)
 
-#endif
+

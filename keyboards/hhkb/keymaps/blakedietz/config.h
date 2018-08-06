@@ -1,7 +1,6 @@
 // Based off of this section:
 // https://github.com/qmk/qmk_firmware/blob/master/doc/BUILD_GUIDE.md#the-configh-file
-#ifndef CONFIG_BLAKEDIETZ_H
-#define CONFIG_BLAKEDIETZ_H
+#pragma once
 
 // Bring in original defaults
 #include "../../config.h"
@@ -21,4 +20,4 @@
 // you hold it, and when this option isn't enabled, z rapidly followed by x actually sends Ctrl-x. That's bad.)
 #define IGNORE_MOD_TAP_INTERRUPT
 
-#endif
+

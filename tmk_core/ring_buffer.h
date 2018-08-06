@@ -1,5 +1,4 @@
-#ifndef RING_BUFFER_H
-#define RING_BUFFER_H
+#pragma once
 /*--------------------------------------------------------------------
  * Ring buffer to store scan codes from keyboard
  *------------------------------------------------------------------*/
@@ -48,4 +47,4 @@ static inline void rbuf_clear(void)
   }
 }
 
-#endif  /* RING_BUFFER_H */
+

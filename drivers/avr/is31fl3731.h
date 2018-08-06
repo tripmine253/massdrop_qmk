@@ -16,14 +16,13 @@
  */
 
 
-#ifndef IS31FL3731_DRIVER_H
-#define IS31FL3731_DRIVER_H
+#pragma once
 
 #include <stdint.h>
 #include <stdbool.h>
 
 typedef struct is31_led {
-	uint8_t driver:2;
+    uint8_t driver:2;
   uint8_t r;
   uint8_t g;
   uint8_t b;
@@ -211,4 +210,4 @@ void IS31FL3731_update_led_control_registers( uint8_t addr1, uint8_t addr2 );
 
 
 
-#endif // IS31FL3731_DRIVER_H
+

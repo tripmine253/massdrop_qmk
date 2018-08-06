@@ -2,8 +2,7 @@
  * WARNING: be careful changing this code, it is very timing dependent
  */
 
-#ifndef F_CPU
-#define F_CPU 16000000
+#pragma once
 #endif
 
 #include <avr/io.h>
@@ -227,4 +226,4 @@ int serial_update_buffers(void) {
   return 0;
 }
 
-#endif
+

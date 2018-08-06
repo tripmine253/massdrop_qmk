@@ -1,5 +1,4 @@
-#ifndef REV2_H
-#define REV2_H
+#pragma once
 
 #include "66.h"
 
@@ -92,4 +91,4 @@
     { KC_NO, KC_NO, k92, k93, k94, k95, k96, k97 }  \
 }
 
-#endif
+

@@ -1,5 +1,4 @@
-#ifndef CONFIG_KEYMAP_H
-#define CONFIG_KEYMAP_H
+#pragma once
 
 #include "config_common.h"
 
@@ -21,4 +20,4 @@
 
 #define ENCODER_RESOLUTION 4
 
-#endif
+

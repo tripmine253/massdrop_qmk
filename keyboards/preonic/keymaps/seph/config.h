@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "../../config.h"
 
@@ -18,4 +17,4 @@
 #define RGBLIGHT_VAL_STEP 17
 
 
-#endif
+

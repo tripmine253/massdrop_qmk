@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef KEYMAP_NORWEGIAN_H
-#define KEYMAP_NORWEGIAN_H
+#pragma once
 
 #include "keymap_nordic.h"
 
@@ -22,22 +21,22 @@
 
 // Norwegian redifinitions from the nordic keyset
 #undef NO_ACUT
-#define NO_ACUT	ALGR(NO_BSLS)  // ´
+#define NO_ACUT ALGR(NO_BSLS)  // ´
 #undef NO_AE
-#define NO_AE	KC_QUOT  // æ
+#define NO_AE   KC_QUOT  // æ
 #undef NO_BSLS
 #define NO_BSLS KC_EQL  // '\'
 #undef NO_CIRC
 #define NO_CIRC LSFT(KC_RBRC)  // ^
 #undef NO_GRV
-#define NO_GRV	LSFT(NO_BSLS)  //
+#define NO_GRV  LSFT(NO_BSLS)  //
 #undef NO_OSLH
-#define NO_OSLH	KC_SCLN  // ø
+#define NO_OSLH KC_SCLN  // ø
 #undef NO_PIPE
 #define NO_PIPE KC_GRV  // |
 
 // Additional norwegian keys not defined in the nordic keyset
-#define NO_AA	KC_LBRC  // å
+#define NO_AA   KC_LBRC  // å
 #define NO_ASTR LSFT(KC_BSLS)  // *
 
 // Norwegian unique MAC characters
@@ -53,4 +52,4 @@
 #define NO_PIPE_MAC ALGR(KC_7)  // |
 #define NO_RCBR_MAC ALGR(LSFT(KC_9))  // }
 
-#endif
+

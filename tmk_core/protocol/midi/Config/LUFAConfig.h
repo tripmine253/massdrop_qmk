@@ -39,8 +39,7 @@
  *  manual section "Summary of Compile Tokens".
  */
 
-#ifndef _LUFA_CONFIG_H_
-#define _LUFA_CONFIG_H_
+#pragma once
 
 	#if (ARCH == ARCH_AVR8)
 
@@ -90,4 +89,4 @@
 		#error Unsupported architecture for this LUFA configuration file.
 
 	#endif
-#endif
+

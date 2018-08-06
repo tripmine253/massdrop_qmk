@@ -1,5 +1,4 @@
-#ifndef STAPELBERG_CONFIG_H
-#define STAPELBERG_CONFIG_H
+#pragma once
 
 #include "../config.h"
 
@@ -47,4 +46,4 @@
 )
 
 
-#endif
+

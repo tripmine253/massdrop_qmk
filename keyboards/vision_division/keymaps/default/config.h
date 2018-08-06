@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "../../config.h"
 #include "matrix_types.h"
@@ -78,4 +77,3 @@ KEYMAP_MASTER(MATRIX_LAYER,                      NUMERIC_NORMAL,          HOMING
 )
 */
 
-#endif

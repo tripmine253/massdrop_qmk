@@ -16,8 +16,7 @@
 */
 #include QMK_KEYBOARD_H
 
-#ifndef ericgebhart
-#define ericgebhart
+#pragma once
 
 #include "quantum.h"
 #include "process_keycode/process_tap_dance.h"
@@ -426,4 +425,4 @@ void x_reset (qk_tap_dance_state_t *state, void *user_data);
 #define ___LAYERS_L4___ TO(MDIA), TO(SYMB_ON_BEPO), TO(SYMB)
 
 
-#endif
+

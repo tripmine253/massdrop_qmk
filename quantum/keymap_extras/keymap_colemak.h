@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef KEYMAP_COLEMAK_H
-#define KEYMAP_COLEMAK_H
+#pragma once
 
 #include "keymap.h"
 // For software implementation of colemak
@@ -87,4 +86,4 @@
 #define KC_CM_DOT  CM_DOT
 #define KC_CM_SLSH CM_SLSH
 
-#endif
+

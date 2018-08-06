@@ -1,5 +1,4 @@
-#ifndef TIGER_LILY_H
-#define TIGER_LILY_H
+#pragma once
 
 #include "quantum.h"
 
@@ -68,4 +67,4 @@
 /* 7 */ {   KA7,    KB7,    KC7,    KD7,    KE7,    KF7,    KG7,    KH7,    KI7,    KJ7,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KO7,    KC_NO,  KQ7,    KR7     }  \
 }
 
-#endif
+

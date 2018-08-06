@@ -15,8 +15,7 @@
  e-mail   :  kristianl@tkjelectronics.com
  */
 
-#ifndef _controllerenums_h
-#define _controllerenums_h
+#pragma once
 
 /**
  * This header file is used to store different enums for the controllers,
@@ -201,4 +200,4 @@ enum AngleEnum {
         Roll = 0x02,
 };
 
-#endif
+

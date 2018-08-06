@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "../../config.h"
 
@@ -8,4 +7,4 @@
 #define NO_AUTO_SHIFT_NUMERIC
 #define USB_MAX_POWER_CONSUMPTION 50
 
-#endif
+

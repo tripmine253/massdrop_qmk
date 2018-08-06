@@ -1,5 +1,4 @@
-#ifndef SUSPEND_H
-#define SUSPEND_H
+#pragma once
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -15,4 +14,4 @@ void suspend_wakeup_init_kb(void);
 void suspend_power_down_user (void);
 void suspend_power_down_kb(void);
 
-#endif
+

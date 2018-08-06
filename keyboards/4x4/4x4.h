@@ -1,6 +1,5 @@
 
-#ifndef FOURX4_H
-#define FOURX4_H
+#pragma once
 
 #include "quantum.h"
 #define ___ KC_NO
@@ -59,4 +58,4 @@
     { K30, K31, K32, K33, K34, K35, K35, K37, K38, K39, K3a, K3b, K3c, K3d, K3e, K3f } \
 }
 
-#endif
+

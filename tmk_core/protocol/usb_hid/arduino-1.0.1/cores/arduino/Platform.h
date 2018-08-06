@@ -1,6 +1,5 @@
 
-#ifndef __PLATFORM_H__
-#define __PLATFORM_H__
+#pragma once
 
 #include <inttypes.h>
 #include <avr/pgmspace.h>
@@ -15,9 +14,9 @@ typedef unsigned long u32;
 #include "Arduino.h"
 
 #if defined(USBCON)
-	#include "USBDesc.h"
-	#include "USBCore.h"
-	#include "USBAPI.h"
+    #include "USBDesc.h"
+    #include "USBCore.h"
+    #include "USBAPI.h"
 #endif /* if defined(USBCON) */
 
-#endif
+

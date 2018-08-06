@@ -1,5 +1,4 @@
-#ifndef TRAVELLER_H
-#define TRAVELLER_H
+#pragma once
 
 #include "quantum.h"
 #include "led.h"
@@ -29,4 +28,4 @@
         { k30, k31, k32, k33, k34, k35, k36,   k37, k38, k39, k3a, k3b, k3c } \
 }
 
-#endif
+

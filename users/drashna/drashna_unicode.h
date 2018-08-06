@@ -1,5 +1,4 @@
-#ifndef UNICODE_USERSPACE_H
-#define UNICODE_USERSPACE_H
+#pragma once
 
 
 
@@ -68,4 +67,4 @@ const uint32_t PROGMEM unicode_map[] = {
   [DEGREE]    = 0x000B0
  };
 
- #endif
+ 

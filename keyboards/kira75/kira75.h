@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef KIRA75_H
-#define KIRA75_H
+#pragma once
 
 #include "quantum.h"
 
@@ -47,4 +46,4 @@ inline void num_led_off(void)     { DDRD &= ~(1<<6); PORTD &= ~(1<<6); }
     { K50,   K51,   KC_NO, K53, KC_NO, KC_NO, K56, KC_NO, KC_NO, KC_NO, K5A, K5B, KC_NO, K5D, K5E,   K5F }  \
 }
 
-#endif
+

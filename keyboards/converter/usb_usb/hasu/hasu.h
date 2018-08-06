@@ -1,6 +1,5 @@
-#ifndef HASU_H
-#define HASU_H
+#pragma once
 
 #include QMK_KEYBOARD_H
 
-#endif
+

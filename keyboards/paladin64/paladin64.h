@@ -1,5 +1,4 @@
-#ifndef PALADIN64_H
-#define PALADIN64_H
+#pragma once
 
 #include "quantum.h"
 
@@ -89,4 +88,4 @@
 }
 
 
-#endif
+

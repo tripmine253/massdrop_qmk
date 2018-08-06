@@ -15,8 +15,7 @@
  e-mail   :  kristianl@tkjelectronics.com
  */
 
-#ifndef _btd_h_
-#define _btd_h_
+#pragma once
 
 #include "Usb.h"
 #include "hid.h"
@@ -617,4 +616,4 @@ protected:
         uint8_t identifier;
 };
 
-#endif
+

@@ -14,8 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef ACTION_CODE_H
-#define ACTION_CODE_H
+#pragma once
 
 /** \brief Action codes
  *
@@ -343,4 +342,4 @@ enum swap_hands_param_tap_op {
 #define ACTION_SWAP_HANDS_ON()          ACTION(ACT_SWAP_HANDS, OP_SH_ON)
 #define ACTION_SWAP_HANDS_OFF()         ACTION(ACT_SWAP_HANDS, OP_SH_OFF)
 
-#endif /* ACTION_CODE_H */
+

@@ -1,5 +1,4 @@
-#ifndef SPLIT_KEYBOARD_UTIL_H
-#define SPLIT_KEYBOARD_UTIL_H
+#pragma once
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -20,4 +19,4 @@ void keyboard_slave_loop(void);
 
 void matrix_master_OLED_init (void);
 
-#endif
+

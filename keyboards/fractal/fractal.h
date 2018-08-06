@@ -1,5 +1,4 @@
-#ifndef FRACTAL_H
-#define FRACTAL_H
+#pragma once
 
 #include "quantum.h"
 
@@ -33,4 +32,4 @@
 
 #define KEYMAP LAYOUT_preonic_mit
 
-#endif
+

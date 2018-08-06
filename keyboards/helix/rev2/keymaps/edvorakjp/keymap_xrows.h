@@ -1,5 +1,4 @@
-#ifndef KEYMAP_XROWS_H
-#define KEYMAP_XROWS_H
+#pragma once
 
 #include "edvorakjp.h"
 
@@ -25,4 +24,4 @@ enum custom_keycodes {
 #define KC_EDJP EDVORAK
 #define KC_QWER QWERTY
 
-#endif
+

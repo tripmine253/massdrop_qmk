@@ -21,8 +21,7 @@ development environment.
 Thanks to Oleg Semyonov for his help with the IAR tools port!
 */
 
-#ifndef __usbportability_h_INCLUDED__
-#define __usbportability_h_INCLUDED__
+#pragma once
 
 /* We check explicitly for IAR and CodeVision. Default is avr-gcc/avr-libc. */
 
@@ -31,7 +30,7 @@ Thanks to Oleg Semyonov for his help with the IAR tools port!
 /* ------------------------------------------------------------------------- */
 
 #ifndef ENABLE_BIT_DEFINITIONS
-#   define ENABLE_BIT_DEFINITIONS	1   /* Enable bit definitions */
+#   define ENABLE_BIT_DEFINITIONS   1   /* Enable bit definitions */
 #endif
 
 /* Include IAR headers */
@@ -141,4 +140,4 @@ static inline void  sei(void)
 #ifndef PRG_RDB
 #   define PRG_RDB(addr)    USB_READ_FLASH(addr)
 #endif
-#endif  /* __usbportability_h_INCLUDED__ */
+

@@ -1,6 +1,4 @@
-#ifndef SUBATOMIC_H
-#define SUBATOMIC_H
+#pragma once
 
 #include "quantum.h"
 
-#endif

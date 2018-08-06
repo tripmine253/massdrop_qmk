@@ -15,8 +15,7 @@
  */
 #include "musical_notes.h"
 
-#ifndef SONG_LIST_H
-#define SONG_LIST_H
+#pragma once
 
 #define NO_SOUND
 
@@ -472,4 +471,4 @@
     H__NOTE(_AS4), W__NOTE(_GS4), W__NOTE(_GS4), W__NOTE(_FS4), W__NOTE(_GS4), \
     H__NOTE(_AS4), WD_NOTE(_DS4)
 
-#endif
+

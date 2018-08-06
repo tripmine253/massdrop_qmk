@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KEYMAP_HUNGARIAN
-#define KEYMAP_HUNGARIAN
+#pragma once
 
 #include "keymap.h"
 
@@ -96,7 +95,7 @@
 #define HU_RPRN LSFT(HU_9) // )
 
 // í,y row
-#define HU_II	KC_NUBS
+#define HU_II   KC_NUBS
 #define HU_QST  LSFT(HU_COMM) // ?
 #define HU_COLN LSFT(HU_DOT) // :
 #define HU_UNDS LSFT(HU_MINS) // _
@@ -137,4 +136,4 @@
 #define HU_SCLN ALGR(HU_COMM) // ;
 #define HU_ASTR ALGR(HU_MINS) // *
 
-#endif
+

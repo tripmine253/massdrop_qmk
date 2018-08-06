@@ -35,8 +35,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
 
-#ifndef NO_DEBUG
-#define NO_DEBUG
+#pragma once
 #endif // !NO_DEBUG
 #ifndef NO_PRINT
 #define NO_PRINT
@@ -57,7 +56,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef AUDIO_ENABLE
 #define C6_AUDIO
 #define NO_MUSIC_MODE
-#endif
+
 
 #define LAYOUT_ortho_5x7( \
     L00, L01, L02, L03, L04, L05, L06, \

@@ -1,5 +1,4 @@
-#ifndef S60XRGB_H
-#define S60XRGB_H
+#pragma once
 
 #include "quantum.h"
 
@@ -83,4 +82,4 @@
   { KC_##K40, KC_##K41, KC_##K42, XXX,      XXX,      XXX,      KC_##K46, XXX,      XXX,      XXX,      KC_##K4A, KC_##K4B, KC_##K4C, KC_##K4D, XXX      }  \
 }
 
-#endif
+

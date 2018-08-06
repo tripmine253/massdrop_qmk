@@ -1,5 +1,4 @@
-#ifndef EAGLE_VIPER_H
-#define EAGLE_VIPER_H
+#pragma once
 
 #include "quantum.h"
 
@@ -7,4 +6,4 @@
     #include "v2.h"
 #endif
 
-#endif
+

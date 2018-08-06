@@ -1,5 +1,4 @@
-#ifndef DEFAULT_CONFIG_H
-#define DEFAULT_CONFIG_H
+#pragma once
 
 #include "config_common.h"
 
@@ -22,4 +21,4 @@
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
 
-#endif
+

@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef PHANTOM_H
-#define PHANTOM_H
+#pragma once
 
 #include "quantum.h"
 
@@ -102,4 +101,4 @@
     K50,   K51,   K52,   KC_NO,        KC_NO, K57,   KC_NO,               KC_NO, K5B,   K5C,   K5D,          K5E,   K5F,   K5G    \
 )
 
-#endif
+

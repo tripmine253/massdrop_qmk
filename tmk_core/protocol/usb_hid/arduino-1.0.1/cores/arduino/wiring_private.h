@@ -22,8 +22,7 @@
   $Id: wiring.h 239 2007-01-12 17:58:39Z mellis $
 */
 
-#ifndef WiringPrivate_h
-#define WiringPrivate_h
+#pragma once
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
@@ -66,4 +65,4 @@ typedef void (*voidFuncPtr)(void);
 } // extern "C"
 #endif
 
-#endif
+

@@ -25,8 +25,7 @@
  * @{
  */
 
-#ifndef _CHCONF_H_
-#define _CHCONF_H_
+#pragma once
 
 #define _CHIBIOS_RT_CONF_
 
@@ -519,6 +518,6 @@
 /* Port-specific settings (override port settings defaulted in chcore.h).    */
 /*===========================================================================*/
 
-#endif  /* _CHCONF_H_ */
+
 
 /** @} */

@@ -5,8 +5,7 @@
  *              http://ugfx.org/license.html
  */
 
-#ifndef _GDISP_LLD_CONFIG_H
-#define _GDISP_LLD_CONFIG_H
+#pragma once
 
 #if GFX_USE_GDISP
 
@@ -24,4 +23,4 @@
 
 #endif    /* GFX_USE_GDISP */
 
-#endif    /* _GDISP_LLD_CONFIG_H */
+

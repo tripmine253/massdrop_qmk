@@ -1,5 +1,4 @@
-#ifndef NQN_COMMON_H
-#define NQN_COMMON_H
+#pragma once
 
 
 /*
@@ -11,4 +10,4 @@ This file holds some commen NQN definitions
 #define XXXXXXX KC_NO
 
 
-#endif
+

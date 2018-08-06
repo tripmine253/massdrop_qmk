@@ -1,5 +1,4 @@
-#ifndef ALVICSTEP_CONFIG_H
-#define ALVICSTEP_CONFIG_H
+#pragma once
 
 #include "../config.h"
 
@@ -32,4 +31,4 @@
 #define DIODE_DIRECTION COL2ROW
  
 
-#endif
+

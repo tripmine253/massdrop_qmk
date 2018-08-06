@@ -20,8 +20,7 @@
  */
 
 
-#ifndef _xboxone_h_
-#define _xboxone_h_
+#pragma once
 
 #include "Usb.h"
 #include "xboxEnums.h"
@@ -169,4 +168,4 @@ private:
         /* Private commands */
         uint8_t XboxCommand(uint8_t* data, uint16_t nbytes);
 };
-#endif
+

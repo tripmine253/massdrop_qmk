@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef KC60SE_H
-#define KC60SE_H
+#pragma once
 
 #include "quantum.h"
 
@@ -78,4 +77,4 @@ inline void kc60se_caps_led_off(void) { DDRB &= ~(1<<2); PORTB &= ~(1<<2); }
 }
 
 
-#endif
+

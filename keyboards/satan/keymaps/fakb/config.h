@@ -1,5 +1,4 @@
-#ifndef CONFIG_H
-#define CONFIG_H
+#pragma once
 
 #include "config_common.h"
 
@@ -89,4 +88,4 @@
 #undef RGB_DI_PIN 
 #define RGB_DI_PIN B2
 
-#endif
+

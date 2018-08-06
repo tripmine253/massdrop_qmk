@@ -1,5 +1,4 @@
-#ifndef USERSPACE
-#define USERSPACE
+#pragma once
 
 #include "quantum.h"
 
@@ -15,4 +14,4 @@ enum custom_keycodes { CK_SAFE = SAFE_RANGE, RGUP, RGDWN, NEWPLACEHOLDER };
 #define _VL 3 // The shifted up layer
 #define _AL 4 // The assorted layer
 
-#endif
+

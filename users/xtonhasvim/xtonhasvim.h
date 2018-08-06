@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef USERSPACE
-#define USERSPACE
+#pragma once
 
 #include QMK_KEYBOARD_H
 #include "action_layer.h"
@@ -63,4 +62,4 @@ enum xtonhasvim_layers {
 };
 
 
-#endif
+

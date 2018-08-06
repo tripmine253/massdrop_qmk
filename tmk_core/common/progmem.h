@@ -1,5 +1,4 @@
-#ifndef PROGMEM_H
-#define PROGMEM_H 1
+#pragma once
 
 #if defined(__AVR__)
 #   include <avr/pgmspace.h>
@@ -10,4 +9,4 @@
 #   define pgm_read_dword(p)    *((uint32_t*)p)
 #endif
 
-#endif
+

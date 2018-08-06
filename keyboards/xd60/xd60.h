@@ -1,5 +1,4 @@
-#ifndef XD60_H
-#define XD60_H
+#pragma once
 
 #include "quantum.h"
 #include "led.h"
@@ -48,4 +47,4 @@ inline void xd60_bl_led_off(void)     { DDRF &= ~(1<<5); PORTF &= ~(1<<5); }
     { K40, K41,   K42, KC_NO, KC_NO, K45,  KC_NO, KC_NO, KC_NO, KC_NO, K4A, K4B, K4C,   K4D }   \
 }
 
-#endif
+

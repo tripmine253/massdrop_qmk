@@ -14,8 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef K_TYPE_H
-#define K_TYPE_H
+#pragma once
 
 #include "quantum.h"
 
@@ -39,4 +38,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     {   K10,   K20, KC_NO,   K38, KC_NO,   K57, KC_NO,   K74,   K82, KC_NO, }, \
 }
 
-#endif
+

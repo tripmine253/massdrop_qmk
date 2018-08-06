@@ -1,5 +1,4 @@
-#ifndef SIXBALL_H
-#define SIXBALL_H
+#pragma once
 
 #include "quantum.h"
 
@@ -11,4 +10,4 @@
     { k02, k03, k06, k05, k04, k01 } \
 } 
 
-#endif
+

@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef DEFAULT_ANIMATIONS_H_
-#define DEFAULT_ANIMATIONS_H_
+#pragma once
 
 #include "visualizer.h"
 
@@ -27,4 +26,4 @@ extern keyframe_animation_t default_suspend_animation;
 // cases
 extern keyframe_animation_t led_test_animation;
 
-#endif /* DEFAULT_ANIMATIONS_H_ */
+

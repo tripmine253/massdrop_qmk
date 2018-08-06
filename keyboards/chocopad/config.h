@@ -1,5 +1,4 @@
-#ifndef CONFIG_H
-#define CONFIG_H
+#pragma once
 
 #include "config_common.h"
 
@@ -56,4 +55,3 @@
 #define ws2812_PORTREG  PORTD
 #define ws2812_DDRREG   DDRD
 
-#endif

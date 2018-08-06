@@ -1,5 +1,4 @@
-#ifndef CONFIG_CINAECO_H
-#define CONFIG_CINAECO_H
+#pragma once
 
 #include "../../config.h"
 
@@ -17,4 +16,4 @@
 // Uncomment to enable NKRO by default. May cause issues with KVM switches.
 //#define FORCE_NKRO
 
-#endif
+

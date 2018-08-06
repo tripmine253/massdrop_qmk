@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef QUANTUM_KEYCODES_H
-#define QUANTUM_KEYCODES_H
+#pragma once
 
 #ifndef MIDI_ENABLE_STRICT
 #define MIDI_ENABLE_STRICT 0
@@ -688,4 +687,4 @@ enum quantum_keycodes {
   #define SH_OFF     (QK_SWAP_HANDS | OP_SH_OFF)
 #endif
 
-#endif // QUANTUM_KEYCODES_H
+

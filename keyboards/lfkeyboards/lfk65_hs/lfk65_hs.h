@@ -1,5 +1,4 @@
-#ifndef LFK65_HS_H
-#define LFK65_HS_H
+#pragma once
 
 /* if the kb.h file exists (because we're running from qmkbuilder) include it */
 #ifdef __has_include
@@ -79,4 +78,4 @@ void reset_keyboard_kb(void);
     {k51, k52, k53, KC_NO, KC_NO, KC_NO, k57, KC_NO, KC_NO, KC_NO, k5B, k5C, k5D, k5E, KC_NO, KC_NO} \
 }
 
-#endif //LFK65_HS_H
+

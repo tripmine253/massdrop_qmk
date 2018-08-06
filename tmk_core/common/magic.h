@@ -1,6 +1,5 @@
-#ifndef MAGIC_H
-#define MAGIC_H
+#pragma once
 
 void magic(void);
 
-#endif
+

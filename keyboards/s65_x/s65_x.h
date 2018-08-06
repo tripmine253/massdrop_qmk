@@ -1,5 +1,4 @@
-#ifndef S65X_H
-#define S65X_H
+#pragma once
 
 #include "quantum.h"
 
@@ -66,4 +65,4 @@
 void matrix_init_user(void);
 void matrix_scan_user(void);
 
-#endif
+

@@ -1,5 +1,4 @@
-#ifndef REV1_H
-#define REV1_H
+#pragma once
 
 #include "fortitude60.h"
 
@@ -39,4 +38,4 @@
     { RT0, RT1, RT2, RT3, RT4, RT5 } \
   }
 
-#endif
+

@@ -47,8 +47,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 #include <stdbool.h>
 
-#ifndef NEXT_KBD_H
-#define NEXT_KBD_H
+#pragma once
 
 #define NEXT_KBD_KMBUS_IDLE 0x300600
 #define NEXT_KBD_TIMING     50
@@ -60,4 +59,4 @@ void next_kbd_init(void);
 void next_kbd_set_leds(bool left, bool right);
 uint32_t next_kbd_recv(void);
 
-#endif
+

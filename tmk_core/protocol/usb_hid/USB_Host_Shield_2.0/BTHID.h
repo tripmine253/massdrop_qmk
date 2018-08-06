@@ -15,8 +15,7 @@
  e-mail   :  kristianl@tkjelectronics.com
  */
 
-#ifndef _bthid_h_
-#define _bthid_h_
+#pragma once
 
 #include "BTD.h"
 #include "hidboot.h"
@@ -152,4 +151,4 @@ private:
         uint8_t interrupt_dcid[2]; // L2CAP device CID for HID_Interrupt - Always 0x0071
         uint8_t l2cap_state;
 };
-#endif
+

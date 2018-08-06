@@ -35,8 +35,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef M0110_H
-#define M0110_H
+#pragma once
 
 
 /* port settings for clock and data line */
@@ -89,4 +88,4 @@ uint8_t m0110_recv_key(void);
 uint8_t m0110_inquiry(void);
 uint8_t m0110_instant(void);
 
-#endif
+

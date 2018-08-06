@@ -1,5 +1,4 @@
-#ifndef __mouserptparser_h__
-#define __mouserptparser_h__
+#pragma once
 
 class MouseRptParser : public MouseReportParser {
   protected:
@@ -43,4 +42,4 @@ void MouseRptParser::OnMiddleButtonDown(MOUSEINFO *mi) {
   Serial.println(F("M Butt Dn"));
 };
 
-#endif
+

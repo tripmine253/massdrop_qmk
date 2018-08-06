@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "../../config.h"
 
@@ -7,4 +6,4 @@
 #define RETRO_TAPPING
 #define PERMISSIVE_HOLD
 
-#endif
+

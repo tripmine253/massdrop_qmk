@@ -1,5 +1,4 @@
-#ifndef RBG_CONFIG_H
-#define RBG_CONFIG_H
+#pragma once
 
 #include "config_common.h"
 
@@ -29,4 +28,3 @@
 #define RGBLIGHT_VAL_STEP 8
 #endif
 
-#endif

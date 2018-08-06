@@ -1,5 +1,4 @@
-#ifndef ORTHO5X13_H
-#define ORTHO5X13_H
+#pragma once
 
 #include "quantum.h"
 
@@ -33,4 +32,3 @@
   { KC_##k40, KC_##k41, KC_##k42, KC_##k43, KC_##k44, KC_##k45, KC_NO,    KC_##k47, KC_##k48, KC_##k49, KC_##k4a, KC_##k4b, KC_##k4c } \
 }
 
-#endif

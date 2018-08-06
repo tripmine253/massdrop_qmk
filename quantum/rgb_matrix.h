@@ -15,8 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef RGB_MATRIX_H
-#define RGB_MATRIX_H
+#pragma once
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -136,4 +135,4 @@ void rgblight_decrease_speed(void);
 void rgblight_mode(uint8_t mode);
 uint32_t rgblight_get_mode(void);
 
-#endif
+

@@ -16,8 +16,7 @@
  */
 
 
-#ifndef _USB_MAIN_H_
-#define _USB_MAIN_H_
+#pragma once
 
 // TESTING
 // extern uint8_t blinkLed;
@@ -99,4 +98,4 @@ void console_flush_output(void);
 
 void sendchar_pf(void *p, char c);
 
-#endif /* _USB_MAIN_H_ */
+

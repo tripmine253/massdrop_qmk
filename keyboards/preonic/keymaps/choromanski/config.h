@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "config_common.h"
 
@@ -49,4 +48,3 @@
 #ifndef TAPPING_TERM
 #define TAPPING_TERM 200
 
-#endif

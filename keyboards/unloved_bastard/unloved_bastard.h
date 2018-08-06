@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef UNLOVED_BASTARD_H
-#define UNLOVED_BASTARD_H
+#pragma once
 
 #include "quantum.h"
 
@@ -60,4 +59,4 @@
 /* 7 */ {   KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KF7,    KG7,    KH7,    KI7,    KJ7,    KK7,  KL7,   KM7,  KN7,    KC_NO,  KP7,    KC_NO,  KC_NO   }  \
 }
 
-#endif
+

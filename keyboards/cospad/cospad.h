@@ -1,5 +1,4 @@
-#ifndef COSPAD_H
-#define COSPAD_H
+#pragma once
 
 #include "quantum.h"
 
@@ -87,4 +86,4 @@ inline void cospad_bl_led_togg(void) {
       PORTF |= (1<<7);
    }
 }
-#endif
+

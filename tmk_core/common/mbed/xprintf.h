@@ -1,5 +1,4 @@
-#ifndef XPRINTF_H
-#define XPRINTF_H
+#pragma once
 
 //#define xprintf(format, ...)            __xprintf(format, ##__VA_ARGS__)
 
@@ -14,4 +13,4 @@ int __xprintf(const char *format, ...);
 #endif
 
 
-#endif
+

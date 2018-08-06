@@ -22,8 +22,7 @@
  * @{
  */
 
-#ifndef USB_DRIVER_H
-#define USB_DRIVER_H
+#pragma once
 
 #include "hal_usb_cdc.h"
 
@@ -179,6 +178,6 @@ extern "C" {
 }
 #endif
 
-#endif /* USB_DRIVER_H */
+
 
 /** @} */

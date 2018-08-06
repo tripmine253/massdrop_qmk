@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef KBD8X_H
-#define KBD8X_H
+#pragma once
 
 #include "quantum.h"
 #include "led.h"
@@ -68,4 +67,4 @@ inline void scroll_led_off(void)  { DDRB &= ~(1<<2); PORTB &= ~(1<<2); }
     { K50, K51,   K52, K53, K54, K55, K56, K57, K58, K59, K5A, K5B, K5C, K5D,   K5E }  \
 }
 
-#endif
+

@@ -33,8 +33,7 @@ bool fauxclicky_enabled;
 // tempo in BPM
 //
 
-#ifndef FAUXCLICKY_TEMPO
-#define FAUXCLICKY_TEMPO TEMPO_DEFAULT
+#pragma once
 #endif
 
 // beep on press
@@ -86,7 +85,7 @@ bool fauxclicky_enabled;
 
 #ifndef FAUXCLICKY_DUTY_CYCLE
 #define FAUXCLICKY_DUTY_CYCLE OCR3A
-#endif
+
 
 //
 // definitions

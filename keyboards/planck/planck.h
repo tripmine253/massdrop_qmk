@@ -1,5 +1,4 @@
-#ifndef PLANCK_H
-#define PLANCK_H
+#pragma once
 
 #include "quantum.h"
 
@@ -141,4 +140,4 @@
 
 #endif
 
-#endif
+

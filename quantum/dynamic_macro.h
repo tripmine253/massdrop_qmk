@@ -15,8 +15,7 @@
  */
 
 /* Author: Wojciech Siewierski < wojciech dot siewierski at onet dot pl > */
-#ifndef DYNAMIC_MACROS_H
-#define DYNAMIC_MACROS_H
+#pragma once
 
 #include "action_layer.h"
 
@@ -300,4 +299,4 @@ bool process_record_dynamic_macro(uint16_t keycode, keyrecord_t *record)
 #undef DYNAMIC_MACRO_CURRENT_LENGTH
 #undef DYNAMIC_MACRO_CURRENT_CAPACITY
 
-#endif
+

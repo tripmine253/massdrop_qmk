@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KEYMAP_GERMAN
-#define KEYMAP_GERMAN
+#pragma once
 
 #include "keymap.h"
 
@@ -112,4 +111,4 @@
 #define DE_TILD ALGR(DE_PLUS) // ~
 #define DE_PIPE ALGR(DE_LESS) // |
 
-#endif
+

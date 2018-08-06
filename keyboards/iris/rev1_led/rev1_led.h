@@ -1,5 +1,4 @@
-#ifndef REV1_LED_H
-#define REV1_LED_H
+#pragma once
 
 #include "iris.h"
 
@@ -37,4 +36,4 @@
         { KC_NO, KC_NO, RT4, RT1, RT2, RT3 } \
     }
 
-#endif
+

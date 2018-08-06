@@ -1,5 +1,4 @@
-#ifndef LOSINGGENERATION_KEYMAP_H
-#define LOSINGGENERATION_KEYMAP_H
+#pragma once
 
 #include "action_layer.h"
 #include "eeconfig.h"
@@ -376,4 +375,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-#endif
+

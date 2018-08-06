@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "../../config.h"
 
@@ -37,4 +36,4 @@
 #define RSPC_KEY KC_9
 #define PERMISSIVE_HOLD
 
-#endif
+

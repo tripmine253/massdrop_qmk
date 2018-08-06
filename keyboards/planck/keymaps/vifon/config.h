@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "../../config.h"
 
@@ -34,4 +33,4 @@
  */
 #define DYNAMIC_MACRO_SIZE 256
 
-#endif
+

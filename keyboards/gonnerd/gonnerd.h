@@ -1,5 +1,4 @@
-#ifndef GONNERD_H
-#define GONNERD_H
+#pragma once
 
 #include "quantum.h"
 
@@ -39,4 +38,4 @@
         K06,   K05,   K78,                        K70,                        K72,   K73,   K74,    K75,      KC_NO, KC_NO, KC_NO   \
 )
 
-#endif
+

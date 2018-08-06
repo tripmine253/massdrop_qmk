@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PROTO_H
-#define PROTO_H
+#pragma once
 
 #include "qc60.h"
 
@@ -198,4 +197,4 @@
 }
 
 
-#endif
+

@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef TWOX1800_H
-#define TWOX1800_H
+#pragma once
 
 #include "quantum.h"
 
@@ -90,4 +89,4 @@
     { kb0, KC_NO, KC_NO, KC_NO, kb4, kb5, kb6, kb7, kb8, kb9, KC_NO } \
 }
 
-#endif
+

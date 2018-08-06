@@ -21,8 +21,7 @@
 #include "wait.h"
 #include "luts.h"
 
-#ifndef VOICES_H
-#define VOICES_H
+#pragma once
 
 float voice_envelope(float frequency);
 
@@ -49,4 +48,4 @@ void set_voice(voice_type v);
 void voice_iterate(void);
 void voice_deiterate(void);
 
-#endif
+

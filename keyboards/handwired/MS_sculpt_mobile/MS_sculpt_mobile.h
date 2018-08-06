@@ -1,5 +1,4 @@
-#ifndef MICROSOFT_SCULPT_MOBILE_H
-#define MICROSOFT_SCULPT_MOBILE_H
+#pragma once
 
 #include "quantum.h"
 
@@ -45,4 +44,4 @@
         {k7A, k7B, k7C, k7D, k7E, k7F, k7G, k7H, k7I, k7, k7J, k7K, k7L, k7M, k7N, k7O, k7P, k7Q},\
 }
 
-#endif
+

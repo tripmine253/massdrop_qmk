@@ -1,5 +1,4 @@
-#ifndef REDDOT_H
-#define REDDOT_H
+#pragma once
 
 #include "quantum.h"
 
@@ -17,4 +16,4 @@
     { k80, k81, k82, k83, k84, k85, k86,    KC_NO, k88, k89, k8A, k8B, k8C, k8D, k8E, k90, k91, k92, k93 } \
 }
 
-#endif
+

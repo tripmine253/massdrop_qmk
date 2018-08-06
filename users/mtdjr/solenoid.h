@@ -1,5 +1,4 @@
-#ifndef SOLENOID_H
-#define SOLENOID_H
+#pragma once
 
 #include <timer.h>
 #include "pincontrol.h"
@@ -96,4 +95,4 @@ void solenoid_setup(void) {
   pinMode(SOLENOID_PIN, PinDirectionOutput);
 }
 
-#endif
+

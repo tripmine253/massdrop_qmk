@@ -1,5 +1,4 @@
-#ifndef ECO_H
-#define ECO_H
+#pragma once
 
 #ifdef KEYBOARD_eco_rev1
     #include "rev1.h"
@@ -24,4 +23,4 @@
         { KC_##k31, KC_##k32, KC_##k33, KC_##k34, KC_##k35, KC_##k36, KC_##k37, KC_##k38, KC_##k39, KC_##k310, KC_##k311, KC_##k312, KC_##k313, KC_##k314 }  \
     }
 
-#endif
+

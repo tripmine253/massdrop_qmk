@@ -1,5 +1,4 @@
-#ifndef ZACH_COMMON_FUNCTIONS
-#define ZACH_COMMON_FUNCTIONS
+#pragma once
 #include "eeconfig.h"
 #include "action_layer.h"
 #include "keymap_colemak.h"
@@ -444,4 +443,4 @@ void music_off_user(void){          // Run when music is turned off
 }
 #endif
 
-#endif
+

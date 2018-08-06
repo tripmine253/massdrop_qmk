@@ -14,8 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef MATRIX_H
-#define MATRIX_H
+#pragma once
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -83,12 +82,12 @@ void matrix_init_user(void);
 void matrix_scan_user(void);
 
 #ifdef I2C_SPLIT
-	void slave_matrix_init(void);
-	uint8_t slave_matrix_scan(void);
+    void slave_matrix_init(void);
+    uint8_t slave_matrix_scan(void);
 #endif
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif
+

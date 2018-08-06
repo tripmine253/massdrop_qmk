@@ -12,8 +12,7 @@
 
 #include "backlight_custom.h"
 
-#ifndef BREATHING_PERIOD
-#define BREATHING_PERIOD 6
+#pragma once
 #endif
 
 #define breathing_min() do {breathing_counter = 0;} while (0)
@@ -137,4 +136,4 @@ void custom_breathing_handler(void) {
 }
 
 #endif // BACKLIGHT_BREATHING
-#endif  // BACKLIGHT_ENABLE
+

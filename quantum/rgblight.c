@@ -25,8 +25,7 @@
 #include "debug.h"
 #include "led_tables.h"
 
-#ifndef RGBLIGHT_LIMIT_VAL
-#define RGBLIGHT_LIMIT_VAL 255
+#pragma once
 #endif
 
 #define MIN(a,b) (((a)<(b))?(a):(b))
@@ -796,4 +795,4 @@ void rgblight_effect_alternating(void){
   pos = (pos + 1) % 2;
 }
 
-#endif /* RGBLIGHT_ANIMATIONS */
+

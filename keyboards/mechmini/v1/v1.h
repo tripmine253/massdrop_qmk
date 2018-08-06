@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef V1_H
-#define V2_H
+#pragma once
 
 #include "../mechmini.h"
 #include "keycode.h"
@@ -40,4 +39,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     { KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO } \
 }
 
-#endif
+

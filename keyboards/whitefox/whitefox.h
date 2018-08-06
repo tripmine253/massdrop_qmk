@@ -14,8 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef WHITEFOX_H
-#define WHITEFOX_H
+#pragma once
 
 #include "quantum.h"
 
@@ -102,4 +101,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     { K80, K81,   K82, K83,   K84, K85, K86, KC_NO }  \
 }
 
-#endif
+

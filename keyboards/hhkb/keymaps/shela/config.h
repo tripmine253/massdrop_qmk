@@ -1,5 +1,4 @@
-#ifndef CONFIG_SHELA_H
-#define CONFIG_SHELA_H
+#pragma once
 
 #include "../../config.h"
 
@@ -9,4 +8,4 @@
 #define ONESHOT_TAP_TOGGLE 2
 #define ONESHOT_TIMEOUT 2000
 
-#endif
+

@@ -14,8 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef ACTION_UTIL_H
-#define ACTION_UTIL_H
+#pragma once
 
 #include <stdint.h>
 #include "report.h"
@@ -96,4 +95,4 @@ uint8_t has_anymod(void);
 }
 #endif
 
-#endif
+

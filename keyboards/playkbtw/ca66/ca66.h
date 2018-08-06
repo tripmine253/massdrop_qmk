@@ -1,5 +1,4 @@
-#ifndef CA66_H
-#define CA66_H
+#pragma once
 
 #include "quantum.h"
 
@@ -17,4 +16,4 @@
   { KC_NO, K401,  K402,  K403,  K404,  KC_NO, K406,  KC_NO, K408,  K409,  K410,  K411,  K412,  K413,  K414 }  \
 }
 
-#endif
+

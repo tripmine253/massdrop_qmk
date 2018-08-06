@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CONFIG_H
-#define CONFIG_H
+#pragma once
 
 #include "config_common.h"
 
@@ -43,13 +42,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
 */
 //Pro micro pinout
-	#define MATRIX_ROW_PINS { B6, B2, B3, B1, F7 }
-	#define MATRIX_COL_PINS { F4, C6, D7, F5, B4, B5 }
-	#define UNUSED_PINS
+    #define MATRIX_ROW_PINS { B6, B2, B3, B1, F7 }
+    #define MATRIX_COL_PINS { F4, C6, D7, F5, B4, B5 }
+    #define UNUSED_PINS
 //Teensy 2 pinout
- 	//#define MATRIX_ROW_PINS { B6, F7, B2, B3, B1 }
-	//#define MATRIX_COL_PINS { F6, C6, D7, F5, B4, B5 }
-	//#define UNUSED_PINS
+    //#define MATRIX_ROW_PINS { B6, F7, B2, B3, B1 }
+    //#define MATRIX_COL_PINS { F6, C6, D7, F5, B4, B5 }
+    //#define UNUSED_PINS
 
 
 /* COL2ROW or ROW2COL */
@@ -92,4 +91,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_MACRO
 //#define NO_ACTION_FUNCTION
 
-#endif
+

@@ -1,5 +1,4 @@
-#ifndef FROSTY_FLAKE_H
-#define FROSTY_FLAKE_H
+#pragma once
 
 #include "quantum.h"
 
@@ -103,4 +102,4 @@
   KA4, KP2, KC6,                KK6,                KC0, KM3, KD0, KA1,   KO0, KK0, KL0  \
 )
 
-#endif
+

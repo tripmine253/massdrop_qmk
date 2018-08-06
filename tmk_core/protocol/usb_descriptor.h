@@ -41,8 +41,7 @@
  *  Header file for Descriptors.c.
  */
 
-#ifndef _DESCRIPTORS_H_
-#define _DESCRIPTORS_H_
+#pragma once
 
 #include <LUFA/Drivers/USB/USB.h>
 #ifdef PROTOCOL_CHIBIOS
@@ -277,4 +276,4 @@ uint16_t get_usb_descriptor(const uint16_t wValue,
                                                            (Revision & 0x0F) )
 #endif
 
-#endif
+

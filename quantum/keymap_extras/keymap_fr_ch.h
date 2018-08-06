@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef KEYMAP_FR_CH
-#define KEYMAP_FR_CH
+#pragma once
 
 #include "keymap.h"
 
@@ -110,4 +109,4 @@
 #define FR_CH_HASH ALGR(KC_3) // #
 #define FR_CH_ACUT ALGR(FR_CH_QUOT) // accent acute ´
 
-#endif
+

@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef SCRABBLEPAD_H
-#define SCRABBLEPAD_H
+#pragma once
 
 #include "quantum.h"
 
@@ -54,4 +53,4 @@
     { kE0, kE1, kE2, kE3, kE4, kE5, kE6, kE7, kE8, kE9, kEA, kEB, kEC, kED, kEE  } \
 }
 
-#endif
+

@@ -1,5 +1,4 @@
-#ifndef __kbdrptparser_h_
-#define __kbdrptparser_h_
+#pragma once
 
 class KbdRptParser : public KeyboardReportParser {
   protected:
@@ -102,4 +101,4 @@ void KbdRptParser::OnKeyPressed(uint8_t key) {
   Serial.println((char)key);
 };
 
-#endif
+

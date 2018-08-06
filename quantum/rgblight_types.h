@@ -20,8 +20,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef RGBLIGHT_TYPES
-#define RGBLIGHT_TYPES
+#pragma once
 
 #ifdef __AVR__
   #include <avr/io.h>
@@ -44,4 +43,4 @@
 struct cRGB  { uint8_t g; uint8_t r; uint8_t b; };
 struct cRGBW { uint8_t g; uint8_t r; uint8_t b; uint8_t w;};
 
-#endif
+

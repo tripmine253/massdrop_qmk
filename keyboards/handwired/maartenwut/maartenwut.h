@@ -1,5 +1,4 @@
-#ifndef MAARTENWUT_H
-#define MAARTENWUT_H
+#pragma once
 
 #include "quantum.h"
 
@@ -20,4 +19,3 @@
   {k40, k41, k42, k43, XXX, k45, XXX, k47, XXX, k49, k4a, k4b, k4c, k4d} \
 }
 
-#endif

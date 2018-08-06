@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /* Sendstring definitions for the Spanish layout */
-#ifndef SENDSTRING_SPANISH
-#define SENDSTRING_SPANISH
+#pragma once
 
 #include "keymap_spanish.h"
 
@@ -68,4 +67,4 @@ const uint8_t ascii_to_keycode_lut[0x80] PROGMEM = {
     KC_X, KC_Y, KC_Z, KC_LBRC, KC_BSLS, KC_RBRC, KC_GRV, KC_DEL
 };
 
-#endif
+

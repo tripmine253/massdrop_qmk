@@ -1,5 +1,4 @@
-#ifndef ACTION_PSEUDO_LUT_H
-#define ACTION_PSEUDO_LUT_H
+#pragma once
 
 #define SHIFT_BIT_SIZE (0xE7 / 8 + 1) // 1bit per 1key
 
@@ -12,4 +11,4 @@ uint8_t get_shift_bit(uint16_t);
 void add_shift_bit(uint16_t);
 void del_shift_bit(uint16_t);
 
-#endif
+

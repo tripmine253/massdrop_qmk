@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef REV1_CONFIG_H
-#define REV1_CONFIG_H
+#pragma once
 
 #include "../config.h"
 
@@ -33,4 +32,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define I2C_MASTER_LEFT
 //#define I2C_MASTER_RIGHT
  
-#endif
+

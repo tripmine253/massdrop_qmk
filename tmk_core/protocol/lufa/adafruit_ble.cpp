@@ -14,8 +14,7 @@
 // These are the pin assignments for the 32u4 boards.
 // You may define them to something else in your config.h
 // if yours is wired up differently.
-#ifndef AdafruitBleResetPin
-#define AdafruitBleResetPin D4
+#pragma once
 #endif
 
 #ifndef AdafruitBleCSPin
@@ -789,7 +788,7 @@ bool adafruit_ble_send_mouse_move(int8_t x, int8_t y, int8_t scroll,
   }
   return true;
 }
-#endif
+
 
 uint32_t adafruit_ble_read_battery_voltage(void) {
   return state.vbat;

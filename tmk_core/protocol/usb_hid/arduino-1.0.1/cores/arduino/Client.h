@@ -1,5 +1,4 @@
-#ifndef client_h
-#define client_h
+#pragma once
 #include "Print.h"
 #include "Stream.h"
 #include "IPAddress.h"
@@ -23,4 +22,4 @@ protected:
   uint8_t* rawIPAddress(IPAddress& addr) { return addr.raw_address(); };
 };
 
-#endif
+

@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef MECHMINI_H
-#define MECHMINI_H
+#pragma once
 
 #include "quantum.h"
 
@@ -27,4 +26,4 @@
     #include "v2.h"
 #endif
 
-#endif
+

@@ -1,5 +1,4 @@
-#ifndef USERSPACE_CONFIG_H
-#define USERSPACE_CONFIG_H
+#pragma once
 
 #ifndef QMK_KEYS_PER_SCAN
 #define QMK_KEYS_PER_SCAN 4
@@ -29,4 +28,4 @@
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
 
-#endif
+

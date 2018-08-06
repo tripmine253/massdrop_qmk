@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 // Number of backlight levels
 #undef  BACKLIGHT_LEVELS
@@ -22,4 +21,4 @@
 #define USE_SERIAL
 #define EE_HANDS
 
-#endif
+

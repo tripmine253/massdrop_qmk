@@ -1,11 +1,10 @@
-#ifndef KINESIS_H
-#define KINESIS_H
+#pragma once
 
 #ifdef KEYBOARD_kinesis_alvicstep
-	#include "alvicstep.h"
+    #include "alvicstep.h"
 #endif
 #ifdef KEYBOARD_kinesis_stapelberg
-	#include "stapelberg.h"
+    #include "stapelberg.h"
 #endif
 
 #include "quantum.h"
@@ -20,4 +19,4 @@ void keypad_led_on(void);
 
 
 
-#endif
+

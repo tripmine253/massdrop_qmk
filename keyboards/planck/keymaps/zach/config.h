@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "../../config.h"
 
@@ -59,4 +58,4 @@
 //#define DYNAMIC_MACRO_ENABLE    // Enable if you need to use the macro functionality
 //#define SPACE_CADET             // Parenthesis on L/R shift
 
-#endif
+

@@ -1,5 +1,4 @@
-#ifndef PILCROW_H
-#define PILCROW_H
+#pragma once
 
 #include "quantum.h"
 
@@ -20,4 +19,4 @@
     { k30, k31, k32, k33, k34, k35, k36, k37, k38, k39 } \
 }
 
-#endif
+

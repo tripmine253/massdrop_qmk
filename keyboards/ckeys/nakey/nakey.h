@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef NAKEY_H
-#define NAKEY_H
+#pragma once
 
 #include "quantum.h"
 
@@ -37,4 +36,4 @@
     { k40, KC_NO, k41, KC_NO }, \
 }
 
-#endif
+

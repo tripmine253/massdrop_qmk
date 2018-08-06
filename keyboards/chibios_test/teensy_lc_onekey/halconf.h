@@ -25,8 +25,7 @@
  * @{
  */
 
-#ifndef _HALCONF_H_
-#define _HALCONF_H_
+#pragma once
 
 #include "mcuconf.h"
 
@@ -348,7 +347,7 @@
 #define USB_USE_WAIT                TRUE
 #endif
 
-#endif /* _HALCONF_H_ */
+
 
 /** @} */
 

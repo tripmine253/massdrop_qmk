@@ -20,8 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * https://web.archive.org/web/20060218214400/http://www.usb.org/developers/devclass_docs/Hut1_12.pdf
  * or http://www.usb.org/developers/hidpage/Hut1_12v2.pdf (older)
  */
-#ifndef KEYCODE_H
-#define KEYCODE_H
+#pragma once
 
 /* FIXME: Add doxygen comments here */
 
@@ -501,4 +500,4 @@ enum internal_special_keycodes {
     KC_MS_ACCEL2        /* 0xFF */
 };
 
-#endif /* KEYCODE_H */
+

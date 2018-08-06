@@ -1,5 +1,4 @@
-#ifndef SPLIT_FLAGS_H
-#define SPLIT_FLAGS_H
+#pragma once
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -17,4 +16,3 @@ extern volatile bool BACKLIT_DIRTY;
 
 
 
-#endif

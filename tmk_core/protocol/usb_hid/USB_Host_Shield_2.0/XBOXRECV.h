@@ -17,8 +17,7 @@
  getBatteryLevel and checkStatus functions made by timstamp.co.uk found using BusHound from Perisoft.net
  */
 
-#ifndef _xboxrecv_h_
-#define _xboxrecv_h_
+#pragma once
 
 #include "Usb.h"
 #include "xboxEnums.h"
@@ -273,4 +272,4 @@ private:
         void XboxCommand(uint8_t controller, uint8_t* data, uint16_t nbytes);
         void checkStatus();
 };
-#endif
+

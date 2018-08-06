@@ -1,5 +1,4 @@
-#ifndef USERSPACE
-#define USERSPACE
+#pragma once
 
 #include "quantum.h"
 #include "action_layer.h"
@@ -72,4 +71,4 @@ bool process_record_layer(uint16_t keycode, keyrecord_t *record);
 bool process_record_ime(uint16_t keycode, keyrecord_t *record);
 bool process_record_user(uint16_t keycode, keyrecord_t *record);
 
-#endif
+

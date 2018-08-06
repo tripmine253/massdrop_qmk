@@ -19,9 +19,8 @@
  * Please use spaces instead of tabs in this file.
  */
 
-#ifndef _GFXCONF_H
-#define _GFXCONF_H
+#pragma once
 
 #include "common_gfxconf.h"
 
-#endif /* _GFXCONF_H */
+

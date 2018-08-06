@@ -1,5 +1,4 @@
-#ifndef PARSER_H
-#define PARSER_H
+#pragma once
 
 #include "hid.h"
 #include "report.h"
@@ -12,4 +11,4 @@ public:
     virtual void Parse(HID *hid, bool is_rpt_id, uint8_t len, uint8_t *buf);
 };
 
-#endif
+

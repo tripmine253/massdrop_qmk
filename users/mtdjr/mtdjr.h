@@ -1,5 +1,4 @@
-#ifndef USERSPACE
-#define USERSPACE
+#pragma once
 
 #include "quantum.h"
 
@@ -98,4 +97,4 @@ enum user_tapdance {
 #define KB_BLOF BL_OFF
 
 
-#endif
+

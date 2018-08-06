@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef IWRAP_H
-#define IWRAP_H
+#pragma once
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -46,4 +45,4 @@ bool iwrap_failed(void);
 uint8_t iwrap_connected(void);
 uint8_t iwrap_check_connection(void);
 
-#endif
+

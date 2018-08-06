@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef KEYBOARD_H
-#define KEYBOARD_H
+#pragma once
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -70,4 +69,4 @@ void keyboard_set_leds(uint8_t leds);
 }
 #endif
 
-#endif
+

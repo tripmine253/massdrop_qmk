@@ -1,5 +1,4 @@
-#ifndef MATRIX_TYPES_H
-#define MATRIX_TYPES_H
+#pragma once
 
 // Because the vision/division keyboard allows for multiple PCB configurations, the configuration
 // can get tricky. The PCB itself has 12 columns, but to achieve a full sized 14-column keyboard
@@ -165,4 +164,3 @@ KEYMAP_ROW_RIGHT_ ## _RIGHT_TYPE( k011, k012, k013, k014, k015, k016, k017, k018
 }
 
 
-#endif // MATRIX_TYPES_H

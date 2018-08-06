@@ -1,5 +1,4 @@
-#ifndef JD40_H
-#define JD40_H
+#pragma once
 
 #include "quantum.h"
 #include "led.h"
@@ -54,4 +53,4 @@ inline void gh60_wasd_leds_off(void)   	{ DDRF &= ~(1<<7); PORTF &= ~(1<<7); }
     { K35, K36, K37, K38, K39, KC_NO,    K40, K41, K42, K43, K44, KC_NO    }  \
 }
 
-#endif
+

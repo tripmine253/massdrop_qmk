@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef TESTS_TEST_COMMON_TEST_DRIVER_H_
-#define TESTS_TEST_COMMON_TEST_DRIVER_H_
+#pragma once
 
 #include "gmock/gmock.h"
 #include <stdint.h>
@@ -45,4 +44,4 @@ private:
 };
 
 
-#endif /* TESTS_TEST_COMMON_TEST_DRIVER_H_ */
+

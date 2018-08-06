@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /* Sendstring definitions for the Colemak layout */
-#ifndef SENDSTRING_COLEMAK
-#define SENDSTRING_COLEMAK
+#pragma once
 
 #include "keymap_colemak.h"
 
@@ -38,4 +37,4 @@ const uint8_t ascii_to_keycode_lut[0x80] PROGMEM = {
     CM_X, CM_Y, CM_Z, KC_LBRC, KC_BSLS, KC_RBRC, KC_GRV, KC_DEL
 };
 
-#endif
+

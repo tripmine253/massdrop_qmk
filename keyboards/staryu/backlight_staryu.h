@@ -1,5 +1,4 @@
-#ifndef STARYU_BL
-#define STARYU_BL
+#pragma once
 
 #include <stdint.h>
 
@@ -9,4 +8,4 @@ void backlight_led_on(uint8_t index);
 
 void backlight_led_off(uint8_t index);
 
-#endif
+

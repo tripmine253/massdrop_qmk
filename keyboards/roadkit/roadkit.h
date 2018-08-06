@@ -1,5 +1,4 @@
-#ifndef ROADKIT_H
-#define ROADKIT_H
+#pragma once
 
 #include "quantum.h"
 
@@ -30,4 +29,4 @@
     { K30,   K31,   K32,   K33 }  \
 }
 
-#endif
+

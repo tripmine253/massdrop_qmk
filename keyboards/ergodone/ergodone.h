@@ -1,5 +1,4 @@
-#ifndef ERGODOX_ERGODONE_H
-#define ERGODOX_ERGODONE_H
+#pragma once
 
 #include "quantum.h"
 #include <stdint.h>
@@ -179,4 +178,4 @@ inline void ergodox_led_all_set(uint8_t n)              {}
     { KC_NO,L51,L52,L53,L54,L55,L56,          R50,R51,R52,R53,R54,R55,KC_NO }  \
    }
 
-#endif
+

@@ -15,8 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef KEYBOARDS_ERGODOX_CONFIG_H_
-#define KEYBOARDS_ERGODOX_CONFIG_H_
+#pragma once
 
 #include QMK_KEYBOARD_CONFIG_H
 
@@ -61,4 +60,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 )
 
 
-#endif /* KEYBOARDS_ERGODOX_CONFIG_H_ */
+

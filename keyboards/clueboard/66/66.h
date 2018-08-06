@@ -1,5 +1,4 @@
-#ifndef CLUEBOARD_H
-#define CLUEBOARD_H
+#pragma once
 
 #include "quantum.h"
 
@@ -13,4 +12,4 @@
     #include "rev3.h"
 #endif
 
-#endif
+

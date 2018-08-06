@@ -29,8 +29,7 @@ extern rgblight_config_t rgblight_config;
 #define _ADJUST 16
 
 
-#ifndef BLUETOOTH_ENABLE
-#define OUT_BT KC_TRNS
+#pragma once
 #endif
 
 enum custom_keycodes {
@@ -243,7 +242,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         return false;
         break;
-#endif
+
   }
   return true;
 }

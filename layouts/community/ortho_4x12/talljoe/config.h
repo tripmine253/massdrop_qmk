@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include QMK_KEYBOARD_CONFIG_H
 #define SPACE_COUNT 3
@@ -19,4 +18,4 @@ LAYOUT_ortho_4x12(                                              \
 )
 
 
-#endif //CONFIG_USER_H
+

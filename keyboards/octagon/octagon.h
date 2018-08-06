@@ -1,5 +1,4 @@
-#ifndef OCTAGON_H
-#define OCTAGON_H
+#pragma once
 
 #include "quantum.h"
 
@@ -11,4 +10,4 @@
     #include "v2.h"
 #endif
 
-#endif
+

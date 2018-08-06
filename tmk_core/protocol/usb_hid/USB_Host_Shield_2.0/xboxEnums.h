@@ -15,8 +15,7 @@
  e-mail   :  kristianl@tkjelectronics.com
  */
 
-#ifndef _xboxenums_h
-#define _xboxenums_h
+#pragma once
 
 #include "controllerEnums.h"
 
@@ -62,4 +61,4 @@ const uint16_t XBOX_BUTTONS[] PROGMEM = {
         0x0008, // SYNC
 };
 
-#endif
+

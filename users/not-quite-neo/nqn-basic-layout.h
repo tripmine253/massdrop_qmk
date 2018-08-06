@@ -1,5 +1,4 @@
-#ifndef NQN_BASIC_LAYOUT_H
-#define NQN_BASIC_LAYOUT_H
+#pragma once
 
 /*
 This is the basic NQN layout
@@ -121,4 +120,4 @@ The naming convention for these blocks is
 #define L06_RIGHT_03 KC_PSCR, KC_SLCK, KC_PAUS,        KC_NLCK,       N_CUT
 
 
-#endif
+

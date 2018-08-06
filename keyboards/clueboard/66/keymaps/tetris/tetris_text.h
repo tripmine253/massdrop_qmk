@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef TETRIS_TEXT_H
-#define TETRIS_TEXT_H
+#pragma once
 
 //// to implement
 void tetris_send_up(void);
@@ -42,4 +41,4 @@ void tetris_start(uint8_t seed);
 // returns 0 when game is over
 int tetris_tick(int ms_since_previous_tick);
 
-#endif
+

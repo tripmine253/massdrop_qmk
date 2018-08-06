@@ -1,5 +1,4 @@
-#ifndef ERGO42_H
-#define ERGO42_H
+#pragma once
 
 #include "quantum.h"
 
@@ -24,4 +23,4 @@
 
 #define LAYOUT_kc LAYOUT_kc_ortho_4x14
 
-#endif
+

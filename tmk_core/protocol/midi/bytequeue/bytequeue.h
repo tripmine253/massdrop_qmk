@@ -17,8 +17,7 @@
 //You should have received a copy of the GNU General Public License
 //along with avr-bytequeue.  If not, see <http://www.gnu.org/licenses/>.
 
-#ifndef BYTEQUEUE_H
-#define BYTEQUEUE_H
+#pragma once
 
 #ifdef __cplusplus
 extern "C" {
@@ -30,10 +29,10 @@ extern "C" {
 typedef uint8_t byteQueueIndex_t;
 
 typedef struct {
-	byteQueueIndex_t start;
-	byteQueueIndex_t end;
-	byteQueueIndex_t length;
-	uint8_t * data;
+    byteQueueIndex_t start;
+    byteQueueIndex_t end;
+    byteQueueIndex_t length;
+    uint8_t * data;
 } byteQueue_t;
 
 //you must have a queue, an array of data which the queue will use, and the length of that array
@@ -55,5 +54,5 @@ void bytequeue_remove(byteQueue_t * queue, byteQueueIndex_t numToRemove);
 }
 #endif 
 
-#endif
+
 

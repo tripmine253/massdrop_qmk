@@ -18,8 +18,7 @@ e-mail   :  support@circuitsathome.com
 //pinout: D[4-7] -> GPOUT[4-7], RS-> GPOUT[2], E ->GPOUT[3]
 //
 
-#ifndef _Max_LCD_h_
-#define _Max_LCD_h_
+#pragma once
 
 #include "Usb.h"
 #include "Print.h"
@@ -103,4 +102,4 @@ private:
         uint8_t _numlines, _currline;
 };
 
-#endif
+

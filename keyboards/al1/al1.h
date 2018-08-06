@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef AL1_H
-#define AL1_H
+#pragma once
 
 #include "quantum.h"
 
@@ -55,4 +54,4 @@
     { K500, K501, K502, K503, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, K512, KC_NO, KC_NO, KC_NO} \
 }
 
-#endif
+

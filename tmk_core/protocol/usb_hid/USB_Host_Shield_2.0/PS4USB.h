@@ -15,8 +15,7 @@
  e-mail   :  kristianl@tkjelectronics.com
  */
 
-#ifndef _ps4usb_h_
-#define _ps4usb_h_
+#pragma once
 
 #include "hiduniversal.h"
 #include "PS4Parser.h"
@@ -127,4 +126,4 @@ protected:
 private:
         void (*pFuncOnInit)(void); // Pointer to function called in onInit()
 };
-#endif
+

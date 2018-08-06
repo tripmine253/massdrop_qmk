@@ -1,5 +1,4 @@
-#ifndef SSD1306_H
-#define SSD1306_H
+#pragma once
 
 #include <stdbool.h>
 #include <stdio.h>
@@ -90,4 +89,4 @@ void matrix_render(struct CharacterMatrix *matrix);
 
 
 
-#endif
+

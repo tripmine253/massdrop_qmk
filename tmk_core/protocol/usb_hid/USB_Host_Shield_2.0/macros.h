@@ -30,8 +30,7 @@ e-mail   :  support@circuitsathome.com
 #define output_if_between(v,l,h,wa,fp,mp,el) if(VALUE_BETWEEN(v,l,h)) output_pgm_message(wa,fp,mp[v-(l+1)],el);
 
 #define SWAP(a, b) (((a) ^= (b)), ((b) ^= (a)), ((a) ^= (b)))
-#ifndef __BYTE_GRABBING_DEFINED__
-#define __BYTE_GRABBING_DEFINED__ 1
+#pragma once
 #ifdef BROKEN_OPTIMIZER_LITTLE_ENDIAN
 // Note: Use this if your compiler generates horrible assembler!
 #define BGRAB0(__usi__)  (((uint8_t *)&(__usi__))[0])
@@ -78,5 +77,5 @@ e-mail   :  support@circuitsathome.com
 #define USBTRACE3(s,r,l) (Notify(PSTR(s), l), D_PrintHex((r), l), Notify(PSTR("\r\n"), l))
 
 
-#endif /* MACROS_H */
+
 

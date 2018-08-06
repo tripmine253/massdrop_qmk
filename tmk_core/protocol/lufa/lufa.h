@@ -36,8 +36,7 @@
   this software.
 */
 
-#ifndef _LUFA_H_
-#define _LUFA_H_
+#pragma once
 
 #include <avr/io.h>
 #include <avr/wdt.h>
@@ -85,4 +84,4 @@ typedef struct {
     #define ENDPOINT_CONFIG(epnum, eptype, epdir, epsize, epbank)    Endpoint_ConfigureEndpoint((epdir) | (epnum) , eptype, epsize, epbank)
 // #endif
 
-#endif
+

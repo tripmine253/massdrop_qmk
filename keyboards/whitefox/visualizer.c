@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KEYBOARDS_WHITEFOX_SIMPLE_VISUALIZER_H_
-#define KEYBOARDS_WHITEFOX_SIMPLE_VISUALIZER_H_
+#pragma once
 
 #include "visualizer.h"
 #include "visualizer_keyframes.h"
@@ -57,4 +56,4 @@ void user_visualizer_resume(visualizer_state_t* state) {
     start_keyframe_animation(&default_startup_animation);
 }
 
-#endif /* KEYBOARDS_WHITEFOX_SIMPLE_VISUALIZER_H_ */
+

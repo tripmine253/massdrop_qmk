@@ -1,5 +1,4 @@
-#ifndef ERGODOX_EZ_H
-#define ERGODOX_EZ_H
+#pragma once
 
 #include "quantum.h"
 #include <stdint.h>
@@ -253,4 +252,4 @@ inline void ergodox_led_all_set(uint8_t n)
     { R06, R16, R26, R36, R46, KC_NO }    \
     }
 
-#endif
+

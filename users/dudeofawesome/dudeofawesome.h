@@ -1,5 +1,4 @@
-#ifndef USERSPACE
-#define USERSPACE
+#pragma once
 
 #ifdef TAPPING_TOGGLE
 #undef TAPPING_TOGGLE
@@ -22,4 +21,4 @@
         ED_NOTE(_BF5),
 #endif
 
-#endif
+

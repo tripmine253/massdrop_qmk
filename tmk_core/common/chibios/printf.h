@@ -93,8 +93,7 @@ regs Kusti, 23.10.2004
 */
 
 
-#ifndef __TFP_PRINTF__
-#define __TFP_PRINTF__
+#pragma once
 
 #include <stdarg.h>
 
@@ -108,4 +107,4 @@ void tfp_format(void* putp,void (*putf) (void*,char),char *fmt, va_list va);
 #define printf tfp_printf 
 #define sprintf tfp_sprintf 
 
-#endif
+

@@ -14,8 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef KEYMAP_COMMON_H
-#define KEYMAP_COMMON_H
+#pragma once
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -126,4 +125,4 @@ extern const uint16_t fn_actions[];
 }
 
 
-#endif
+

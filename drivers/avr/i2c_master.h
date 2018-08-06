@@ -2,8 +2,7 @@
  * Github repository: https://github.com/g4lvanix/I2C-master-lib
  */
 
-#ifndef I2C_MASTER_H
-#define I2C_MASTER_H
+#pragma once
 
 #define I2C_READ 0x01
 #define I2C_WRITE 0x00
@@ -28,4 +27,3 @@ i2c_status_t i2c_writeReg(uint8_t devaddr, uint8_t regaddr, uint8_t* data, uint1
 i2c_status_t i2c_readReg(uint8_t devaddr, uint8_t regaddr, uint8_t* data, uint16_t length, uint16_t timeout);
 i2c_status_t i2c_stop(uint16_t timeout);
 
-#endif // I2C_MASTER_H

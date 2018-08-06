@@ -1,5 +1,4 @@
-#ifndef IBM_TERMINAL_H
-#define IBM_TERMINAL_H
+#pragma once
 
 #include "quantum.h"
 
@@ -79,4 +78,3 @@ void matrix_init_user(void);
     { KC_NO, KC_NO, KC_NO, KC_NO, K84,   KC_NO, KC_NO, KC_NO,}, \
 }
 
-#endif

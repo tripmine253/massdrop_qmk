@@ -14,8 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef ACTION_H
-#define ACTION_H
+#pragma once
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -109,4 +108,4 @@ void debug_action(action_t action);
 }
 #endif
 
-#endif  /* ACTION_H */
+

@@ -1,5 +1,4 @@
-#ifndef USERSPACE
-#define USERSPACE
+#pragma once
 
 #include "quantum.h"
 
@@ -15,4 +14,4 @@ enum custom_keycodes {
   NEWPLACEHOLDER  //use "NEWPLACEHOLDER for keymap specific codes
 };
 
-#endif
+

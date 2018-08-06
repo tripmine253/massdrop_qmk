@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef KEYMAP_WORKMAN_H
-#define KEYMAP_WORKMAN_H
+#pragma once
 
 #include "keymap.h"
 // For software implementation of workman
@@ -80,4 +79,4 @@
 #define KC_WK_K    WK_K
 #define KC_WK_L    WK_L
 
-#endif
+

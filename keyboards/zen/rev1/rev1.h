@@ -1,5 +1,4 @@
-#ifndef REV1_H
-#define REV1_H
+#pragma once
 
 #include "zen.h"
 
@@ -37,4 +36,4 @@
         { k90, k91, k92, k93, k94, k95, k96 } \
     }
 
-#endif
+

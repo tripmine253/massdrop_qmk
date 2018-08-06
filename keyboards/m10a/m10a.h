@@ -1,5 +1,4 @@
-#ifndef M10A_H
-#define M10A_H
+#pragma once
 
 #include "quantum.h"
 
@@ -16,4 +15,4 @@
     { k30, k31, k32 } \
 }
 
-#endif
+

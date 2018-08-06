@@ -15,8 +15,7 @@
  e-mail   :  kristianl@tkjelectronics.com
  */
 
-#ifndef _ps3bt_h_
-#define _ps3bt_h_
+#pragma once
 
 #include "BTD.h"
 #include "PS3Enums.h"
@@ -237,4 +236,4 @@ private:
         void HIDMove_Command(uint8_t* data, uint8_t nbytes);
         void enable_sixaxis(); // Command used to enable the Dualshock 3 and Navigation controller to send data via Bluetooth
 };
-#endif
+

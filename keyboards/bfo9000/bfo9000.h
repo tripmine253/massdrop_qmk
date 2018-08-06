@@ -1,5 +1,4 @@
-#ifndef BFO9000_H
-#define BFO9000_H
+#pragma once
 
 #include "quantum.h"
 
@@ -34,4 +33,4 @@
         { R50, R51, R52, R53, R54, R55, R56, R57, R58 } \
     }
 
-#endif
+

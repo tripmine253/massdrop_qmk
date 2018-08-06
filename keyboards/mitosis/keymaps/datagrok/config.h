@@ -1,5 +1,4 @@
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 #include "../../config.h"
 
@@ -29,4 +28,4 @@
 #define C6_AUDIO
 #endif
 
-#endif
+

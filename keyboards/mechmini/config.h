@@ -16,8 +16,7 @@
 
 #include "config_common.h"
 
-#ifndef CONFIG_H
-#define CONFIG_H
+#pragma once
 
 #define VENDOR_ID       0xFEED
 #define PRODUCT_ID      0xCA40
@@ -25,4 +24,4 @@
 #define PRODUCT         Mechmini
 #define DESCRIPTION     40% modular keyboard
 
-#endif
+

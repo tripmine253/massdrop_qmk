@@ -35,8 +35,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef PS2_H
-#define PS2_H
+#pragma once
 
 #include <stdbool.h>
 #include "wait.h"
@@ -131,4 +130,4 @@ static inline void inhibit(void)
     data_hi();
 }
 
-#endif
+

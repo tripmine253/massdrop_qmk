@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef V2_H
-#define V2_H
+#pragma once
 
 #include "../eagle_viper.h"
 
@@ -73,6 +72,6 @@
   { K1A,   KC_NO, K1C, K1D,   K1E,   K1F,   K1G,   K1H,   K1I,   K1J,   K1K,   KC_NO, K1M, K1N,   K1O,   }, \
   { KC_NO, K0B,   K0C, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, K0J,   KC_NO, KC_NO, KC_NO, K0M, K0N,   KC_NO    }  \
 }
-#endif
+
 
 #define LAYOUT_eagle LAYOUT_60_ansi

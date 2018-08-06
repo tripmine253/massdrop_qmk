@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef KEYMAP_GERMAN_OSX
-#define KEYMAP_GERMAN_OSX
+#pragma once
 
 #include "keymap.h"
 
@@ -109,4 +108,4 @@
 #define DE_OSX_TILD LALT(DE_OSX_N) // ~
 #define DE_OSX_PIPE LALT(DE_OSX_7) // |
 
-#endif
+

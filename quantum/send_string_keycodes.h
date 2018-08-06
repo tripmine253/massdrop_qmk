@@ -1,5 +1,4 @@
-#ifndef SEND_STRING_KEYCODES
-#define SEND_STRING_KEYCODES
+#pragma once
 
 #define X_NO                 00
 #define X_ROLL_OVER          01
@@ -204,4 +203,4 @@
 #define X_WWW_FAVORITES      ba
 #define X_MEDIA_FAST_FORWARD bb
 #define X_MEDIA_REWIND       bc
-#endif
+

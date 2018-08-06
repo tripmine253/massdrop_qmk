@@ -32,8 +32,7 @@ e-mail   :  support@circuitsathome.com
 #endif
 #endif
 
-#ifndef __PGMSPACE_H_
-#define __PGMSPACE_H_ 1
+#pragma once
 
 #include <inttypes.h>
 
@@ -191,4 +190,4 @@ e-mail   :  support@circuitsathome.com
 #ifndef pgm_read_pointer
 #define pgm_read_pointer
 #endif
-#endif
+

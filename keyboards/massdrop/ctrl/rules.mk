@@ -1,5 +1,5 @@
 # project specific files
-SRC = led_programs.c
+SRC = led_instructions.c
 SRC += matrix.c
 
 #For platform and packs

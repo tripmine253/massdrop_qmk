@@ -121,4 +121,8 @@ void led_matrix_task(void);
 
 void gcr_compute(void);
 
+void rgb_matrix_set_color(uint8_t index, uint8_t red, uint8_t green, uint8_t blue);
+
+void rgb_matrix_set_color_all(uint8_t red, uint8_t green, uint8_t blue);
+
 #endif //_LED_MATRIX_H_

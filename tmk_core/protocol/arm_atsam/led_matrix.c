@@ -243,7 +243,7 @@ void prepare_static_color_map(void) {
 
     while (cur < lede)
     {
-        static_color_map[cur->id] = (led_static_color_t) { .r = 1, .b = 0, .g = 0 };
+        static_color_map[cur->id] = (led_static_color_t) { .r = 0, .b = 0, .g = 0 };
         cur++;
     }
 }
@@ -253,6 +253,25 @@ void led_matrix_prepare(void)
     disp_calc_extents();
     disp_pixel_setup();
     prepare_static_color_map();
+}
+
+void rgb_matrix_set_color(uint8_t index, uint8_t red, uint8_t green, uint8_t blue) {
+    static_color_map[index].r = red;
+    static_color_map[index].g = green;
+    static_color_map[index].b = blue;
+}
+
+void rgb_matrix_set_color_all(uint8_t red, uint8_t green, uint8_t blue) {
+    issi3733_led_t *cur = led_map;
+    issi3733_led_t *lede = led_map + ISSI3733_LED_COUNT; //End pointer of mapping
+
+    while (cur < lede)
+    {
+        static_color_map[cur->id].r = red;
+        static_color_map[cur->id].g = green;
+        static_color_map[cur->id].b = blue;
+        cur++;
+    }
 }
 
 __attribute__((weak))

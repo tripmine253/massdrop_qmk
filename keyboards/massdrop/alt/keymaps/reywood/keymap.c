@@ -74,49 +74,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   rgb_matrix_record_key_press(record);
 
   switch (keycode) {
-    case L_BRI:
-      if (record->event.pressed) {
-        if (LED_GCR_STEP > LED_GCR_MAX - gcr_desired) gcr_desired = LED_GCR_MAX;
-        else gcr_desired += LED_GCR_STEP;
-        if (led_animation_breathing) gcr_breathe = gcr_desired;
-      }
-      return false;
-    case L_BRD:
-      if (record->event.pressed) {
-        if (LED_GCR_STEP > gcr_desired) gcr_desired = 0;
-        else gcr_desired -= LED_GCR_STEP;
-        if (led_animation_breathing) gcr_breathe = gcr_desired;
-      }
-      return false;
-    case L_PTN:
-      if (record->event.pressed) {
-        if (led_animation_id == led_setups_count - 1) led_animation_id = 0;
-        else led_animation_id++;
-      }
-      return false;
-    case L_PTP:
-      if (record->event.pressed) {
-        if (led_animation_id == 0) led_animation_id = led_setups_count - 1;
-        else led_animation_id--;
-      }
-      return false;
-    case L_PSI:
-      if (record->event.pressed) {
-        led_animation_speed += ANIMATION_SPEED_STEP;
-      }
-      return false;
-    case L_PSD:
-      if (record->event.pressed) {
-        led_animation_speed -= ANIMATION_SPEED_STEP;
-        if (led_animation_speed < 0) led_animation_speed = 0;
-      }
-      return false;
-    case L_T_MD:
-      if (record->event.pressed) {
-        led_lighting_mode++;
-        if (led_lighting_mode > LED_MODE_MAX_INDEX) led_lighting_mode = LED_MODE_NORMAL;
-      }
-      return false;
     case L_T_ONF:
       if (record->event.pressed) {
         led_enabled = !led_enabled;
@@ -133,21 +90,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if (record->event.pressed) {
         led_enabled = 0;
         I2C3733_Control_Set(led_enabled);
-      }
-      return false;
-    case L_T_BR:
-      if (record->event.pressed) {
-        led_animation_breathing = !led_animation_breathing;
-        if (led_animation_breathing) {
-          gcr_breathe = gcr_desired;
-          led_animation_breathe_cur = BREATHE_MIN_STEP;
-          breathe_dir = 1;
-        }
-      }
-      return false;
-    case L_T_PTD:
-      if (record->event.pressed) {
-        led_animation_direction = !led_animation_direction;
       }
       return false;
     case U_T_AUTO:

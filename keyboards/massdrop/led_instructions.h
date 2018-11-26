@@ -2,6 +2,7 @@ typedef struct led_setup_s {
   float hs;         //Band begin at percent
   float he;         //Band end at percent
   uint32_t ef;      //Animation and color effects
+  uint32_t ms;      //Animation period in ms (only first instruction of pattern)
   uint8_t rs;       //Red start value
   uint8_t re;       //Red end value
   uint8_t gs;       //Green start value
@@ -36,12 +37,12 @@ typedef struct led_instruction_s {
 // #define EF_AXIS_Z         0x00000010 // Man, like, who knows what the future holds?
 // #define EF_AXIS_Z_INVERT  0x00000020 // Reversed
 
-// Cannot be combined with EF_SCROLL_TIME
-#define EF_SCROLL         0x00000040  // Animate scroll in axis direction
-#define EF_SCROLL_INVERT  0x00000080  // Animate scroll in opposite of axis direction
+// Cannot be combined with EF_ANIM_TIME
+#define EF_ANIM_SCROLL         0x00000040  // Animate scroll in axis direction
+#define EF_ANIM_SCROLL_INVERT  0x00000080  // Animate scroll in opposite of axis direction
 
-// Cannot be combined with EF_SCROLL(_INVERT)
-#define EF_SCROLL_TIME    0x00000100  // Animate over time
+// Cannot be combined with EF_ANIM_SCROLL(_INVERT)
+#define EF_ANIM_TIME    0x00000100  // Animate over time
 
 // Blend effects are all mutually-exclusive. Keep these bits separated from
 // non-blend effects because led_instructions.c does a crude bit mask and
@@ -58,6 +59,8 @@ typedef struct led_instruction_s {
 #define EF_BGR            0x80000000  // RGB -> BGR
 // - - - - - -
 
+#define DEFAULT_ANIM_PERIOD_MS 2500
+
 // LED Extra Instructions
 #define LED_FLAG_NULL                0x00
 #define LED_FLAG_MATCH_ID            0x01
@@ -68,7 +71,7 @@ typedef struct led_instruction_s {
 #define LED_FLAG_USE_COLOR_MAP       0x80
 
 extern uint8_t led_animation_id;
-extern float led_animation_speed;
+extern float led_animation_period_scalar;
 extern uint8_t led_lighting_mode;
 extern uint8_t led_animation_direction;
 extern uint8_t led_animation_breathe_cur;

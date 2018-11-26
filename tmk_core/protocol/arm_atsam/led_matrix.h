@@ -76,6 +76,7 @@ typedef struct issi3733_led_s {
 } issi3733_led_t;
 
 typedef struct led_disp_s {
+  uint64_t clk_ms;
   uint64_t frame;
   float left;
   float right;

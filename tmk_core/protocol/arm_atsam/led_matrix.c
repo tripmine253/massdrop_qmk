@@ -344,6 +344,7 @@ void led_matrix_run(void)
     {
         led_cur = led_map;
         disp.frame += 1;
+        disp.clk_ms = CLK_get_ms();
 
         rgb_matrix_run_user(disp);
     }
@@ -364,6 +365,7 @@ uint8_t led_matrix_init(void)
 
     led_matrix_prepare();
 
+    disp.clk_ms = CLK_get_ms();
     disp.frame = 0;
     led_next_run = 0;
 

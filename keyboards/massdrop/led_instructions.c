@@ -11,12 +11,16 @@ uint32_t temp_layer_state = 0;
 __attribute__((weak))
 led_instruction_t led_instructions[] = { { .end = 1 } };
 
+// TODO: is there a better way to allocate this array to be the same length as
+// the led_setups array?
+float animation_offsets[11];
+
 float breathe_mult;
 float position_offset;
 
 uint8_t led_animation_id;
 uint8_t led_lighting_mode;
-float led_animation_speed;
+float led_animation_period_scalar;
 uint8_t led_animation_direction;
 uint8_t led_animation_breathe_cur;
 uint8_t breathe_step;
@@ -27,7 +31,7 @@ led_setup_t *led_animation;
 void rgb_matrix_init_user(void) {
   led_animation_id = 0;
   led_lighting_mode = LED_MODE_NORMAL;
-  led_animation_speed = 4.0f;
+  led_animation_period_scalar = 1;
   led_animation_direction = 0;
   led_animation_breathe_cur = BREATHE_MIN_STEP;
   breathe_step = 1;
@@ -111,7 +115,7 @@ static void apply_blend(float* r, float* g, float* b, uint32_t effect, float app
   }
 }
 
-static void rgb_matrix_pattern(led_setup_t *f, float* ro, float* go, float* bo, issi3733_led_t *led) {
+static void rgb_matrix_pattern(led_setup_t *f, uint8_t anim_id, float* ro, float* go, float* bo, issi3733_led_t *led) {
   float led_px = led->px;
   float led_py = led->py;
   float px;
@@ -128,13 +132,13 @@ static void rgb_matrix_pattern(led_setup_t *f, float* ro, float* go, float* bo, 
     bool is_y_axis = f->ef & (EF_AXIS_Y | EF_AXIS_Y_INVERT);
     bool is_y_axis_invert = f->ef & EF_AXIS_Y_INVERT;
 
-    if (f->ef & (EF_SCROLL | EF_SCROLL_INVERT)) {
-      float offset = position_offset;
+    if (f->ef & (EF_ANIM_SCROLL | EF_ANIM_SCROLL_INVERT)) {
+      float offset = animation_offsets[anim_id];
 
       if (
-        (led_animation_direction && (f->ef & EF_SCROLL_INVERT)) || (!led_animation_direction && (f->ef & EF_SCROLL))
+        (led_animation_direction && (f->ef & EF_ANIM_SCROLL_INVERT)) || (!led_animation_direction && (f->ef & EF_ANIM_SCROLL))
       ) {
-          offset = -position_offset;
+          offset = -animation_offsets[anim_id];
       }
 
       if (is_x_axis_invert) {
@@ -212,18 +216,27 @@ void rgb_matrix_run_user(led_disp_t disp) {
     else if (breathe_mult < 0) breathe_mult = 0;
   }
 
-
-
-  // led_animation_speed = deciHz, 4.0f -> 0.4 Hz (10 ms disp.frame)
-
-
-
-
   //Only needs to be calculated once per frame
-  position_offset = (float)(disp.frame % (uint32_t)(1000.0f / led_animation_speed)) / 10.0f * led_animation_speed;
-  position_offset *= 100.0f;
-  position_offset = (uint32_t) position_offset % 10000;
-  position_offset /= 100.0f;
+  int anim_index;
+  for (anim_index = 0; anim_index < led_setups_count; anim_index += 1) {
+    led_setup_t *animation = led_setups[anim_index];
+    uint32_t ms;
+
+    if (animation->ms > 0) {
+      ms = (uint32_t) animation->ms * led_animation_period_scalar;
+    } else {
+      ms = (uint32_t) DEFAULT_ANIM_PERIOD_MS * led_animation_period_scalar;
+    }
+
+    if (ms <= 0) {
+      ms = 1;
+    }
+
+    position_offset = (float) (disp.clk_ms % ms);
+    position_offset /= ms / 100.0f;
+
+    animation_offsets[anim_index] = position_offset;
+  }
 
   highest_active_layer = 0;
   temp_layer_state = layer_state;
@@ -260,7 +273,7 @@ void rgb_run(issi3733_led_t *led)
     //Act on LED
     if (led_cur_instruction->end) {
       // If no instructions, use normal pattern
-      rgb_matrix_pattern(led_animation, &ro, &go, &bo, led);
+      rgb_matrix_pattern(led_animation, led_animation_id, &ro, &go, &bo, led);
     } else {
       uint8_t skip;
       uint8_t modid = (led->id - 1) / 32;                         //PS: Calculate which id# contains the led bit
@@ -293,9 +306,9 @@ void rgb_run(issi3733_led_t *led)
             go = led_cur_instruction->g;
             bo = led_cur_instruction->b;
           } else if (led_cur_instruction->flags & LED_FLAG_USE_PATTERN) {
-            rgb_matrix_pattern(led_setups[led_cur_instruction->pattern_id], &ro, &go, &bo, led);
+            rgb_matrix_pattern(led_setups[led_cur_instruction->pattern_id], led_cur_instruction->pattern_id, &ro, &go, &bo, led);
           } else if (led_cur_instruction->flags & LED_FLAG_USE_ROTATE_PATTERN) {
-            rgb_matrix_pattern(led_animation, &ro, &go, &bo, led);
+            rgb_matrix_pattern(led_animation, led_animation_id, &ro, &go, &bo, led);
           } else if (led_cur_instruction->flags & LED_FLAG_USE_COLOR_MAP) {
             led_static_color_t static_color = static_color_map[led->id];
             apply_blend(&ro, &go, &bo, static_color.ef, (float) static_color.r, (float) static_color.g, (float) static_color.b);

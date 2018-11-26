@@ -115,6 +115,7 @@ extern const uint8_t led_setups_count;
 extern issi3733_led_t led_map[ISSI3733_LED_COUNT+1];
 extern issi3733_led_t *led_cur;
 extern issi3733_led_t *lede;
+extern led_static_color_t static_color_map[ISSI3733_LED_COUNT+1];
 
 void led_matrix_run(void);
 void led_matrix_task(void);

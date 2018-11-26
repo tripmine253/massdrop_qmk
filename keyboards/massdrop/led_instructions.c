@@ -34,7 +34,84 @@ void rgb_matrix_init_user(void) {
   breathe_dir = 1;
 }
 
-void rgb_matrix_pattern(led_setup_t *f, float* ro, float* go, float* bo, issi3733_led_t *led) {
+static void apply_blend(float* r, float* g, float* b, uint32_t effect, float applied_r, float applied_g, float applied_b) {
+  uint32_t blend = effect & 0xffc00000;
+
+  float temp_r;
+  float temp_g;
+  float temp_b;
+
+  switch(blend) {
+    case EF_NONE:
+      if (*r == 0.0f && *g == 0.0f && *b == 0.0f) {
+        *r = applied_r;
+        *g = applied_g;
+        *b = applied_b;
+      }
+      break;
+    case EF_OVER:
+      *r = applied_r;
+      *g = applied_g;
+      *b = applied_b;
+      break;
+    case EF_ADD:
+      *r += applied_r;
+      *g += applied_g;
+      *b += applied_b;
+      break;
+    case EF_SUBTRACT:
+      *r -= applied_r;
+      *g -= applied_g;
+      *b -= applied_b;
+      break;
+    case EF_MULTIPLY:
+      *r = *r * applied_r / 255.0f;
+      *g = *g * applied_g / 255.0f;
+      *b = *b * applied_b / 255.0f;
+      break;
+    case EF_DIVIDE:
+      *r = *r / applied_r * 255.0f;
+      *g = *g / applied_g * 255.0f;
+      *b = *b / applied_b * 255.0f;
+      break;
+    case EF_RBG:
+      temp_g = *g;
+      temp_b = *b;
+      *g = temp_b;
+      *b = temp_g;
+      break;
+    case EF_GRB:
+      temp_r = *r;
+      temp_g = *g;
+      *r = temp_g;
+      *g = temp_r;
+      break;
+    case EF_GBR:
+      temp_r = *r;
+      temp_g = *g;
+      temp_b = *b;
+      *r = temp_g;
+      *g = temp_b;
+      *b = temp_r;
+      break;
+    case EF_BRG:
+      temp_r = *r;
+      temp_g = *g;
+      temp_b = *b;
+      *r = temp_b;
+      *g = temp_r;
+      *b = temp_g;
+      break;
+    case EF_BGR:
+      temp_r = *r;
+      temp_b = *b;
+      *r = temp_b;
+      *b = temp_r;
+      break;
+  }
+}
+
+static void rgb_matrix_pattern(led_setup_t *f, float* ro, float* go, float* bo, issi3733_led_t *led) {
   float led_px = led->px;
   float led_py = led->py;
   float px;
@@ -61,15 +138,15 @@ void rgb_matrix_pattern(led_setup_t *f, float* ro, float* go, float* bo, issi373
       }
 
       if (is_x_axis_invert) {
-        px += offset;
-      } else if (is_x_axis) {
         px -= offset;
+      } else if (is_x_axis) {
+        px += offset;
       }
 
       if (is_y_axis_invert) {
-        py += offset;
-      } else if (is_y_axis) {
         py -= offset;
+      } else if (is_y_axis) {
+        py += offset;
       }
     }
 
@@ -104,25 +181,11 @@ void rgb_matrix_pattern(led_setup_t *f, float* ro, float* go, float* bo, issi373
       effect_pct = (py - f->hs) / (f->he - f->hs);
     }
 
-    //Add in any color effects
-    if (f->ef & EF_OVER)
-    {
-      *ro = (effect_pct * (f->re - f->rs)) + f->rs;// + 0.5;
-      *go = (effect_pct * (f->ge - f->gs)) + f->gs;// + 0.5;
-      *bo = (effect_pct * (f->be - f->bs)) + f->bs;// + 0.5;
-    }
-    else if (f->ef & EF_SUBTRACT)
-    {
-      *ro -= (effect_pct * (f->re - f->rs)) + f->rs;// + 0.5;
-      *go -= (effect_pct * (f->ge - f->gs)) + f->gs;// + 0.5;
-      *bo -= (effect_pct * (f->be - f->bs)) + f->bs;// + 0.5;
-    }
-    else
-    {
-      *ro += (effect_pct * (f->re - f->rs)) + f->rs;// + 0.5;
-      *go += (effect_pct * (f->ge - f->gs)) + f->gs;// + 0.5;
-      *bo += (effect_pct * (f->be - f->bs)) + f->bs;// + 0.5;
-    }
+    float applied_r = (effect_pct * (f->re - f->rs)) + f->rs;
+    float applied_g = (effect_pct * (f->ge - f->gs)) + f->gs;
+    float applied_b = (effect_pct * (f->be - f->bs)) + f->bs;
+
+    apply_blend(ro, go, bo, f->ef, applied_r, applied_g, applied_b);
 
     f++;
   }
@@ -148,6 +211,13 @@ void rgb_matrix_run_user(led_disp_t disp) {
     if (breathe_mult > 1) breathe_mult = 1;
     else if (breathe_mult < 0) breathe_mult = 0;
   }
+
+
+
+  // led_animation_speed = deciHz, 4.0f -> 0.4 Hz (10 ms disp.frame)
+
+
+
 
   //Only needs to be calculated once per frame
   position_offset = (float)(disp.frame % (uint32_t)(1000.0f / led_animation_speed)) / 10.0f * led_animation_speed;
@@ -202,9 +272,9 @@ void rgb_run(issi3733_led_t *led)
 
         //PS: Check layer active first
         if (led_cur_instruction->flags & LED_FLAG_MATCH_LAYER) {
-        if (led_cur_instruction->layer != highest_active_layer) {
+          if (led_cur_instruction->layer != highest_active_layer) {
             skip = 1;
-        }
+          }
         }
 
         if (!skip)
@@ -226,6 +296,9 @@ void rgb_run(issi3733_led_t *led)
             rgb_matrix_pattern(led_setups[led_cur_instruction->pattern_id], &ro, &go, &bo, led);
           } else if (led_cur_instruction->flags & LED_FLAG_USE_ROTATE_PATTERN) {
             rgb_matrix_pattern(led_animation, &ro, &go, &bo, led);
+          } else if (led_cur_instruction->flags & LED_FLAG_USE_COLOR_MAP) {
+            led_static_color_t static_color = static_color_map[led->id];
+            apply_blend(&ro, &go, &bo, static_color.ef, (float) static_color.r, (float) static_color.g, (float) static_color.b);
           }
         }
 
@@ -249,6 +322,16 @@ void rgb_run(issi3733_led_t *led)
   *led->rgb.r = (uint8_t)ro;
   *led->rgb.g = (uint8_t)go;
   *led->rgb.b = (uint8_t)bo;
+
+
+
+
+
+// TODO: Re-enable indicators
+
+
+
+
 
 // #ifdef USB_LED_INDICATOR_ENABLE
 //   if (keyboard_leds())

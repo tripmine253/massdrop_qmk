@@ -36,24 +36,26 @@ typedef struct led_instruction_s {
 // #define EF_AXIS_Z         0x00000010 // Man, like, who knows what the future holds?
 // #define EF_AXIS_Z_INVERT  0x00000020 // Reversed
 
-// Blend effects are all mutually-exclusive
-#define EF_OVER           0x00000040  // Overwrite any previous color information with new
-#define EF_ADD            0x00000080  // Add color values
-#define EF_SUBTRACT       0x00000100  // Subtract color values
-#define EF_MULTIPLY       0x00000200  // Multiply color values
-#define EF_DIVIDE         0x00000400  // Divide color values
-#define EF_RBG            0x00000800  // RGB -> RBG
-#define EF_GRB            0x00001000  // RGB -> GRB
-#define EF_GBR            0x00002000  // RGB -> GBR
-#define EF_BRG            0x00004000  // RGB -> BRG
-#define EF_BGR            0x00008000  // RGB -> BGR
-
 // Cannot be combined with EF_SCROLL_TIME
-#define EF_SCROLL         0x00010000  // Animate scroll in axis direction
-#define EF_SCROLL_INVERT  0x00020000  // Animate scroll in opposite of axis direction
+#define EF_SCROLL         0x00000040  // Animate scroll in axis direction
+#define EF_SCROLL_INVERT  0x00000080  // Animate scroll in opposite of axis direction
 
 // Cannot be combined with EF_SCROLL(_INVERT)
-#define EF_SCROLL_TIME    0x00040000  // Animate over time
+#define EF_SCROLL_TIME    0x00000100  // Animate over time
+
+// Blend effects are all mutually-exclusive. Keep these bits separated from
+// non-blend effects because led_instructions.c does a crude bit mask and
+// switch-case.
+#define EF_OVER           0x00400000  // Overwrite any previous color information with new
+#define EF_ADD            0x00800000  // Add color values
+#define EF_SUBTRACT       0x01000000  // Subtract color values
+#define EF_MULTIPLY       0x02000000  // Multiply color values
+#define EF_DIVIDE         0x04000000  // Divide color values
+#define EF_RBG            0x08000000  // RGB -> RBG
+#define EF_GRB            0x10000000  // RGB -> GRB
+#define EF_GBR            0x20000000  // RGB -> GBR
+#define EF_BRG            0x40000000  // RGB -> BRG
+#define EF_BGR            0x80000000  // RGB -> BGR
 // - - - - - -
 
 // LED Extra Instructions
@@ -63,6 +65,7 @@ typedef struct led_instruction_s {
 #define LED_FLAG_USE_RGB             0x10
 #define LED_FLAG_USE_PATTERN         0x20
 #define LED_FLAG_USE_ROTATE_PATTERN  0x40
+#define LED_FLAG_USE_COLOR_MAP       0x80
 
 extern uint8_t led_animation_id;
 extern float led_animation_speed;

@@ -16,7 +16,6 @@ led_instruction_t led_instructions[] = { { .end = 1 } };
 float animation_offsets[11];
 
 float breathe_mult;
-float position_offset;
 
 uint8_t led_animation_id;
 uint8_t led_lighting_mode;
@@ -133,12 +132,14 @@ static void rgb_matrix_pattern(led_setup_t *f, uint8_t anim_id, float* ro, float
     bool is_y_axis_invert = f->ef & EF_AXIS_Y_INVERT;
 
     if (f->ef & (EF_ANIM_SCROLL | EF_ANIM_SCROLL_INVERT)) {
-      float offset = animation_offsets[anim_id];
+      float offset;
 
       if (
         (led_animation_direction && (f->ef & EF_ANIM_SCROLL_INVERT)) || (!led_animation_direction && (f->ef & EF_ANIM_SCROLL))
       ) {
-          offset = -animation_offsets[anim_id];
+        offset = -animation_offsets[anim_id];
+      } else {
+        offset = animation_offsets[anim_id];
       }
 
       if (is_x_axis_invert) {
@@ -183,6 +184,17 @@ static void rgb_matrix_pattern(led_setup_t *f, uint8_t anim_id, float* ro, float
 
       // Scrolled vertically
       effect_pct = (py - f->hs) / (f->he - f->hs);
+    } else if (f->ef & EF_ANIM_TIME) {
+      float offset;
+
+      if (!led_animation_direction) {
+        offset = animation_offsets[anim_id];
+      } else {
+        offset = 100.0f - animation_offsets[anim_id];
+      }
+
+      if (offset < f->hs || offset > f->he) { f++; continue; }
+      effect_pct = (offset - f->hs) / (f->he - f->hs);
     }
 
     float applied_r = (effect_pct * (f->re - f->rs)) + f->rs;
@@ -232,10 +244,10 @@ void rgb_matrix_run_user(led_disp_t disp) {
       ms = 1;
     }
 
-    position_offset = (float) (disp.clk_ms % ms);
-    position_offset /= ms / 100.0f;
+    float position_offset = (float) (disp.clk_ms % ms);
 
-    animation_offsets[anim_index] = position_offset;
+    // Scale offset to range 0-100
+    animation_offsets[anim_index] = position_offset * 100.0f / ms;
   }
 
   highest_active_layer = 0;

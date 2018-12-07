@@ -2,11 +2,6 @@
 #include "led_matrix.h"
 #include QMK_KEYBOARD_H
 
-extern issi3733_led_t *led_cur;
-extern uint8_t led_per_run;
-extern issi3733_led_t *lede;
-extern issi3733_led_t led_map[];
-
 static uint16_t last_boost_update;
 static uint8_t led_boosts[ISSI3733_LED_COUNT + 1];
 static uint8_t led_boost_index;
@@ -82,16 +77,14 @@ static void update_led_boosts(void) {
 }
 
 void rgb_run(issi3733_led_t *led_cur) {
-  uint8_t led_id = led_cur->id;
   if (led_cur->scan == UNDERGLOW_SCAN_CODE) {
-    rgb_matrix_set_color(led_id, UNDERGLOW_R, UNDERGLOW_G, UNDERGLOW_B);
+    *led_cur->rgb.r = UNDERGLOW_R;
+    *led_cur->rgb.g = UNDERGLOW_G;
+    *led_cur->rgb.b = UNDERGLOW_B;
   } else {
-    rgb_matrix_set_color(
-      led_id,
-      calculate_new_color_component_value(led_cur, MAX_R, MIN_R),
-      calculate_new_color_component_value(led_cur, MAX_G, MIN_G),
-      calculate_new_color_component_value(led_cur, MAX_B, MIN_B)
-    );
+    *led_cur->rgb.r = calculate_new_color_component_value(led_cur, MAX_R, MIN_R);
+    *led_cur->rgb.g = calculate_new_color_component_value(led_cur, MAX_G, MIN_G);
+    *led_cur->rgb.b = calculate_new_color_component_value(led_cur, MAX_B, MIN_B);
   }
 }
 

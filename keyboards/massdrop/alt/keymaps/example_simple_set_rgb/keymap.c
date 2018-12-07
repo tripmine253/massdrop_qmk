@@ -83,8 +83,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     uint8_t b = 0;
 
     if (record->event.pressed) {
-      g = 1;
-      b = 1;
+      g = 255;
+      b = 125;
     }
 
     uint8_t row = 0;

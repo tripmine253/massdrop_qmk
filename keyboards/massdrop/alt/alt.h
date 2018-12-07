@@ -92,14 +92,14 @@ static const keypos_t LED_ID_TO_KEYMAP[68] = {
   { .col =  8, .row =  2 },
   { .col =  9, .row =  2 },
   { .col = 10, .row =  2 },
-  // Gap here
+  // gap
   { .col = 12, .row =  2 },
   { .col = 13, .row =  2 },
   { .col = 14, .row =  2 },
 
   // 45 - 58
   { .col =  0, .row =  3 },
-  // Gap here
+  // gap
   { .col =  2, .row =  3 },
   { .col =  3, .row =  3 },
   { .col =  4, .row =  3 },
@@ -118,13 +118,13 @@ static const keypos_t LED_ID_TO_KEYMAP[68] = {
   { .col =  0, .row =  4 },
   { .col =  1, .row =  4 },
   { .col =  2, .row =  4 },
-  // Gap here
-  // Gap here
-  // Gap here
+  // gap
+  // gap
+  // gap
   { .col =  6, .row =  4 },
-  // Gap here
-  // Gap here
-  // Gap here
+  // gap
+  // gap
+  // gap
   { .col = 10, .row =  4 },
   { .col = 11, .row =  4 },
   { .col = 12, .row =  4 },

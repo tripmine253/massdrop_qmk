@@ -65,15 +65,15 @@ led_setup_t leds_white[] = {
 //White with moving red stripe
 led_setup_t leds_white_with_red_stripe[] = {
     { .hs = 0, .he = 100, .rs = 255, .re = 255, .gs = 255, .ge = 255, .bs = 255, .be = 255, .ef = EF_AXIS_X },
-    { .hs = 0, .he = 15, .rs = 0, .re = 0, .gs = 0, .ge = 255, .bs = 0, .be = 255, .ef = EF_AXIS_X | EF_SCROLL | EF_SUBTRACT },
-    { .hs = 15, .he = 30, .rs = 0, .re = 0, .gs = 255, .ge = 0, .bs = 255, .be = 0, .ef = EF_AXIS_X | EF_SCROLL | EF_SUBTRACT },
+    { .hs = 0, .he = 15, .rs = 0, .re = 0, .gs = 0, .ge = 255, .bs = 0, .be = 255, .ef = EF_AXIS_X | EF_ANIM_SCROLL | EF_SUBTRACT },
+    { .hs = 15, .he = 30, .rs = 0, .re = 0, .gs = 255, .ge = 0, .bs = 255, .be = 0, .ef = EF_AXIS_X | EF_ANIM_SCROLL | EF_SUBTRACT },
     { .end = 1 },
 };
 
 //Black with moving red stripe
 led_setup_t leds_black_with_red_stripe[] = {
-    { .hs = 0, .he = 15, .rs = 0, .re = 255, .gs = 0, .ge = 0, .bs = 0, .be = 0, .ef = EF_AXIS_X | EF_SCROLL },
-    { .hs = 15, .he = 30, .rs = 255, .re = 0, .gs = 0, .ge = 0, .bs = 0, .be = 0, .ef = EF_AXIS_X | EF_SCROLL },
+    { .hs = 0, .he = 15, .rs = 0, .re = 255, .gs = 0, .ge = 0, .bs = 0, .be = 0, .ef = EF_AXIS_X | EF_ANIM_SCROLL },
+    { .hs = 15, .he = 30, .rs = 255, .re = 0, .gs = 0, .ge = 0, .bs = 0, .be = 0, .ef = EF_AXIS_X | EF_ANIM_SCROLL },
     { .end = 1 },
 };
 
@@ -90,12 +90,12 @@ led_setup_t leds_rainbow_ns[] = {
 
 //Rainbow scrolling
 led_setup_t leds_rainbow_s[] = {
-    { .hs = 0,      .he = 16.67,  .rs = 255, .re = 255, .gs = 0,   .ge = 255, .bs = 0,   .be = 0,   .ef = EF_AXIS_X | EF_SCROLL | EF_OVER },
-    { .hs = 16.67,  .he = 33.33,  .rs = 255, .re = 0,   .gs = 255, .ge = 255, .bs = 0,   .be = 0,   .ef = EF_AXIS_X | EF_SCROLL | EF_OVER },
-    { .hs = 33.33,  .he = 50,     .rs = 0,   .re = 0,   .gs = 255, .ge = 255, .bs = 0,   .be = 255, .ef = EF_AXIS_X | EF_SCROLL | EF_OVER },
-    { .hs = 50,     .he = 66.67,  .rs = 0,   .re = 0,   .gs = 255, .ge = 0,   .bs = 255, .be = 255, .ef = EF_AXIS_X | EF_SCROLL | EF_OVER },
-    { .hs = 66.67,  .he = 83.33,  .rs = 0,   .re = 255, .gs = 0,   .ge = 0,   .bs = 255, .be = 255, .ef = EF_AXIS_X | EF_SCROLL | EF_OVER },
-    { .hs = 83.33,  .he = 100,    .rs = 255, .re = 255, .gs = 0,   .ge = 0,   .bs = 255, .be = 0,   .ef = EF_AXIS_X | EF_SCROLL | EF_OVER },
+    { .hs = 0,      .he = 16.67,  .rs = 255, .re = 255, .gs = 0,   .ge = 255, .bs = 0,   .be = 0,   .ef = EF_AXIS_X | EF_ANIM_SCROLL | EF_OVER },
+    { .hs = 16.67,  .he = 33.33,  .rs = 255, .re = 0,   .gs = 255, .ge = 255, .bs = 0,   .be = 0,   .ef = EF_AXIS_X | EF_ANIM_SCROLL | EF_OVER },
+    { .hs = 33.33,  .he = 50,     .rs = 0,   .re = 0,   .gs = 255, .ge = 255, .bs = 0,   .be = 255, .ef = EF_AXIS_X | EF_ANIM_SCROLL | EF_OVER },
+    { .hs = 50,     .he = 66.67,  .rs = 0,   .re = 0,   .gs = 255, .ge = 0,   .bs = 255, .be = 255, .ef = EF_AXIS_X | EF_ANIM_SCROLL | EF_OVER },
+    { .hs = 66.67,  .he = 83.33,  .rs = 0,   .re = 255, .gs = 0,   .ge = 0,   .bs = 255, .be = 255, .ef = EF_AXIS_X | EF_ANIM_SCROLL | EF_OVER },
+    { .hs = 83.33,  .he = 100,    .rs = 255, .re = 255, .gs = 0,   .ge = 0,   .bs = 255, .be = 0,   .ef = EF_AXIS_X | EF_ANIM_SCROLL | EF_OVER },
     { .end = 1 },
 };
 

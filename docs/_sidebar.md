@@ -39,9 +39,11 @@
   * [Glossary](reference_glossary.md)
   * [Unit Testing](unit_testing.md)
   * [Useful Functions](ref_functions.md)
+  * [Configurator Support](reference_configurator_support.md)
 
 * [Features](features.md)
   * [Basic Keycodes](keycodes_basic.md)
+  * [US ANSI Shifted Keys](keycodes_us_ansi_shifted.md)
   * [Quantum Keycodes](quantum_keycodes.md)
   * [Advanced Keycodes](feature_advanced_keycodes.md)
   * [Audio](feature_audio.md)
@@ -73,7 +75,6 @@
   * [Thermal Printer](feature_thermal_printer.md)
   * [Unicode](feature_unicode.md)
   * [Userspace](feature_userspace.md)
-  * [US ANSI Shifted Keys](keycodes_us_ansi_shifted.md)
 
 * For Makers and Modders
   * [Hand Wiring Guide](hand_wire.md)

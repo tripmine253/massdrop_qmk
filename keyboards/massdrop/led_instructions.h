@@ -74,6 +74,7 @@ extern uint8_t led_animation_id;
 extern float led_animation_period_scalar;
 extern uint8_t led_lighting_mode;
 extern uint8_t led_animation_direction;
+extern uint8_t led_animation_orientation;
 extern uint8_t led_animation_breathe_cur;
 extern uint8_t breathe_dir;
 

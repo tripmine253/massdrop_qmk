@@ -21,9 +21,15 @@ uint8_t led_animation_id;
 uint8_t led_lighting_mode;
 float led_animation_period_scalar;
 uint8_t led_animation_direction;
+uint8_t led_animation_orientation;
 uint8_t led_animation_breathe_cur;
 uint8_t breathe_step;
 uint8_t breathe_dir;
+
+uint32_t ef_axis_x = EF_AXIS_X;
+uint32_t ef_axis_x_invert = EF_AXIS_X_INVERT;
+uint32_t ef_axis_y = EF_AXIS_Y;
+uint32_t ef_axis_y_invert = EF_AXIS_Y_INVERT;
 
 led_setup_t *led_animation;
 
@@ -32,6 +38,7 @@ void rgb_matrix_init_user(void) {
   led_lighting_mode = LED_MODE_NORMAL;
   led_animation_period_scalar = 1;
   led_animation_direction = 0;
+  led_animation_orientation = 0;
   led_animation_breathe_cur = BREATHE_MIN_STEP;
   breathe_step = 1;
   breathe_dir = 1;
@@ -126,10 +133,10 @@ static void rgb_matrix_pattern(led_setup_t *f, uint8_t anim_id, float* ro, float
     px = led_px;
     py = led_py;
 
-    bool is_x_axis = f->ef & (EF_AXIS_X | EF_AXIS_X_INVERT);
-    bool is_x_axis_invert = f->ef & EF_AXIS_X_INVERT;
-    bool is_y_axis = f->ef & (EF_AXIS_Y | EF_AXIS_Y_INVERT);
-    bool is_y_axis_invert = f->ef & EF_AXIS_Y_INVERT;
+    bool is_x_axis = f->ef & (ef_axis_x | ef_axis_x_invert);
+    bool is_x_axis_invert = f->ef & ef_axis_x_invert;
+    bool is_y_axis = f->ef & (ef_axis_y | ef_axis_y_invert);
+    bool is_y_axis_invert = f->ef & ef_axis_y_invert;
 
     if (f->ef & (EF_ANIM_SCROLL | EF_ANIM_SCROLL_INVERT)) {
       float offset;
@@ -155,11 +162,11 @@ static void rgb_matrix_pattern(led_setup_t *f, uint8_t anim_id, float* ro, float
       }
     }
 
-    if (f->ef & EF_AXIS_X_INVERT) {
+    if (is_x_axis_invert) {
       px = 100.0f - px;
     }
 
-    if (f->ef & EF_AXIS_Y_INVERT) {
+    if (is_y_axis_invert) {
       py = 100.0f - py;
     }
 
@@ -179,7 +186,7 @@ static void rgb_matrix_pattern(led_setup_t *f, uint8_t anim_id, float* ro, float
       // Scrolled horizontally
       effect_pct = (px - f->hs) / (f->he - f->hs);
     } else if (is_y_axis) {
-      py = fmod(px + 100.0f, 100.0f);
+      py = fmod(py + 100.0f, 100.0f);
       if (py < f->hs || py > f->he) { f++; continue; }
 
       // Scrolled vertically
@@ -248,6 +255,18 @@ void rgb_matrix_run_user(led_disp_t disp) {
 
     // Scale offset to range 0-100
     animation_offsets[anim_index] = position_offset * 100.0f / ms;
+  }
+
+  if (led_animation_orientation) {
+    ef_axis_x = EF_AXIS_Y;
+    ef_axis_x_invert = EF_AXIS_Y_INVERT;
+    ef_axis_y = EF_AXIS_X;
+    ef_axis_y_invert = EF_AXIS_X_INVERT;
+  } else {
+    ef_axis_x = EF_AXIS_X;
+    ef_axis_x_invert = EF_AXIS_X_INVERT;
+    ef_axis_y = EF_AXIS_Y;
+    ef_axis_y_invert = EF_AXIS_Y_INVERT;
   }
 
   highest_active_layer = 0;

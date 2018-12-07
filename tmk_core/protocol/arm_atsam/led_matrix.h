@@ -111,7 +111,6 @@ extern uint8_t gcr_actual_last;
 
 extern uint8_t led_enabled;
 extern uint8_t led_animation_breathing;
-extern const uint8_t led_setups_count;
 
 extern issi3733_led_t led_map[ISSI3733_LED_COUNT+1];
 extern issi3733_led_t *led_cur;

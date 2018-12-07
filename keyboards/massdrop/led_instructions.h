@@ -80,5 +80,6 @@ extern uint8_t breathe_dir;
 
 extern led_instruction_t led_instructions[];
 extern void *led_setups[];
+extern const uint8_t led_setups_count;
 
 extern uint32_t layer_state;

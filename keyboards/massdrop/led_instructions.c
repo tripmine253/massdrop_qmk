@@ -2,7 +2,6 @@
 #include <stdint.h>
 #include "led_matrix.h"
 #include "led_instructions.h"
-#include "led_patterns.c"
 #include "quantum.h"
 
 uint8_t highest_active_layer = 0;

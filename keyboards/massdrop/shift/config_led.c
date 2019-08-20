@@ -5,11 +5,31 @@
 #include "rgb_matrix.h"
 #include "config_led.h"
 
+// This table can be almost-automatically derived from ISSI3733_LED_MAP that is
+// defined in config_led.h
+
+// scan in the following equations refers to the scan variable of ISSI3733_LED_MAP
+//   col = (uint8_t)(scan / 8)
+//   row = (uint8_t)(scan % 8)
+//
+// You can calculate the (0-244, 0-64) x/y values from the x/y values defined in
+// ISSI3733_LED_MAP with the following formula:
+//   uint8_t rgb_x = ((ISSI3733_LED_MAP[i].x - MIN_X) / (MAX_X - MIN_X)) * 224;
+//   uint8_t rgb_y = ((ISSI3733_LED_MAP[i].y - MIN_Y) / (MAX_Y - MIN_Y)) * 64; //TODO: 64 - this?
+// Where the min/max vars are the minimum and maximum "bounds" of x/y values
+// present in ISSI3733_LED_MAP
+//
+// The row/col values need to be manually tweaked though, compensating for the
+// "empty" cells that are a product of larger keys
+//
+// There is a quick-and-dirty implementation of this under ledvis.html
+
+
 // TODO: update after layout change
 led_config_t g_led_config = {
   {
-    {   1,   2,   3,   5,   6,   7,   8,  10,  12,  14,  15,  16,  17 },
-    {  22,  23,   4,  27,  29,  30,   9,  11,  13,  18,  19,  20,  21 },
+    {   1,   2,   3,   5,   6,   7,   8,  10,  12,  NO_LED,  15,  16,  NO_LED },
+    {  22,  23,   4,  27,  29,  30,   9,  11,  13,  18,  19,  20,  NO_LED },
     {  40,  24,  25,  28,  46,  31,  32,  34,  35,  36,  37,  38,  39 },
     {  58,  41,  26,  44,  47,  48,  33,  51,  52,  54,  55,  56,  57 },
     {  75,  42,  43,  45,  64,  49,  50,  68,  53,  71,  72,  73,  74 },
@@ -213,12 +233,14 @@ led_config_t g_led_config = {
 
     4, 4, 4,
 
+// Underglow/border LEDs (64) - LED_FLAG_UNDERGLOW
     2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
     2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
     2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
     2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
     2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-    2, 2, 2, 2, 2, 2, 2, 2
+    2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+	2, 2, 2, 2
   }
 };
 

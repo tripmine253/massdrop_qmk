@@ -28,7 +28,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define I2C_HZ 870000
 
 //Count of LED bodies
-#define ISSI3733_LED_COUNT 160
+//#define ISSI3733_LED_COUNT 160
+#define ISSI3733_LED_COUNT 166
 
 #define LED_GCR_MAX                 165         //Max GCR value (0 - 255) WARNING: Raising this value may overload the LED drivers and USB bus
 #define LED_GCR_STEP                10          //GCR increment/decrement value

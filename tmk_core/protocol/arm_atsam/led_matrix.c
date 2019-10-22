@@ -333,21 +333,37 @@ void led_matrix_indicators(void)
         for (uint8_t i = 0; i < ISSI3733_LED_COUNT; i++)
         {
             if (
-            #if USB_LED_NUM_LOCK_SCANCODE != 255
+            #ifdef USB_LED_NUM_LOCK_SCANCODE
                 (led_map[i].scan == USB_LED_NUM_LOCK_SCANCODE && (kbled & (1<<USB_LED_NUM_LOCK))) ||
             #endif //NUM LOCK
-            #if USB_LED_CAPS_LOCK_SCANCODE != 255
+            #ifdef USB_LED_CAPS_LOCK_SCANCODE
                 (led_map[i].scan == USB_LED_CAPS_LOCK_SCANCODE && (kbled & (1<<USB_LED_CAPS_LOCK))) ||
             #endif //CAPS LOCK
-            #if USB_LED_SCROLL_LOCK_SCANCODE != 255
+            #ifdef USB_LED_SCROLL_LOCK_SCANCODE
                 (led_map[i].scan == USB_LED_SCROLL_LOCK_SCANCODE && (kbled & (1<<USB_LED_SCROLL_LOCK))) ||
             #endif //SCROLL LOCK
-            #if USB_LED_COMPOSE_SCANCODE != 255
+            #ifdef USB_LED_COMPOSE_SCANCODE
                 (led_map[i].scan == USB_LED_COMPOSE_SCANCODE && (kbled & (1<<USB_LED_COMPOSE))) ||
             #endif //COMPOSE
-            #if USB_LED_KANA_SCANCODE != 255
+            #ifdef USB_LED_KANA_SCANCODE
                 (led_map[i].scan == USB_LED_KANA_SCANCODE && (kbled & (1<<USB_LED_KANA))) ||
             #endif //KANA
+			// Dedicated LEDs (Could be done more efficiently - meh)
+			#ifdef USB_LED_NUM_LOCK_LEDID
+				(led_map[i].id == USB_LED_NUM_LOCK_LEDID && (kbled & (1<<USB_LED_NUM_LOCK))) ||
+			#endif
+			#ifdef USB_LED_CAPS_LOCK_LEDID
+				(led_map[i].id == USB_LED_CAPS_LOCK_LEDID && (kbled & (1<<USB_LED_CAPS_LOCK))) ||
+			#endif
+			#ifdef USB_LED_SCROLL_LOCK_LEDID
+				(led_map[i].id == USB_LED_SCROLL_LOCK_LEDID && (kbled & (1<<USB_LED_SCROLL_LOCK))) ||
+			#endif
+			#ifdef USB_LED_COMPOSE_LEDID
+				(led_map[i].id == USB_LED_COMPOSE_LEDID && (kbled & (1<<USB_LED_COMPOSE))) ||
+			#endif
+			#ifdef USB_LED_KANA_LEDID
+				(led_map[i].id == USB_LED_KANA_LEDID && (kbled & (1<<USB_LED_KANA))) ||
+			#endif
             (0))
             {
                 led_buffer[i].r = 255 - led_buffer[i].r;

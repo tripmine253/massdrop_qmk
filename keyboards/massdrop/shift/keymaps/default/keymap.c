@@ -1,6 +1,6 @@
 #include QMK_KEYBOARD_H
 
-enum ctrl_keycodes {
+enum shift_keycodes {
     U_T_AGCR = SAFE_RANGE, //USB Toggle Automatic GCR control
     DBG_TOG,               //DEBUG Toggle On / Off
     DBG_MTRX,              //DEBUG Toggle Matrix Prints

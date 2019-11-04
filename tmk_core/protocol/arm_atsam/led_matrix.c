@@ -87,6 +87,9 @@ int8_t gcr_change_counter;              //GCR increase and decrease calls are co
 uint16_t v_5v_cat_hit;                  //Flag for when 5v catastrophic level has been reached, and timer for recovery period
 uint64_t v_5v_low_timer;                //Timer for disabling USB extra device after causing a low voltage situation for an amount of time (-1 indicates timer not active)
 
+uint8_t led_mfg_test_mode = LED_MFG_TEST_MODE_OFF;
+
+
 //WARNING: Automatic GCR is in place to prevent USB shutdown and LED driver overloading
 //Note: GCR updates are currently synced to come before a PWM update, so GCR updates actually happen off the PWM update timer
 void gcr_compute(void)
@@ -328,10 +331,11 @@ void flush(void)
 void led_matrix_indicators(void)
 {
     uint8_t kbled = keyboard_leds();
-    if (kbled && rgb_matrix_config.enable)
+    if (/*kbled &&*/ rgb_matrix_config.enable)
     {
         for (uint8_t i = 0; i < ISSI3733_LED_COUNT; i++)
         {
+#ifdef USB_LED_INDICATOR_ENABLE
             if (
             #ifdef USB_LED_NUM_LOCK_SCANCODE
                 (led_map[i].scan == USB_LED_NUM_LOCK_SCANCODE && (kbled & (1<<USB_LED_NUM_LOCK))) ||
@@ -349,27 +353,41 @@ void led_matrix_indicators(void)
                 (led_map[i].scan == USB_LED_KANA_SCANCODE && (kbled & (1<<USB_LED_KANA))) ||
             #endif //KANA
 			// Dedicated LEDs (Could be done more efficiently - meh)
-			#ifdef USB_LED_NUM_LOCK_LEDID
-				(led_map[i].id == USB_LED_NUM_LOCK_LEDID && (kbled & (1<<USB_LED_NUM_LOCK))) ||
-			#endif
-			#ifdef USB_LED_CAPS_LOCK_LEDID
-				(led_map[i].id == USB_LED_CAPS_LOCK_LEDID && (kbled & (1<<USB_LED_CAPS_LOCK))) ||
-			#endif
-			#ifdef USB_LED_SCROLL_LOCK_LEDID
-				(led_map[i].id == USB_LED_SCROLL_LOCK_LEDID && (kbled & (1<<USB_LED_SCROLL_LOCK))) ||
-			#endif
-			#ifdef USB_LED_COMPOSE_LEDID
-				(led_map[i].id == USB_LED_COMPOSE_LEDID && (kbled & (1<<USB_LED_COMPOSE))) ||
-			#endif
-			#ifdef USB_LED_KANA_LEDID
-				(led_map[i].id == USB_LED_KANA_LEDID && (kbled & (1<<USB_LED_KANA))) ||
-			#endif
             (0))
             {
                 led_buffer[i].r = 255 - led_buffer[i].r;
                 led_buffer[i].g = 255 - led_buffer[i].g;
                 led_buffer[i].b = 255 - led_buffer[i].b;
             }
+#endif
+#ifdef DEDICATED_LED_INDICATOR_ENABLE
+            if ( (led_mfg_test_mode == LED_MFG_TEST_MODE_OFF) && (
+			// Turn off unactive dedicated LED indicators
+			#ifdef USB_LED_NUM_LOCK_LEDID
+				(led_map[i].id == USB_LED_NUM_LOCK_LEDID && ((kbled & (1<<USB_LED_NUM_LOCK))==0) ) ||
+			#endif
+			#ifdef USB_LED_CAPS_LOCK_LEDID
+				(led_map[i].id == USB_LED_CAPS_LOCK_LEDID && ((kbled & (1<<USB_LED_CAPS_LOCK))==0) ) ||
+			#endif
+			#ifdef USB_LED_SCROLL_LOCK_LEDID
+				(led_map[i].id == USB_LED_SCROLL_LOCK_LEDID && ((kbled & (1<<USB_LED_SCROLL_LOCK))==0) ) ||
+			#endif
+			#ifdef USB_LED_COMPOSE_LEDID
+				(led_map[i].id == USB_LED_COMPOSE_LEDID && !(kbled & (1<<USB_LED_COMPOSE))) ||
+			#endif
+			#ifdef USB_LED_KANA_LEDID
+				(led_map[i].id == USB_LED_KANA_LEDID && !(kbled & (1<<USB_LED_KANA))) ||
+			#endif
+            (0)))
+            {
+                led_buffer[i].r = 0;
+                led_buffer[i].g = 0;
+                led_buffer[i].b = 0;
+                //led_buffer[i].r = 255 - led_buffer[i].r;
+                //led_buffer[i].g = 255 - led_buffer[i].g;
+                //led_buffer[i].b = 255 - led_buffer[i].b;
+            }
+#endif
         }
     }
 

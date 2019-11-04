@@ -39,6 +39,10 @@ volatile uint8_t i2c_led_q_running;
 
 #endif // !defined(MD_BOOTLOADER) && defined(RGB_MATRIX_ENABLE)
 
+
+#ifndef NO_MD_USB2422
+// I2C0 is used only for USB2422 HUB
+
 void i2c0_init(void)
 {
     DBGC(DC_I2C0_INIT_BEGIN);
@@ -111,8 +115,11 @@ void i2c0_stop(void)
         while (SERCOM0->I2CM.STATUS.bit.BUSSTATE != 1);
     }
 }
+#endif //NO_MD_USB2422
 
 #if !defined(MD_BOOTLOADER) && defined(RGB_MATRIX_ENABLE)
+// I2C1 is used only for IS31FL3733 LED Drivers
+
 void i2c1_init(void)
 {
     DBGC(DC_I2C1_INIT_BEGIN);
@@ -259,8 +266,15 @@ uint8_t I2C3733_Init_Control(void)
 
     wait_ms(1);
 
+#ifdef IRST_ENABLE
+    IRST_ENABLE;
+    IRST_OFF;		// Reset active high
+    SDB_ENABLE;
+    SDB_OFF;
+#else
     sr_exp_data.bit.IRST = 0;
     SR_EXP_WriteData();
+#endif
 
     wait_ms(1);
 
@@ -352,13 +366,18 @@ void I2C3733_Control_Set(uint8_t state)
 {
     DBGC(DC_I2C3733_CONTROL_SET_BEGIN);
 
-    if (sr_exp_data.bit.SDB_N == 0 && state == 1)
+    if (I2C3733_Control_Get() == 0 && state == 1)
     {
         gcr_actual = 0; //Set low GCR when turning on to prevent instant overload conditions
     }
 
+#ifdef SDB_PORT
+    if( state == 1 )	SDB_ON;
+    else				SDB_OFF;
+#else
     sr_exp_data.bit.SDB_N = (state == 1 ? 1 : 0);
     SR_EXP_WriteData();
+#endif
 
     DBGC(DC_I2C3733_CONTROL_SET_COMPLETE);
 }
@@ -367,7 +386,11 @@ void I2C3733_Control_Set(uint8_t state)
 //Return 0 if disabled
 uint8_t I2C3733_Control_Get(void)
 {
+#ifdef SDB_PORT
+	return( SDB_IN() );
+#else
     return (sr_exp_data.bit.SDB_N == 1);
+#endif
 }
 
 void i2c_led_desc_defaults(void)

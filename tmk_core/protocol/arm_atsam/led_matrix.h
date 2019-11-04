@@ -83,6 +83,10 @@ extern uint8_t gcr_desired;
 extern uint8_t gcr_breathe;
 extern uint8_t gcr_actual;
 extern uint8_t gcr_actual_last;
+extern uint8_t led_mfg_test_mode;
+
+#define LED_MFG_TEST_MODE_OFF		0
+#define LED_MFG_TEST_MODE_ON		1
 
 void gcr_compute(void);
 
@@ -171,6 +175,7 @@ uint32_t led_matrix_get_tick(void);
 
 #define LED_IS_EDGE(scan)           (scan >= LED_EDGE_MIN_SCAN)     //Return true if an LED's scan value indicates an edge LED
 #define LED_IS_EDGE_ALT(scan)       (scan == LED_EDGE_ALT_MODE)     //Return true if an LED's scan value indicates an alternate edge mode LED
+
 
 #endif // USE_MASSDROP_CONFIGURATOR
 

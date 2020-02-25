@@ -156,10 +156,13 @@ extern uint8_t led_animation_circular;
 extern float led_edge_brightness;
 extern uint8_t led_edge_mode;
 
-extern issi3733_led_t led_map[ISSI3733_LED_COUNT];
 extern RGB led_buffer[ISSI3733_LED_COUNT];
 
 uint32_t led_matrix_get_tick(void);
+
+#endif // USE_MASSDROP_CONFIGURATOR
+
+extern issi3733_led_t led_map[ISSI3733_LED_COUNT];
 
 #define LED_MODE_NORMAL             0                               //Must be 0
 #define LED_MODE_KEYS_ONLY          1
@@ -180,7 +183,5 @@ uint32_t led_matrix_get_tick(void);
 #define LED_IS_EDGE_ALT(scan)       (scan == LED_EDGE_ALT_MODE)     //Return true if an LED's scan value indicates an alternate edge mode LED
 #define LED_IS_INDICATOR(scan)      (scan == LED_INDICATOR_SCAN)    //Return true if an LED's scan value indicates it is a dedicated Indicator
 
-
-#endif // USE_MASSDROP_CONFIGURATOR
 
 #endif //_LED_MATRIX_H_

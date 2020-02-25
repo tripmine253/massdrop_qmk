@@ -108,9 +108,9 @@ UDC_DESC_STORAGE udi_hid_kbd_report_desc_t udi_hid_kbd_report_desc = {{
     0x81, 0x02,  //   Input (Data, Variable, Absolute)
     0x81, 0x01,  //   Input (Constant)
     0x19, 0x00,  //   Usage Minimum (0)
-    0x29, 0xFF,  //   Usage Maximum (255)
+    0x29, 0x65,  //   Usage Maximum (255) --> 101
     0x15, 0x00,  //   Logical Minimum (0)
-    0x25, 0xFF,  //   Logical Maximum (255)
+    0x25, 0x65,  //   Logical Maximum (255) --> 101
     0x75, 0x08,  //   Report Size (8)
     0x95, 0x06,  //   Report Count (6)
     0x81, 0x00,  //   Input (Data, Array)
@@ -648,13 +648,13 @@ UDC_DESC_STORAGE udi_hid_raw_report_desc_t udi_hid_raw_report_desc = {{
 	0xA1, 0x01,  			// Collection (Application)
     0x75, 0x08,              //   Report Size (8)
     0x15, 0x00,              //   Logical Minimum (0)
-    0x25, 0xFF,              //   Logical Maximum (255)
+    0x26, 0xFF, 0x00,        //   Logical Maximum (0x00FF) = 255
     0x95, 0x40,              //     Report Count
     0x09, 0x01,              //     Usage (Input)
-    0x81, 0x02,              //     Input (Data
+    0x81, 0x02,              //     Input (Data)
     0x95, 0x40,              //     Report Count
     0x09, 0x02,              //     Usage (Output)
-    0x91, 0x02,              //     Output (Data
+    0x91, 0x02,              //     Output (Data)
     0xC0,                    // End Collection - Consumer Control
 }};
 

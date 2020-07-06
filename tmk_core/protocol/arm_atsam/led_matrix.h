@@ -83,10 +83,16 @@ extern uint8_t gcr_desired;
 extern uint8_t gcr_breathe;
 extern uint8_t gcr_actual;
 extern uint8_t gcr_actual_last;
+extern uint8_t led_mfg_test_mode;
+
+#define LED_MFG_TEST_MODE_OFF		0
+#define LED_MFG_TEST_MODE_ON		1
+#define LED_MFG_TEST_MODE_RAWP		2
 
 void gcr_compute(void);
 
 void led_matrix_indicators(void);
+void led_set_one_rawp(int i, uint8_t r, uint8_t g, uint8_t b);
 
 /*-------------------------  Legacy Lighting Support  ------------------------*/
 
@@ -148,9 +154,16 @@ extern uint8_t breathe_dir;
 extern uint8_t led_animation_orientation;
 extern uint8_t led_animation_circular;
 extern float led_edge_brightness;
+extern float led_ratio_brightness;
 extern uint8_t led_edge_mode;
 
+extern RGB led_buffer[ISSI3733_LED_COUNT];
+
 uint32_t led_matrix_get_tick(void);
+
+#endif // USE_MASSDROP_CONFIGURATOR
+
+extern issi3733_led_t led_map[ISSI3733_LED_COUNT];
 
 #define LED_MODE_NORMAL             0                               //Must be 0
 #define LED_MODE_KEYS_ONLY          1
@@ -165,10 +178,12 @@ uint32_t led_matrix_get_tick(void);
 #define LED_EDGE_FULL_MODE          255                             //LEDs configured with this scan code will always be on for edge lighting modes
 #define LED_EDGE_ALT_MODE           254                             //LEDs configured with this scan code will turn off in edge alternating mode
 #define LED_EDGE_MIN_SCAN           254                             //LEDs configured with scan code >= to this are assigned as edge LEDs
+#define LED_INDICATOR_SCAN          253                             //LEDs configured as dedicated indicators
 
+#define LED_IS_KEY(scan)            (scan < LED_INDICATOR_SCAN)     //Return true if an LED's scan value indicates it is a key LED
 #define LED_IS_EDGE(scan)           (scan >= LED_EDGE_MIN_SCAN)     //Return true if an LED's scan value indicates an edge LED
 #define LED_IS_EDGE_ALT(scan)       (scan == LED_EDGE_ALT_MODE)     //Return true if an LED's scan value indicates an alternate edge mode LED
+#define LED_IS_INDICATOR(scan)      (scan == LED_INDICATOR_SCAN)    //Return true if an LED's scan value indicates it is a dedicated Indicator
 
-#endif // USE_MASSDROP_CONFIGURATOR
 
 #endif //_LED_MATRIX_H_

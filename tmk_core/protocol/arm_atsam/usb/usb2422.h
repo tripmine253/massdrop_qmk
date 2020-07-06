@@ -25,7 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define USB2422_ADDR       0x58 //I2C device address, one instance
 
 #define USB2422_HUB_ACTIVE_GROUP    0   //PA
-#define USB2422_HUB_ACTIVE_PIN      18  //18
+#define USB2422_HUB_ACTIVE_PIN      18  //18	<- Hard code alert! ***FIXME
 
 /* -------- USB2422_VID : (USB2422L Offset: 0x00) (R/W 16) Vendor ID -------- */
 #if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))

@@ -56,6 +56,37 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define ADC_CONFIG_C1I  ADC_NA, 0,  0, 0, 0,                              0,                              0,                              0
 #define ADC_CONFIG_C2I  ADC_NA, 0,  0, 0, 0,                              0,                              0,                              0
 
+// Below configuration is applicable to PCBA version 1.5 and above
+// This will replace the above configuration dynamically
+//                              ADC_PORT    ADC_MUX
+//                              |  ADC_PIN  |  ADC_INDEX
+//                              |       |   |  |  ADC_MUXPOS                      ADC_REFSEL                      ADC_SAMPLENUM                   ADC_SAMPLEN
+#define ADC_CONFIG_C1A5_V1_5    1,      2,  1, 0, ADC_INPUTCTRL_MUXPOS_AIN14_Val, ADC_REFCTRL_REFSEL_INTREF_Val,  ADC_AVGCTRL_SAMPLENUM_16_Val,   63
+#define ADC_CONFIG_C1B5_V1_5    1,      1,  1, 0, ADC_INPUTCTRL_MUXPOS_AIN13_Val, ADC_REFCTRL_REFSEL_INTREF_Val,  ADC_AVGCTRL_SAMPLENUM_16_Val,   63
+#define ADC_CONFIG_C2A5_V1_5    1,      3,  1, 0, ADC_INPUTCTRL_MUXPOS_AIN15_Val, ADC_REFCTRL_REFSEL_INTREF_Val,  ADC_AVGCTRL_SAMPLENUM_16_Val,   63
+#define ADC_CONFIG_C2B5_V1_5    1,      8,  1, 0, ADC_INPUTCTRL_MUXPOS_AIN2_Val , ADC_REFCTRL_REFSEL_INTREF_Val,  ADC_AVGCTRL_SAMPLENUM_16_Val,   63
+
+
+
+#define SRC_2_A5_PORT   PA
+#define SRC_2_A5_PIN    21
+#define SRC_2_B5_PORT   PA
+#define SRC_2_B5_PIN    20
+
+#define SRC_2_A5_INIT   PORT->Group[SRC_2_A5_PORT].DIRSET.reg = (1 << SRC_2_A5_PIN); \
+                        PORT->Group[SRC_2_A5_PORT].PINCFG[SRC_2_A5_PIN].bit.INEN = 0
+#define SRC_2_A5_DEINIT PORT->Group[SRC_2_A5_PORT].DIRCLR.reg = (1 << SRC_2_A5_PIN)
+#define SRC_2_A5_ON     PORT->Group[SRC_2_A5_PORT].OUTSET.reg = (1 << SRC_2_A5_PIN)
+#define SRC_2_A5_OFF    PORT->Group[SRC_2_A5_PORT].OUTCLR.reg = (1 << SRC_2_A5_PIN)
+
+#define SRC_2_B5_INIT   PORT->Group[SRC_2_B5_PORT].DIRSET.reg = (1 << SRC_2_B5_PIN); \
+                        PORT->Group[SRC_2_B5_PORT].PINCFG[SRC_2_B5_PIN].bit.INEN = 0
+#define SRC_2_B5_DEINIT PORT->Group[SRC_2_B5_PORT].DIRCLR.reg = (1 << SRC_2_B5_PIN)
+#define SRC_2_B5_ON     PORT->Group[SRC_2_B5_PORT].OUTSET.reg = (1 << SRC_2_B5_PIN)
+#define SRC_2_B5_OFF    PORT->Group[SRC_2_B5_PORT].OUTCLR.reg = (1 << SRC_2_B5_PIN)
+
+
+
 //Conversion values dependant upon the circuitry
 #define ADC_5V_VOLTS_PER_COUNT      0.001904297f
 #define ADC_5V_VOLTS_OFFSET         0.0f

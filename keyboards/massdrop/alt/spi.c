@@ -37,8 +37,8 @@ void SR_EXP_Init_kb(void) {
     sr_exp_data.bit.HUB_CONNECT = 0;            //USB Hub disconnected
     sr_exp_data.bit.HUB_RESET_N = 0;            //USB Hub in reset state
 
-    sr_exp_data.bit.SRC_1 = 1;                  //Set CON1 CC A5/B5 as Rd 5.1k
-    sr_exp_data.bit.SRC_2 = 1;                  //Set CON2 CC A5/B5 as Rd 5.1k
+    sr_exp_data.bit.SRC_1_A5 = 1;                  //Set CON1 CC A5/B5 as Rd 5.1k
+    sr_exp_data.bit.SRC_1_B5 = 1;                  //Set CON2 CC A5/B5 as Rd 5.1k
     sr_exp_data.bit.S_UP = 0;                   //Default USB data to CON1
     sr_exp_data.bit.E_UP_N = 1;                 //Disable HOST
     sr_exp_data.bit.S_DN1 = 1;                  //Default EXTRA port to CON2

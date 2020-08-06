@@ -42,7 +42,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Port and Pin definition of key column hardware configuration */
 #define MATRIX_COL_PORTS PB, PB, PB, PB, PB, PB, PB, PB, PB, PB, PA, PA, PA, PA, PA
+
+// Hw Version 1 colomn defalt config
 #define MATRIX_COL_PINS   4,  5,  6,  7,  8,  9, 10, 11, 12, 13,  5,  6,  7, 10, 11
+// HW version 1.5 config updated dynamically
+// Mentioned here only for reference
+//#define MATRIX_COL_PINS   4,  5,  6,  7,  17,  9, 10, 11, 12, 13,  5,  6,  7, 10, 11
 
 /* This Shift Register expands available hardware output lines to control additional peripherals */
 /* It uses four lines from the MCU to provide 16 output lines */
@@ -78,6 +83,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DEBUG_PORT2_ENABLE          1
 #define DEBUG_PORT2_PORT            PB
 #define DEBUG_PORT2_PIN             17
+
 /* PCB M25 */
 #define DEBUG_PORT3_ENABLE          1
 #define DEBUG_PORT3_PORT            PA

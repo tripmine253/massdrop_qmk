@@ -28,6 +28,13 @@ uint8_t adc_config[][ADC_SAMPLEN + 1] = {
     {   ADC_CONFIG_C2I }
 };
 
+
+    // Suupport for new hw
+__attribute__ ((weak))
+void  update_adc_config(uint8_t * p_adc_config)
+{
+}
+
 #ifdef ADC_USBC_RP_DELTA_MAX
 uint16_t adc_usbc_rp_nominal[ADC_USBC_RP_TYPES * ADC_USBC_CON_TYPES] = { ADC_USBC_RP_NOM };
 #endif
@@ -87,6 +94,10 @@ void ADC_init(void)
     uint8_t adc_index;
     PortGroup *port;
     uint8_t adc_row;
+
+    // Backward compatibilty with old hw
+    update_adc_config((uint8_t *)adc_config);
+
 
     for (adc_row = 0; adc_row < sizeof(adc_config) / sizeof(adc_config[0]); adc_row++)
     {

@@ -244,15 +244,25 @@ void main_subtasks(void)
     main_subtask_usb_extra_device();
 }
 
+__attribute__ ((weak))
+uint8_t is_hw_version_1(void)
+{
+    return 1;
+}
+
 int main(void)
 {
     DBG_LED_ENA;
     DBG_1_ENA;
     DBG_1_OFF;
-    DBG_2_ENA;
-    DBG_2_OFF;
-    DBG_3_ENA;
-    DBG_3_OFF;
+
+    if (is_hw_version_1())
+    {
+        DBG_2_ENA;
+        DBG_2_OFF;
+        DBG_3_ENA;
+        DBG_3_OFF;
+    }
 
     debug_code_init();
 

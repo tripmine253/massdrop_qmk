@@ -3,6 +3,9 @@ SRC = matrix.c
 SRC += config_led.c
 SRC += spi.c
 SRC += usb.c
+SRC += config_hw_version.c
+SRC += config_adc.c
+
 
 #For platform and packs
 ARM_ATSAM = SAMD51J18A

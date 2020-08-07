@@ -16,6 +16,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "arm_atsam_protocol.h"
+#include "config_hw_version.h"
+#include "config_adc.h"
 
 //Note: rp_best_index not used
 void usb_set_host_kb(uint8_t con, uint8_t rp_best_index) {
@@ -36,11 +38,23 @@ void usb_set_host_kb(uint8_t con, uint8_t rp_best_index) {
 
 void usb_set_extra_kb(uint8_t con) {
     if (con == 1) {
-        sr_exp_data.bit.SRC_1 = 0;                      //Set CON1 CC A5/B5 as Rp 56k
+        if (!is_hw_version_1())
+        {
+            sr_exp_data.bit.SRC_1_B5 = 0;                //Set CON1 CC A5/B5 as Rp 56k
+        }
+        sr_exp_data.bit.SRC_1_A5 = 0;                    //Set CON1 CC A5/B5 as Rp 56k
         sr_exp_data.bit.E_VBUS_1 = 0;                   //Disable CON1 5V
         SR_EXP_WriteData();                             //Update port configuration
     } else if (con == 2) {
-        sr_exp_data.bit.SRC_2 = 0;                      //Set CON2 CC A5/B5 as Rp 56k
+        if (!is_hw_version_1()){
+            // Set GPIO of Port 2 = 0 to connect
+            SRC_2_A5_OFF;
+            SRC_2_B5_OFF;
+        }
+        else {
+            sr_exp_data.bit.SRC_1_B5 = 0;               //Set CON2 CC A5/B5 as Rp 56k This SRC_1_B5 is SRC_2 for hw version 1
+            //sr_exp_data.bit.SRC_2 = 0;                //Set CON2 CC A5/B5 as Rp 56k Replaced by above line
+        }
         sr_exp_data.bit.E_VBUS_2 = 0;                   //Disable CON2 5V
         SR_EXP_WriteData();                             //Update port configuration
     }
@@ -56,14 +70,22 @@ void usb_init_host_detection_kb(void) {
     sr_exp_data.bit.S_DN1 = 1;                          //EXTRA to USBC-2
 
     //Configure CC lines
-    sr_exp_data.bit.SRC_1 = 1;                          //Set CON1 CC A5/B5 as Rd 5.1k
-    sr_exp_data.bit.SRC_2 = 1;                          //Set CON2 CC A5/B5 as Rd 5.1k
+    sr_exp_data.bit.SRC_1_A5 = 1;                          //Set CON1 CC A5/B5 as Rd 5.1k
+    sr_exp_data.bit.SRC_1_B5 = 1;                          //Set CON1 CC A5/B5 as Rd 5.1k
 
     //Enable ports
     sr_exp_data.bit.E_UP_N = 0;                         //Enable HOST for use
     sr_exp_data.bit.E_DN1_N = 0;                        //Enable EXTRA for use
 
     SR_EXP_WriteData();                                 //Update port configuration
+
+    // Set GPIO of Port 2 to 1 default configuration valid on for v1.5 version
+    if (!is_hw_version_1())
+    {
+        SRC_2_A5_ON;
+        SRC_2_B5_ON;
+    }
+
 }
 
 //Return 1 if configuration successful

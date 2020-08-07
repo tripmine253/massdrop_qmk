@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "debug.h"
 #include "clks.h"
 #include <string.h>
+#include "config_hw_version.h"
 
 #define MCU_PORTS_USED  2 //PA, PB
 
@@ -59,6 +60,12 @@ void matrix_init(void)
     memset(mdebounced, 0, MATRIX_ROWS * sizeof(matrix_row_t));
 
     memset(row_masks, 0, sizeof(row_masks));
+
+    if (!is_hw_version_1())
+    {
+        // In hw version PB 17 is used for row 5 instead PB8
+        row_pins[4] = 17;
+    }
 
     //Inputs
     uint8_t row;

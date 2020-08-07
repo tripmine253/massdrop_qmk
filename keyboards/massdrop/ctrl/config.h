@@ -39,6 +39,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Port and Pin definition of key row hardware configuration */
 #define MATRIX_ROW_PORTS PB, PB, PB, PB, PB, PB, PA, PA, PB, PB, PB
 #define MATRIX_ROW_PINS   4,  5,  6,  7,  8,  9, 10, 11, 10, 11, 12
+// Below is the configuration of PCBA v1.5 which is loaded dynamically on V1.5 PCBA
+// Mentioned here only for reference
+//#define MATRIX_ROW_PINS   4,  5,  6,  7,  17,  9, 10, 11, 10, 11, 12
 
 /* Port and Pin definition of key column hardware configuration */
 #define MATRIX_COL_PORTS PA, PA, PA, PA, PA, PA, PA, PA

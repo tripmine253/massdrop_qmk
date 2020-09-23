@@ -28,7 +28,10 @@ void hw_version_init(void)
 
     //Read input 
     // This PIN shall read 0 for HW version 1 and 1 for HW version 1.5
-     hw_version_1 = ~(PORT->Group[HW_VERSION_CHECK_PORT].IN.reg & (1 << HW_VERSION_CHECK_PIN));                 //Read PB port on Pin 
+    hw_version_1 = ~((PORT->Group[HW_VERSION_CHECK_PORT].IN.reg & (1 << HW_VERSION_CHECK_PIN))>>HW_VERSION_CHECK_PIN);  //Read PB port on Pin 
+    hw_version_1 = hw_version_1 & 0x01; // Consider only LSB bit
+     
+
 }
 
 // This function returns 1 is hw versio is 1 and 0 for version >= 1.5

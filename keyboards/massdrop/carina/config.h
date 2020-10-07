@@ -24,8 +24,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID          0xEE69
 #define DEVICE_VER          0x0100
 
-#define MANUFACTURER        "Massdrop Inc."
-#define PRODUCT             "Massdrop Carina Sixty Percent Acrylic Keyboard"
+#define MANUFACTURER        "Drop Inc."
+#define PRODUCT             "Drop Sixty Percent"
 #define SERIAL_NUM          "Unavailable"
 
 /* key matrix size */

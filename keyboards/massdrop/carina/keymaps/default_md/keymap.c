@@ -10,6 +10,8 @@ enum carina_keycodes {
     L_PTP,              //LED Pattern Select Previous
     L_PSI,              //LED Pattern Speed Increase
     L_PSD,              //LED Pattern Speed Decrease
+    L_RATIOD,
+    L_RATIOI,
     L_T_MD,             //LED Toggle Mode
     L_T_ONF,            //LED Toggle On / Off
     L_ON,               //LED On
@@ -39,10 +41,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [1] = LAYOUT(
         KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,  \
-        L_T_BR,  L_PSD,   L_BRI,   L_PSI,   KC_NO,  _______, KC_PSCR, KC_SLCK, KC_PAUS, _______, KC_UP,   _______, _______,  _______, \
-        L_T_PTD, L_PTP,   L_BRD,   L_PTN,   KC_NO, _______, KC_INS,  KC_HOME, KC_PGUP, KC_LEFT, KC_DOWN, KC_RGHT,           _______, \
-        _______, L_T_MD,  L_T_ONF, _______, KC_NO, MD_BOOT, TG_NKRO, KC_END,  KC_PGDN, KC_VOLU, KC_VOLD,                    _______, \
-        _______, _______, _______,                   _______,                                    _______, KC_MUTE, _______,  _______ \
+        L_T_BR,  L_PSD,   L_BRI,   L_PSI,   L_EDG_I, _______, KC_PSCR, KC_SLCK, KC_PAUS, _______, KC_UP,   _______, _______, U_T_AGCR,\
+        L_T_PTD, L_PTP,   L_BRD,   L_PTN,   L_EDG_D, _______, KC_INS,  KC_HOME, KC_PGUP, KC_LEFT, KC_DOWN, KC_RGHT,           _______, \
+        _______, L_T_MD,  L_T_ONF, _______, L_EDG_M, MD_BOOT, TG_NKRO, KC_END,  KC_PGDN, KC_VOLU, KC_VOLD,                   _______, \
+        _______, _______, _______,                   DBG_FAC,                                    _______, KC_MUTE, _______,  _______ \
     ),
     /*
     [X] = LAYOUT(
@@ -104,6 +106,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 led_edge_brightness -= 0.1;
                 if (led_edge_brightness < 0) { led_edge_brightness = 0; }
+            }
+            return false;
+        case L_RATIOI:
+            if (record->event.pressed) {
+                led_ratio_brightness += 0.2;
+                if (led_ratio_brightness > 2.0) { led_ratio_brightness = 2.0; }
+            }
+            return false;
+        case L_RATIOD:
+            if (record->event.pressed) {
+                led_ratio_brightness -= 0.2;
+                if (led_ratio_brightness < 0.0) { led_ratio_brightness = 0.0; }
             }
             return false;
         case L_PTN:
